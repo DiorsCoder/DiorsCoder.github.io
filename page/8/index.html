@@ -454,135 +454,6 @@ body {
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-用Hexo在gitHub上搭建个人博客笔记！" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/12/12/用Hexo在gitHub上搭建个人博客笔记！/">用hexo在github上搭建个人博客笔记！</a>
-    </h1>
-  
-
-        
-        <a href="/2015/12/12/用Hexo在gitHub上搭建个人博客笔记！/" class="archive-article-date">
-  	<time datetime="2015-12-12T04:13:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-12-12</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>###一、前提需要Git 和 node.js的支持！</p>
-<p>#####Windows10 x64位 ,  github page 部署 hexo</p>
-<p>#####nodejs官网下载地址：<a href="https://nodejs.org/en/" target="_blank" rel="external">https://nodejs.org/en/</a></p>
-<p>####Git for Windows下载地址：<a href="https://git-for-windows.github.io/" target="_blank" rel="external">https://git-for-windows.github.io/</a></p>
-<p>####Hexo 中文文档：<a href="https://hexo.io/zh-cn/docs/commands.html" target="_blank" rel="external">https://hexo.io/zh-cn/docs/commands.html</a></p>
-<p>####Hexo Themes列表：<a href="https://hexo.io/themes/" target="_blank" rel="external">https://hexo.io/themes/</a></p>
-<p>####next 主題风格配置：<a href="http://theme-next.iissnan.com/" target="_blank" rel="external">http://theme-next.iissnan.com/</a><br><img src="http://upload-images.jianshu.io/upload_images/2255249-5dcd7f4f8e28d47c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Paste_Image.png"></p>
-<p>####安装完成后通过查看版本看是否安装成功，git鼠标点击右键会有菜单显示。</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/2255249-5e0089d1ac2f2896.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Paste_Image.png"></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/2255249-41189c8978455fe5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Paste_Image.png"></p>
-<p>###安装 hexo：</p>
-<p>#####1.输入命令：npm install -g hexo （-g 是指全局安装 hexo）</p>
-<p>#####2.查看安装成功与否，输入命令：hexo -v 查看会有版本等信息列出。</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/2255249-d9d9b02e565170f5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Paste_Image.png"></p>
-<p>####3.新建项目文件（必须为空，否则会失败），右键运行Git Bash，输入命令：hexo init 会生成如下文件：<br><img src="http://upload-images.jianshu.io/upload_images/2255249-7d23ce39f4e8919f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Paste_Image.png"></p>
-<h4 id="输入-hexo-s-命令，生成本地服务。然后浏览器输入-：http-localhost-4000-如果不出意外就会出现如下图："><a href="#输入-hexo-s-命令，生成本地服务。然后浏览器输入-：http-localhost-4000-如果不出意外就会出现如下图：" class="headerlink" title="输入  hexo s  命令，生成本地服务。然后浏览器输入 ：http://localhost:4000/ 如果不出意外就会出现如下图："></a>输入  hexo s  命令，生成本地服务。然后浏览器输入 ：<a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a> 如果不出意外就会出现如下图：</h4><p><img src="http://upload-images.jianshu.io/upload_images/2255249-dd50fb6194731b84.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Paste_Image.png"></p>
-<p>####<br><img src="http://upload-images.jianshu.io/upload_images/2255249-c7beed01a453fc36.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Paste_Image.png"></p>
-<p>####如果无法访问，可能是端口号占用，更改服务端口号：hexo s -p 5000</p>
-<p>###二、</p>
-<p>#####申请注册 gitHub 账号，官网地址：<a href="https://github.com/" target="_blank" rel="external">https://github.com/</a> ，登录创建 仓库 ，仓库名必须为（gitHub账号名）.gitHub.io</p>
-<p>#####例如：我的账号是：DiorsCoder，仓库名创建为： DiorsCoder.gitHub.io</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/2255249-aa8e880aff34f04d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Paste_Image.png"></p>
-<p>#####修改站点配置文件 DiorsCoder.github.io\ _config.yml </p>
-<p><img src="http://upload-images.jianshu.io/upload_images/2255249-a8c8090d67d57a42.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Paste_Image.png"></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/2255249-13559580c526c39f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Paste_Image.png"></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/2255249-1b1c376daf873763.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Paste_Image.png"></p>
-<p>####安装<a href="https://github.com/hexojs/hexo-deployer-git" target="_blank" rel="external"> hexo-deployer-git </a>自动部署发布工具： npm instal lhexo-deployer-git  –save</p>
-<p>####发布到 gitHub 输入如下命令：hexo clean &amp;&amp; hexo g -d </p>
-<p>####不出意外浏览器访问： <a href="https://DiorsCoder.github.io" target="_blank" rel="external">https://DiorsCoder.github.io</a> 就能看的部署到线上的项目。</p>
-<p>###三、配置 SSH key</p>
-<ol>
-<li>ssh-keygen -t rsa -C “邮箱地址” 然后连续3次回车，最终会生成一个文件在用户目录下，打开用户目录，找到.ssh\id_rsa.pub文件，记事本打开并复制里面的内容，打开你的github主页，进入个人设置 -&gt; SSH and GPG keys -&gt; New SSH key：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">//生成 key</div><div class="line"> ssh-keygen -t rsa -C &quot;865196792@qq.com&quot;</div><div class="line">//检测 github 账号的 ssh 是否设置成功</div><div class="line">ssh -T git@github.com</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<p><img src="http://upload-images.jianshu.io/upload_images/2255249-9af922b72d4310d2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Paste_Image.png"></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/2255249-76483a762bfad658.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Paste_Image.png"></p>
-<p>####配置 git 信息：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">git config --global user.name &quot;DiorsCoder&quot; #  github用户名 </div><div class="line">git config --global user.email  &quot;865196792@qq.com&quot; #github注册邮箱</div><div class="line">git config --list #查看</div></pre></td></tr></table></figure></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/2255249-6d5bb882b6e88186.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Paste_Image.png"></p>
-<p>###常用命令和报错处理：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">hexo init  #执行站点的初始化</div><div class="line">hexo g == hexo generate #生成静态页面。在生成时可以加上-d或--deploy参数在生成后立即部署。生成的静态文件在public文件夹下，没有则会自动建立。</div><div class="line">hexo d == hexo deploy #将 .deploy 目录部署到 gitHub,也就是将public目录下生成的静态文件上传到某个特定的位置，部署时可以加上-g或--generate参数，在部署前先生成一遍静态文件。</div><div class="line"></div><div class="line">hexo s == hexo server #开启预览访问端口（默认：4000，&apos;ctr+c&apos;关闭server）,在本地http://localhost:4000启动一个hexo服务器，可以用来预览hexo站点的效果。</div><div class="line">hexo n == hexo new  #新建一个markdown文件。</div><div class="line">hexo new [layout] &lt;title&gt;# [layout]是该文件的类型，取值有post、draft和page三种，分别对应新建文章、草稿、页面。在运行该命令时，会调用scaffolds下的对应模板。</div><div class="line">hexo clean #清理Hexo缓存。该操作会强制Hexo清空已生成的全部静态文件以及Hexo自身的数据库，有时候相当有效（更换主题后建议运行）。</div><div class="line">hexo publish &lt;title&gt;#发布某篇草稿（即将该markdown文件转移到_post文件夹下）</div><div class="line"></div><div class="line">#命令可以复合使用：</div><div class="line">hexo clean &amp;&amp; hexo g -d</div></pre></td></tr></table></figure></p>
-<p>####hexo new page message：生成菜单项:<br><img src="http://upload-images.jianshu.io/upload_images/2255249-a3061ed29fb34f8b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Paste_Image.png"></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/2255249-22b10c9ea6e692fb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Paste_Image.png"></p>
-<p>####如果部署失败 （报错：Deployer not found: git，输入命令：npm install hexo-deployer-git –save 解决！） </p>
-<p><img src="http://upload-images.jianshu.io/upload_images/2255249-1334e56cdc18aa95.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Paste_Image.png"></p>
-<p> ###輸入 hexo d 命令部署失敗，綫上報錯404或者還是原來的樣子！解決辦法，刪除項目根目錄 .deploy_git 文件夾！重新執行命令： hexo d<br><img src="http://upload-images.jianshu.io/upload_images/2255249-7ba17f2df3343c69.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Paste_Image.png"><br><img src="http://upload-images.jianshu.io/upload_images/2255249-c462d0be784a04cf.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Paste_Image.png"></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/2255249-1ec5c80e77d1b1fa.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Paste_Image.png"></p>
-<p>####如果部署失败,报错（Could not read from remote repository.）</p>
-<p>#####解决办法：删除当前key，然后重新生成key，执行（三、配置 SSH key） ，然后从新生成部署。</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/2255249-713fcd46642325c3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Paste_Image.png"></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/2255249-5d3b0eb88ed6fc55.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Paste_Image.png"></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/2255249-7cd6e014800d52c1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Paste_Image.png"></p>
-<p>#####提示如下图则说明部署成功：<br><img src="http://upload-images.jianshu.io/upload_images/2255249-71519ec80b64c321.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Paste_Image.png"></p>
-<p>#####浏览器输入：<a href="https://dragonersli.github.io/" target="_blank" rel="external">https://dragonersli.github.io/</a> 就可以看到项目了，然后后面就是各种配置了。</p>
-<p>####卸载Hexo ：3.0.0版本执行npm uninstall hexo-cli -g，之前版本执行npm uninstall hexo -g。</p>
-<p>#####站点部分配置如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"># Site #站点信息</div><div class="line">title: blog Name #标题</div><div class="line">subtitle: Subtitle #副标题</div><div class="line">description: my blog desc #描述</div><div class="line">author: me #作者</div><div class="line">language: zh-CN #语言</div><div class="line">timezone: Asia/Shanghai #时区</div><div class="line"># URL</div><div class="line">url: http://yoururl.com   #用于绑定域名, 其他的不需要配置</div><div class="line">root: /</div><div class="line">#permalink: :year/:month/:day/:title/</div><div class="line">permalink: posts/title.html</div><div class="line">permalink_defaults:</div><div class="line"></div><div class="line"># Directory #目录</div><div class="line">source_dir: source #源文件</div><div class="line">public_dir: public #生成的网页文件</div><div class="line">tag_dir: tags #标签</div><div class="line">archive_dir: archives #归档</div><div class="line">category_dir: categories #分类</div><div class="line">code_dir: downloads/code</div><div class="line">i18n_dir: :lang #国际化</div><div class="line">skip_render:</div><div class="line"></div><div class="line"># Writing #写作</div><div class="line">new_post_name: :title.md #新文章标题</div><div class="line">default_layout: post #默认模板(post page photo draft)</div><div class="line">titlecase: false #标题转换成大写</div><div class="line">external_link: true #新标签页里打开连接</div><div class="line">filename_case: 0</div><div class="line">render_drafts: false</div><div class="line">post_asset_folder: false</div><div class="line">relative_link: false</div><div class="line">future: true</div><div class="line">highlight: #语法高亮</div><div class="line">  enable: true</div><div class="line">  line_number: true #显示行号</div><div class="line">  auto_detect: true</div><div class="line">  tab_replace:</div><div class="line"></div><div class="line"># Category &amp; Tag #分类和标签</div><div class="line">default_category: uncategorized #默认分类</div><div class="line">category_map:</div><div class="line">tag_map:</div><div class="line"></div><div class="line"># Date / Time format #日期时间格式</div><div class="line">## http://momentjs.com/docs/#/displaying/format/</div><div class="line">date_format: YYYY-MM-DD</div><div class="line">time_format: HH:mm:ss</div><div class="line"></div><div class="line"># Pagination #分页</div><div class="line">per_page: 10 #每页文章数, 设置成 0 禁用分页</div><div class="line">pagination_dir: page</div><div class="line"></div><div class="line"># Extensions #插件和主题</div><div class="line">## 插件: http://hexo.io/plugins/</div><div class="line">## 主题: http://hexo.io/themes/</div><div class="line">theme: next</div><div class="line"></div><div class="line"># Deployment #部署, 同时发布在 GitHub 和 GitCafe 上面</div><div class="line">deploy:</div><div class="line">- type: git</div><div class="line">  repo: git@github.com:DiorsCoder/DiorsCoder.github.io.git,gitcafe-pages</div><div class="line">- type: git</div><div class="line">  repo: git@github.com:DiorsCoder/DiorsCoder.github.io.git,master</div><div class="line">message: &apos;站点更新: &#123;&#123; now(&quot;YYYY-MM-DD HH:mm:ss&quot;) &#125;&#125;&apos; </div><div class="line"># Disqus #Disqus评论系统</div><div class="line">disqus_shortname: </div><div class="line"></div><div class="line">plugins: #插件，例如生成 RSS 和站点地图的</div><div class="line">- hexo-generator-feed</div><div class="line">- hexo-generator-sitemap</div></pre></td></tr></table></figure>
-<p>###四、主题安装：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">git clone https://github.com/iissnan/hexo-theme-next themes/next  #next主题</div><div class="line"> </div><div class="line">git clone https://github.com/litten/hexo-theme-yilia.git themes/yilia  #yilia主题</div></pre></td></tr></table></figure>
-<p><img src="http://upload-images.jianshu.io/upload_images/2255249-6a0837dba6a17b33.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Paste_Image.png"></p>
-<p>####经常修改主题配置文件之后，执行 hexo clean &amp;&amp; hexo g -d 命令部署失败，查看错误信息如下：<br><img src="http://upload-images.jianshu.io/upload_images/2255249-6f1edc8f3d11a200.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Paste_Image.png"></p>
-<p>####主题配置文件问题有可能是空格问题，也有可能是配置问题。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">PHP</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/PHP笔记/" class="article-tag-list-link color1">PHP笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2015/12/12/用Hexo在gitHub上搭建个人博客笔记！/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
     <article id="post-hello-next" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -845,10 +716,6 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">生活</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Android</a>
               </li>
              
@@ -954,6 +821,10 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">JQUERY</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">生活</a>
               </li>
              
               <li class="article-tag-list-item">

@@ -454,19 +454,19 @@ body {
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-Redis-5种数据类型学习笔记！-" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-php-curl_post获取不到返回结果问题！" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/08/16/Redis-5种数据类型学习笔记！-/">Redis-5种数据类型学习笔记！-</a>
+      <a class="article-title" href="/2016/08/16/php-curl_post获取不到返回结果问题！/">php-curl_post获取不到返回结果问题！</a>
     </h1>
   
 
         
-        <a href="/2016/08/16/Redis-5种数据类型学习笔记！-/" class="archive-article-date">
+        <a href="/2016/08/16/php-curl_post获取不到返回结果问题！/" class="archive-article-date">
   	<time datetime="2016-08-15T19:30:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-08-16</time>
 </a>
         
@@ -474,14 +474,9 @@ body {
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"> redis 有5种数据格式！</div><div class="line">redis有16个数据库(0-15)!</div><div class="line">切换数据库：select 15(切换第15个数据库) </div><div class="line">清空数据库：flushall </div><div class="line">set  key : 1 values     (   :  表示作用域 )</div><div class="line">//输入ping 返回 pong</div></pre></td></tr></table></figure>
-<p>1.string类型：<br>个人理解：就是简单的key-&gt;value<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div></pre></td><td class="code"><pre><div class="line"> </div><div class="line"></div><div class="line">SET key value </div><div class="line">设置指定 key 的值 </div><div class="line"></div><div class="line">  set name lucy   //ok</div><div class="line"></div><div class="line">GET key</div><div class="line">获取指定 key 的值 </div><div class="line"></div><div class="line">get name    //lucy</div><div class="line"> </div><div class="line">GETRANGE key start end</div><div class="line">返回 key 中字符串值的子字符  </div><div class="line"></div><div class="line">getrange name 0 2 //luc</div><div class="line"></div><div class="line">GETSET key value</div><div class="line">//获取 key 的旧值返回，设置key 的新值 value</div><div class="line"> //key 若不存在返回nil</div><div class="line"></div><div class="line">set name lucy   //ok</div><div class="line">getset name lily  //lucy</div><div class="line"></div><div class="line"></div><div class="line">  </div><div class="line">MSET key1 val1 key2 val 2 ...</div><div class="line">同时设置一个或多个 key-value 对。</div><div class="line"></div><div class="line">mset  name  lucy age 18 class 3 //ok</div><div class="line"></div><div class="line">MGET key1 [key2..]</div><div class="line">获取所有(一个或多个)给定 key 的值。</div><div class="line"></div><div class="line"> mget name age class //lucy 18 3</div><div class="line"> </div><div class="line">SETEX key seconds value</div><div class="line"> 为 key 赋值 value ，并设置过期时间（以秒为单位）</div><div class="line"></div><div class="line">PSETEX key milliseconds value</div><div class="line">这个命令和 SETEX 命令相似，但它以毫秒为单位设置 key 的生存时间 </div><div class="line"></div><div class="line"> setex  name  60 lucy </div><div class="line">//为name 赋值lucy，过期时间60s，</div><div class="line">//可以用ttl name 查看剩余过期时间</div><div class="line">psetex name 600 lucy</div><div class="line"></div><div class="line">SETNX key value</div><div class="line">只有在 key 不存在时设置 key 的值。</div><div class="line"></div><div class="line"> set name lucy </div><div class="line">setnx name lily //（integer) 0 失败</div><div class="line">set names lily  //（integer) 1 成功</div><div class="line"> </div><div class="line">STRLEN key</div><div class="line">返回 key 所储存的字符串值的长度。</div><div class="line">strlen name   //(integer) 4</div><div class="line"></div><div class="line">SUBSTR key start end</div><div class="line">截取 key 从 start 开始 截取 到 end</div><div class="line">substr name 0 1 // lu </div><div class="line"> </div><div class="line"> </div><div class="line"></div><div class="line">MSETNX key value [key value ...]</div><div class="line">同时设置一个或多个 key-value 对，当且仅当所有给定 key 都不存在。</div><div class="line"></div><div class="line">msetnx  key1 val1 key2 val2 </div><div class="line"> </div><div class="line"></div><div class="line"> </div><div class="line">INCR key</div><div class="line">将 key 中储存的数字值增一 </div><div class="line"></div><div class="line">set n 10 </div><div class="line">incr n  //11</div><div class="line"> </div><div class="line">INCRBY key increment</div><div class="line">将 key 所储存的值加上给定的增量值（increment） </div><div class="line"></div><div class="line">set n 10</div><div class="line">incrby n 2 //12</div><div class="line"> </div><div class="line"> </div><div class="line">DECR key</div><div class="line">将 key 中储存的数字值减一。</div><div class="line"></div><div class="line"> set n 10</div><div class="line">decr n  // 9</div><div class="line"></div><div class="line">DECRBY key decrement</div><div class="line">key 所储存的值减去给定的减量值（decrement） 。</div><div class="line"></div><div class="line"> set n 10</div><div class="line">decrby n 2  //8</div><div class="line"></div><div class="line">APPEND key value</div><div class="line">APPEND 命令将 value 追加到字符串 key 原值末尾</div><div class="line">append name hello  //name 不存在返回  hello</div><div class="line">set  name lucy </div><div class="line">append name hello // lucyhello</div><div class="line"></div><div class="line"></div><div class="line"> del key  </div><div class="line">删除key   //del 成功 (integer) 1 ，失败(integer) 0</div><div class="line">del name   </div><div class="line"></div><div class="line"></div><div class="line">符合给定模式的 key 列表 (Array) </div><div class="line"> keys  abc*  //获取 以abc 开头的 key</div><div class="line">keys *abc  //获取 以abc 结尾的 key</div><div class="line">keys *  //获取该数据库所有 key </div><div class="line">//如果为空 返回(empy list or set)</div><div class="line"></div><div class="line">判断key 是否存在</div><div class="line">exists  key  // 成功 (integer) 1 ，失败(integer) 0</div><div class="line">exists name</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">判断key 类型</div><div class="line">type key  // 返回 类型</div><div class="line">type name</div><div class="line"></div><div class="line">修改 key 名称</div><div class="line">rename key  k   //成功返回ok</div><div class="line">rename name  title</div><div class="line"></div><div class="line"></div><div class="line">randomkey</div><div class="line">随机返回一个key</div><div class="line">randomkey </div><div class="line"></div><div class="line"></div><div class="line">创建一个 key 并赋值：set key  val</div><div class="line">为 key 设置过期时间：expire key 60(秒)  </div><div class="line">查看剩余过期时间：ttl  key   </div><div class="line">过期后 再 get key  则 返回 (nil)</div></pre></td></tr></table></figure></p>
-<p>2.list类型：<br>个人理解：一个双向队列，要么头进尾出，要么尾进头出。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">lpush   list   string</div><div class="line">//在list 头部压入字符串元素</div><div class="line"></div><div class="line">rpush list string</div><div class="line">//在list 尾部压入字符串元素 </div><div class="line">// 当 key 存在但不是列表类型时，返回一个错误。</div><div class="line"></div><div class="line">llen  list </div><div class="line">// 返回 list 长度，不存在返回0</div><div class="line"></div><div class="line">lrange  list start end</div><div class="line">//返回列表中指定区间内的元素，区间以偏移量 START 和 END 指定。 </div><div class="line">//其中 0 表示列表的第一个元素， 1 表示列表的第二个元素，以此类推。 </div><div class="line">//你也可以使用负数下标，以 -1 表示列表的最后一个元素， -2 表示列表的倒数第二个元素，以此类推。</div><div class="line">lrange list 0 -1  //取list全部</div><div class="line"></div><div class="line">lrem list count  string</div><div class="line">//从list 头部开始 删除 count 个 string</div><div class="line"></div><div class="line">lpop list </div><div class="line">//弹出最头部 的元素，删除</div><div class="line"></div><div class="line">rpop list </div><div class="line">//弹出最尾部 的元素，删除</div></pre></td></tr></table></figure></p>
-<p>3.hash类型：<br>个人理解： hash 类似mysql的一行记录，一行记录中， table有多个field，每个field对应一个value；<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line">hset   table  field1   value1   </div><div class="line">//设置 field1 值 为 value1</div><div class="line">//成功 返回  （integer) 1 ,失败 返回（integer) 0 </div><div class="line">//如果field1 已存在 ，则替换 ，但返回 （integer) 0</div><div class="line"></div><div class="line">hget   table  filed1   </div><div class="line">//获取 field1</div><div class="line"></div><div class="line">hgetall table </div><div class="line">//获取table所有field</div><div class="line"></div><div class="line">hdel   table  field1  </div><div class="line">//删除  filed1  </div><div class="line">//成功 返回  （integer) 1 ,失败 返回（integer) 0 </div><div class="line"></div><div class="line"></div><div class="line">hexists  table  field1</div><div class="line">//field1 是否存在</div><div class="line">//成功 返回  （integer) 1 ,失败 返回（integer) 0 </div><div class="line"></div><div class="line">hincrby table field  n</div><div class="line">//给 field  自增长 n（可以为负数）</div><div class="line"></div><div class="line"></div><div class="line">hkeys table</div><div class="line">//获取 table 所有 field</div><div class="line"></div><div class="line"></div><div class="line">hlen  table</div><div class="line">//哈希表中字段的数量。 当 key 不存在时，返回 0 。</div><div class="line"></div><div class="line">hmset   table  field1 value1 field2 value2  field3 value3 ...</div><div class="line">//批量设置</div><div class="line"></div><div class="line">hmget  table field1 field2 field3 field4 ...</div><div class="line">//批量获取</div><div class="line"></div><div class="line"></div><div class="line">hsetnx  table  field value</div><div class="line">//为field 设置 value ，如果 field已存在，则 失败，返回  （integer） 0</div></pre></td></tr></table></figure></p>
-<p>4.set类型：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div></pre></td><td class="code"><pre><div class="line">sadd  set  value1 value2 value3 ...</div><div class="line">//将一个或多个成员元素加入到集合中，已经存在于集合的成员元素将被忽略。 </div><div class="line">//假如集合 key 不存在，则创建一个只包含添加的元素作成员的集合。 </div><div class="line">//当集合 key 不是集合类型时，返回一个错误。</div><div class="line">//集合元素不能重复，否则添加失败</div><div class="line"></div><div class="line">scard  set</div><div class="line">//集合的数量。 当集合 key 不存在时，返回 0 。</div><div class="line"></div><div class="line">smembers  set</div><div class="line">//查看 set 所有元素</div><div class="line"></div><div class="line"></div><div class="line">sdiff  set1  set2 setn...</div><div class="line">//在set1 集合里，但不在set2 集合里。求差集，不存在的集合 key 将视为空集。</div><div class="line"></div><div class="line"></div><div class="line">sdiffstore  set   set1 set2 setn...</div><div class="line">//在set1 集合里，但不在set2 集合里。差集存储set 集合</div><div class="line"></div><div class="line"></div><div class="line">sinter  set1 set2 setn...</div><div class="line">//求交集， 当给定集合当中有一个空集时，结果也为空集(根据集合运算定律)。</div><div class="line"></div><div class="line"></div><div class="line">sinterstore  set  set1 set2 setn...</div><div class="line">//求set1，set2 ，setn的交集。交集存储set 集合</div><div class="line"></div><div class="line">sunion  set1 set2 setn...</div><div class="line">//求set1 ，set2 ，setn的并集</div><div class="line"></div><div class="line">sunionstore   set  set1 set2 setn...</div><div class="line">//求set1，set2 ，setn的并集。交集存储set 并集</div><div class="line"></div><div class="line">sismember   set  value</div><div class="line">//判断 value 是否是 set 集合的元素，是返回 1，否 返回 0</div><div class="line"></div><div class="line">smove  set1  set2  value</div><div class="line">//把set1集合的value 移到 set2 集合。smove是原子性操作，成功返回 1，失败返回 0</div><div class="line"></div><div class="line">spop  set </div><div class="line">//移除并返回set 集合中的一个随机元素。</div><div class="line"></div><div class="line">srandmember  set</div><div class="line">//随机返回set 集合中的一个元素  </div><div class="line"></div><div class="line">srem    set    value1 value2 valuen</div><div class="line">//从集合 set 中 移除 value元素，可以移除多个，返回移除成功的个数。</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div></pre></td><td class="code"><pre><div class="line"> ZADD KEY_NAME SCORE1 VALUE1.. SCOREN VALUEN</div><div class="line">// 命令用于将一个或多个成员元素及其分数值加入到有序集当中。</div><div class="line">//如果某个成员已经是有序集的成员，那么更新这个成员的分数值，并通过重新插入这个成员元素，来保证该成员在正确的位置上。</div><div class="line">//分数值可以是整数值或双精度浮点数。</div><div class="line">//如果有序集合 key 不存在，则创建一个空的有序集并执行 ZADD 操作。</div><div class="line">//当 key 存在但不是有序集类型时，返回一个错误。</div><div class="line"></div><div class="line"> ZCARD KEY_NAME</div><div class="line">//用于计算集合中元素的数量。</div><div class="line"></div><div class="line">ZCOUNT key min max</div><div class="line">//用于计算有序集合中指定分数区间的成员数量。</div><div class="line"></div><div class="line">ZINCRBY key increment member</div><div class="line">//对有序集合中指定成员的分数加上增量 increment</div><div class="line">//可以通过传递一个负数值 increment ，让分数减去相应的值，比如 ZINCRBY key -5 member ，就是让 member 的 score 值减去 5 。</div><div class="line">//当 key 不存在，或分数不是 key 的成员时， ZINCRBY key increment member 等同于 ZADD key increment member 。</div><div class="line">//当 key 不是有序集类型时，返回一个错误。</div><div class="line">//分数值可以是整数值或双精度浮点数。</div><div class="line"></div><div class="line"></div><div class="line">ZINTERSTORE destination numkeys key [key ...] [WEIGHTS weight [weight ...]] [AGGREGATE SUM|MIN|MAX]</div><div class="line">//计算给定的一个或多个有序集的交集，中给定 key 的数量必须以 numkeys 参数指定，并将该交集(结果集)储存到 destination 。</div><div class="line">//默认情况下，结果集中某个成员的分数值是所有给定集下该成员分数值之和。</div><div class="line"></div><div class="line">ZLEXCOUNT KEY MIN MAX</div><div class="line">//在计算有序集合中指定字典区间内成员数量。</div><div class="line"></div><div class="line">ZRANGE key start stop [WITHSCORES]</div><div class="line">//返回有序集中，指定区间内的成员。</div><div class="line">//其中成员的位置按分数值递增(从小到大)来排序。</div><div class="line">//具有相同分数值的成员按字典序(lexicographical order )来排列。</div><div class="line">//如果你需要成员按值递减(从大到小)来排列，请使用 ZREVRANGE 命令。</div><div class="line">//下标参数 start 和 stop 都以 0 为底，也就是说，以 0 表示有序集第一个成员，以 1 表示有序集第二个成员，以此类推。</div><div class="line">//你也可以使用负数下标，以 -1 表示最后一个成员， -2 表示倒数第二个成员，以此类推。</div><div class="line"></div><div class="line"></div><div class="line">ZRANK key member</div><div class="line">//返回有序集中指定成员的排名。其中有序集成员按分数值递增(从小到大)顺序排列。</div><div class="line"></div><div class="line">ZRANK key member</div><div class="line">//用于移除有序集中的一个或多个成员，不存在的成员将被忽略。</div><div class="line">//当 key 存在但不是有序集类型时，返回一个错误。</div><div class="line"> </div><div class="line">ZSCORE key member</div><div class="line">//返回有序集中，成员的分数值。 如果成员元素不是有序集 key 的成员，或 key 不存在，返回 nil 。</div><div class="line"></div><div class="line"> ZSCORE key member</div><div class="line">//返回有序集中，成员的分数值。 如果成员元素不是有序集 key 的成员，或 key 不存在，返回 nil 。</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">ZSCAN key cursor [MATCH pattern] [COUNT count]</div><div class="line">//用于迭代有序集合中的元素（包括元素成员和元素分值）</div></pre></td></tr></table></figure>
-<p>```</p>
+        <p>####post数据到远程服务器，获取返回数据。通过代码时而有数据，时而无。print_R（）返回为空，用var_dump（）打印出来是string(0) “”  ,用FireFox的Httprequester工具，请求结果正确！最后找到问题所在，用的封装curl_postData（）函数有问题。从 <a href="http://php.net/manual/zh/function.curl-exec.php" target="_blank" rel="external">http://php.net/manual/zh/function.curl-exec.php</a> 上获取代码，结果就ok了！这个坑踩的冤！！</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/2255249-0464a42e4f417844.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Paste_Image.png"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"> /** </div><div class="line">* Send a POST requst using cURL </div><div class="line">* @param string $url to request </div><div class="line">* @param array $post values to send </div><div class="line">* @param array $options for cURL </div><div class="line">* @return string </div><div class="line">*/ </div><div class="line">function curl_post($url, array $post = NULL, array $options = array()) </div><div class="line">&#123; </div><div class="line">    $defaults = array( </div><div class="line">        CURLOPT_POST =&gt; 1, </div><div class="line">        CURLOPT_HEADER =&gt; 0, </div><div class="line">        CURLOPT_URL =&gt; $url, </div><div class="line">        CURLOPT_FRESH_CONNECT =&gt; 1, </div><div class="line">        CURLOPT_RETURNTRANSFER =&gt; 1, </div><div class="line">        CURLOPT_FORBID_REUSE =&gt; 1, </div><div class="line">        CURLOPT_TIMEOUT =&gt; 4, </div><div class="line">        CURLOPT_POSTFIELDS =&gt; http_build_query($post) </div><div class="line">    ); </div><div class="line"></div><div class="line">    $ch = curl_init(); </div><div class="line">    curl_setopt_array($ch, ($options + $defaults)); </div><div class="line">    if( ! $result = curl_exec($ch)) </div><div class="line">    &#123; </div><div class="line">        trigger_error(curl_error($ch)); </div><div class="line">    &#125; </div><div class="line">    curl_close($ch); </div><div class="line">    return $result; </div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
       
 
@@ -494,448 +489,6 @@ body {
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">PHP</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Redis</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Redis笔记/" class="article-tag-list-link color3">Redis笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/08/16/Redis-5种数据类型学习笔记！-/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
-    <article id="post-Redis环境配置安装注意安装步骤及说明事项。" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/08/16/Redis环境配置安装注意安装步骤及说明事项。/">Redis环境配置安装注意安装步骤及说明事项。</a>
-    </h1>
-  
-
-        
-        <a href="/2016/08/16/Redis环境配置安装注意安装步骤及说明事项。/" class="archive-article-date">
-  	<time datetime="2016-08-15T19:30:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-08-16</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Wiondows下安装redis步骤：<br>1.使用phpinfo()函数查看PHP的版本信息，这会决定扩展文件版本</p>
-<p>2.根据PHP版本号，编译器版本号和CPU架构，<br>选择php_redis-2.2.5-5.5-ts-vc11-x86.zip和php_igbinary-1.2.1-5.5-ts-vc11-x86.zip<br>下载地址：<br><a href="http://windows.php.net/downloads/pecl/snaps/redis/2.2.5/" target="_blank" rel="external">http://windows.php.net/downloads/pecl/snaps/redis/2.2.5/</a><br><a href="http://windows.php.net/downloads/pecl/releases/igbinary/1.2.1/" target="_blank" rel="external">http://windows.php.net/downloads/pecl/releases/igbinary/1.2.1/</a></p>
-<p>3.解压缩后，将php_redis.dll和php_redis.pdb拷贝至php的ext目录下</p>
-<p>4.修改php.ini，(PS：此php.ini文件是在Apache目录）在该文件中加入：<br>; php_redis<br>extension=php_igbinary.dll<br>extension=php_redis.dll<br>注意：extension=php_igbinary.dll一定要放在extension=php_redis.dll的前面，否则此扩展不会生效</p>
-<p>5.重启Apache后，使用phpinfo查看扩展是否成功安装</p>
-<p>新建一个test.php页面<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$redis=new Redis();</div><div class="line">$redis-&gt;connect(&apos;192.168.1.11&apos;,6379);</div><div class="line">$redis-&gt;auth(&apos;123456&apos;);</div><div class="line">$redis-&gt;set(&apos;test&apos;,&apos;helloworld&apos;);</div><div class="line">echo $redis-&gt;get(&apos;test&apos;);</div></pre></td></tr></table></figure></p>
-<ol>
-<li>什么是Redis<br>Redis是Remote Dictionary Server(远程数据服务)的缩写<br>由意大利人 antirez(Salvatore Sanfilippo)  开发的一款 内存高速缓存数据库<br>该软件使用C语言编写,它的数据模型为 key-value<br>它支持丰富的数据结构，比如 String  list  hash   set  sorted set。<br>可持久化，保证了数据安全。</li>
-</ol>
-<p>缓存：<br>有两种类型 数据缓存、页面缓存(smarty)<br>使用缓存减轻数据库的负载。<br>在开发网站的时候如果有一些数据在短时间之内不会发生变化，而它们还要被频繁访问，为了提高用户的请求速度/降低网站的负载，就把这些数据放到一个读取速度更快的介质上，该行为就称作对该数据的缓存动作。<br>该介质可以是文件、数据库、内存，内存经常用于数据缓存。</p>
-<p>页面缓存经常用在CMS内存管理系统里边<br>数据缓存经常会用在页面的具体数据里边</p>
-<ol>
-<li>redis和memcache比较<br>    Redis不仅仅支持简单的k/v类型的数据，同时还提供list，set，zset，hash等数据结构的存储。<br>    Redis支持master-slave(主—从)模式应用。<br>    Redis支持数据的持久化，可以将内存中的数据保持在磁盘中，重启的时候可以再次加载进行使用。<br>    Redis单个value的最大限制是1GB， memcached只能保存1MB的数据 </li>
-</ol>
-<p>一．编译安装Redis<br>安装redis-2.6.14.tar.gz<br>shell# cd /home/jinnan/tar<br>shell# tar zxvf redis-2.6.14.tar.gz<br>shell# cd redis-2.6.14<br>shell# make<br>    shell# cd src<br>在该目录会看到以下文件</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/2255249-8edc591c4017d581.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="1.png"></p>
-<pre><code>redis-benchmark       压力测试
-</code></pre><p>redis-check-aof       检查redis持久化命令文件的完整性<br>redis-check-dump   检查redis持久化数据文件的完整性<br>redis-cli            redis在linux上的客户端<br>redis-sentinel           做集群用的<br>redis-server         linux上的服务端</p>
-<pre><code>将redis源码目录下的  src目录里的 redis-cli和 redis-server 拷贝到工作目录里.同时将源码根目录下的redis.conf 也拷贝到工作目录里
-</code></pre><p>shell# mkdir /usr/local/redis<br>shell# cp redis-cli redis-server /usr/local/redis<br>shell# cp ../redis.conf /usr/local/redis</p>
-<p>至此在linux上编译安装redis服务端和客户端已经大功告成<br>启动redis服务器:<br>shell# cd /usr/local/redis<br>shell# vi ./redis.conf<br>把参数daemonize no 改为 daemonize yes<br>shell# ./redis-server redis.conf</p>
-<p>二. redis配置文件说明<br>/usr/local/redis/redis.conf<br>1 daemonize  no<br>默认情况下，redis 不是在后台运行的，如果需要在后台运行，把该项的值更改为yes<br>2 pidfile  /var/run/redis.pid<br>当Redis 在后台运行的时候，Redis 默认会把pid 文件放在/var/run/redis.pid，你可以配置到其他地址。当运行多个redis 服务时，需要指定不同的pid 文件和端口<br>3 port<br>监听端口，默认为6379<br>4 #bind 127.0.0.1<br>指定Redis 只接收来自于该IP 地址的请求，如果不进行设置，那么将处理所有请求，在生产环境中为了安全最好设置该项。默认注释掉，不开启<br>5 timeout 0<br>设置客户端连接时的超时时间，单位为秒。当客户端在这段时间内没有发出任何指令，那么关闭该连接<br>6 tcp-keepalive 0<br>指定TCP连接是否为长连接,”侦探”信号有server端维护。默认为0.表示禁用<br>7 loglevel notice<br>log 等级分为4 级，debug,verbose, notice, 和warning。生产环境下一般开启notice<br>8 logfile stdout<br>配置log 文件地址，默认使用标准输出，即打印在命令行终端的窗口上，也可以修改为日志文件对应的目录地址<br>9 databases 16<br>设置数据库的个数，可以使用SELECT 命令来切换数据库。默认使用的数据库是0号库。默认16个库<br>10<br>save 900 1<br>save 300 10<br>save 60 10000<br>保存数据快照的频率，即将数据持久化到dump.rdb文件中的频度。用来描述”在多少秒期间至少多少个变更操作”触发snapshot数据保存动作<br>默认设置，意思是：<br>if(在60 秒之内有10000 个keys 发生变化时){<br>进行镜像备份<br>}else if(在300 秒之内有10 个keys 发生了变化){<br>进行镜像备份<br>}else if(在900 秒之内有1 个keys 发生了变化){<br>进行镜像备份<br>}<br>更多配置参考：<br><a href="http://blog.csdn.net/neubuffer/article/details/17003909" target="_blank" rel="external">http://blog.csdn.net/neubuffer/article/details/17003909</a><br>三．php_redis安装配置<br>phpredis中文手册：<br><a href="http://www.cnblogs.com/ikodota/archive/2012/03/05/php_redis_cn.html" target="_blank" rel="external">http://www.cnblogs.com/ikodota/archive/2012/03/05/php_redis_cn.html</a> </p>
-<ol>
-<li>下载 phpredis 扩展包<br>上传到linux指定目录(/home/jinnan/rdtar)</li>
-<li>进入phpredis源码目录并执行php的bin目录下的一个工具叫  phpize<br> shell# cd /home/jinnan/tar<br> shell# tar zxvf phpredis.tar.gz<br>shell# cd phpredis<br>shell# /usr/local/php/bin/phpize   ????<br>以上这个指令必须在phpredis解压包目录/home/jinnan/tar/phpredis(根据个人情况设置)执行</li>
-<li><p>安装autoconf-2.62.tar.gz<br>shell# cd /home/jinnan/tar<br>shell# tar zxvf autoconf-2.62.tar.gz<br>shell# cd autoconf-2.62<br>shell# ./configure &amp;&amp; make &amp;&amp; make install</p>
-</li>
-<li><p>配置并编译安装phpredis<br> shell#./configure –with-php-config=/usr/local/php/bin/php-config<br> shell# make &amp;&amp; make install</p>
-</li>
-<li><p>给php.ini设置redis扩展<br>打开php.ini配置文件设置以下代码<br>shell# vi /usr/local/php/lib/php.ini</p>
-</li>
-<li><p>重启apache</p>
-<pre><code>shell# /usr/local/http2/bin/apachectl restart
-</code></pre><p>至此，使用php操作redis 所用到的 phpredis扩展包 已经编译安装并配置完毕。</p>
-</li>
-<li><p>查看php是否有引入redis扩展</p>
-</li>
-<li><p>php使用redis示例代码</p>
-</li>
-</ol>
-<p><img src="http://upload-images.jianshu.io/upload_images/2255249-b439391aa649b6cc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="2.png"></p>
-<p> 浏览器看效果：</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/2255249-9e30088d4051cfe2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="3.png"></p>
-<ol>
-<li>如果不清楚php-redis扩展内部到底有什么方法可以利用反射</li>
-</ol>
-<p><img src="http://upload-images.jianshu.io/upload_images/2255249-d7753d03572660bf.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="4.png"></p>
-<p>官方网址：<a href="http://redis.io/" target="_blank" rel="external">http://redis.io/</a><br>redis 中文资料站: <a href="http://www.redis.cn/" target="_blank" rel="external">http://www.redis.cn/</a><br>redis 命令手册： <a href="http://www.redisdoc.com/en/latest/index.html" target="_blank" rel="external">http://www.redisdoc.com/en/latest/index.html</a><br>php操作redis：<a href="http://blog.sina.com.cn/s/blog_3dbab2840100uo5l.html" target="_blank" rel="external">http://blog.sina.com.cn/s/blog_3dbab2840100uo5l.html</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">PHP</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Redis</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Redis笔记/" class="article-tag-list-link color3">Redis笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/08/16/Redis环境配置安装注意安装步骤及说明事项。/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
-    <article id="post-Linux-ubuntu-lamp安装配置环境phpmyadmin-！" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/08/16/Linux-ubuntu-lamp安装配置环境phpmyadmin-！/">Linux-ubuntu-lamp安装配置环境phpmyadmin-！</a>
-    </h1>
-  
-
-        
-        <a href="/2016/08/16/Linux-ubuntu-lamp安装配置环境phpmyadmin-！/" class="archive-article-date">
-  	<time datetime="2016-08-15T19:30:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-08-16</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>PHP开发和服务器运行环境首选LAMP组合，即Linux+Apache+Mysql+Php/Perl/Python，能最优化服务器性能。如何在本地电脑Ubuntu 中安装和配置LAMP环境搭建？Ubuntu9.10本身就是基于Linux内核，所以Linux是现成的了。使用Ubuntu LAMP Server软件包可以很简单地实现Linux下Apache，Mysql和Php的统一安装和配置，也不再需要一个一个来安装配置了。</p>
-<p>Ubuntu环境下如何安装LAMP组件？</p>
-<p>使用Ubuntu界面管理器：<br>系统-&gt;系统管理-&gt;新立得软件包管理器-&gt;编辑-&gt;使用任务标记分组软件包-&gt;LAMP Server(勾选)-&gt;确定-&gt;返回到上一个窗口点击应用(或System-&gt;Administration-&gt;Synaptic Package Manager-&gt;Edit-&gt;Mark packages by Task-&gt;LAMP Server-&gt;OK)。然后系统会自动下载安装lamp环境软件包，几分钟就下载搞定。安装过程中会要求设置Mysql root帐号的密码，设置好了记住。另外当Ubuntu系统升级时lamp环境组件也会同时更新到最新版本。</p>
-<p>安装完毕测试：打开Firefox浏览器在地址栏输入127.0.0.1，显示It works!表明Apache服务器已经开始工作了，LAMP安装也就这样完成了。<br><img src="http://upload-images.jianshu.io/upload_images/2255249-ce5928572e76f03b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>ubuntu LAMP 安装 环境配置<br>Linux ubuntu LAMP 安装配置环境-It Works</p>
-<p>当然不使用Gnome，使用终端命令也很简单：<br>直接一条命令：apt-get install apache2 mysql-server mysql-client php5 php5-gd php5-mysql</p>
-<p>设置Ubuntu文件执行读写权限</p>
-<p>LAMP组建安装好之后，PHP网络服务器根目录默认设置是在：/var/www。由于Linux系统的安全性原则，改 目录下的文件读写权限是只允许root用户操作的，所以我们不能在www文件夹中新建php文件，也不能修改和删除，必须要先修改/var/www目录的读写权限。在界面管理器中通过右键属性不能修改文件权限，得执行root终端命令：sudo chmod 777 /var/www。然后就可以写入html或php文件了。如果对777表示的文件权限不是很清楚，可以到这篇文章中看看：文件权限666是什么意思。</p>
-<p>如何安装phpmyadmin-Mysql 数据库管理</p>
-<p>使用界面管理器：<br>系统-&gt;系统管理-&gt;新立得软件包管理器-&gt;搜索 phpmyadmin-&gt;右键标记安装。<br>或直接使用一条命令：sudo apt-get install phpmyadmin 安装开始。</p>
-<p>phpmyadmin设置：<br>在安装过程中会要求选择Web server：apache2或lighttpd，选择apache2，按tab键然后确定。然后会要求输入设置的Mysql数据库密码连接密码 Password of the database’s administrative user。<br>然后将phpmyadmin与apache2建立连接，以我的为例：www目录在/var/www，phpmyadmin在/usr/share/phpmyadmin目录，所以就用命令：sudo ln -s /usr/share/phpmyadmin /var/www 建立连接。</p>
-<p>phpmyadmin测试：在浏览器地址栏中打开<a href="http://localhost/phpmyadmin。" target="_blank" rel="external">http://localhost/phpmyadmin。</a></p>
-<p>Ubuntu LAMP 如何配置Apache</p>
-<ol>
-<li>启用 mod_rewrite 模块<br>终端命令：sudo a2enmod rewrite<br>重启Apache服务器：sudo /etc/init.d/apache2 restart</li>
-</ol>
-<p>Apache重启后我们可以测试一下，在/var/www目录下新建文件test.php，写入代码：  &lt;?php phpinfo(); ?&gt; 保存，在地址栏输入<a href="http://127.0.0.1/test.php" target="_blank" rel="external">http://127.0.0.1/test.php</a> ;或 <a href="http://localhost/test.php" target="_blank" rel="external">http://localhost/test.php</a> ，如果正确出现了php 配置信息则表明LAMP Apache已经正常工作了(记得重启Apache服务器后再测试)。</p>
-<p>2.设置Apache支持.htm .html .php<br>sudo gedit /etc/apache2/apache2.conf<br>或sudo gedit /etc/apache2/mods-enabled/php5.conf<br>在打开的文件中加上<br>AddType application/x-httpd-php .php .htm .html 即可。</p>
-<p>LAMP配置之Mysql测试</p>
-<p>上面php,Apache 都已经测试过了，下面我们再测试一下Mysql 数据库是否已经正确启用。</p>
-<p>在/var/www目录下新建 mysql_test.php：<br>&lt;?php$link = mysql_connect(“localhost”,”root”,”020511”);if (!$link){die(‘Could not connect: ‘ . mysql_error());}else echo “Mysql已经正确配置”;mysql_close($link);?&gt;<br>保存退出，在地址栏输入<a href="http://127.0.0.1/mysql_test.php，显示”Mysql" target="_blank" rel="external">http://127.0.0.1/mysql_test.php，显示”Mysql</a> 已经正确配置”则表示OK了，如果不行，重启Apache服务器后再试一下。</p>
-<p>解决Firefox浏览器显示中文乱码等问题</p>
-<p>上面在FireFox浏览器中打开mysql_test.php或phpmyadmin测试时，如果出现了中文乱码，则是默认语言设置问题，解决方法如下：</p>
-<p>打开apache配置文件： udo gedit /etc/apache2/apache2.conf，在最后面加上：AddDefaultCharset UTF-8，如果还是乱码的，再将UTF-8改用gb2312。<br>重启Apache：sudo /etc/init.d/apache2 restart  再刷新mysql_test.php 中文乱码没有了。</p>
-<p>如果要人工启动mysql：mysql -u root -p，根据提示输入密码。<br>如果重启Apache时出现：</p>
-<ul>
-<li>Restarting web server apache2<br>apache2: Could not reliably determine the server’s fully qualified domain name, using 127.0.1.1 for ServerName<br>apache2: Could not reliably determine the server’s fully qualified domain name, using 127.0.1.1 for ServerName</li>
-</ul>
-<p>则还是修改apache配置文件：sudo gedit /etc/apache2/apache2.conf，在文件最后设置：ServerName 127.0.0.1</p>
-<p>LAMP组件经常使用的几个终端命令</p>
-<p>重启 apache：sudo /etc/init.d/apache2 restart</p>
-<p>重启mysql：sudo /etc/init.d/mysql restart</p>
-<p>配置 php.ini：sudo gedit /etc/php5/apache2/php.ini</p>
-<p>配置 apache2.conf：sudo gedit /etc/apache2/apache2.conf</p>
-<p>配置 my.cnf：sudo gedit /etc/mysql/my.cnf</p>
-<p>PHP CGI ：sudo /var/www/cgi-bin/</p>
-<p>Ubuntu PHP 编辑器</p>
-<p>最后LAMP配置就完成了，在Ubuntu下进行简单的php代码编辑，用Gedit就可以了。Gedit支持HTML，PHP，Javascsript等近几十种语言的代码高亮功能。如果是PHP项目开发，建议使用PHP IDE编辑器，比如Zend Studio，Eclipse。据说文本编辑VIM也很不错。</p>
-<p>PS：如果是Windows XP 下要搭建LAMP 环境，建议大家试试xampp快速安装配置法，使用也很方便快捷，点击前面的超级链接或Google一下就知道怎么用了。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">PHP</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Ubuntu</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/PHP笔记/" class="article-tag-list-link color1">PHP笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/08/16/Linux-ubuntu-lamp安装配置环境phpmyadmin-！/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
-    <article id="post-Linux下Nginx配置虚拟主机！" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/08/16/Linux下Nginx配置虚拟主机！/">linux下nginx配置虚拟主机！</a>
-    </h1>
-  
-
-        
-        <a href="/2016/08/16/Linux下Nginx配置虚拟主机！/" class="archive-article-date">
-  	<time datetime="2016-08-15T19:30:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-08-16</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>什么虚拟主机?<br>一台linux服务器上放置多套网站:<br>一家公司可能企业网站<br>要点:<br>一旦一台linux服务器上加设虚拟主机，则不能再用ip来访问这台linux服务器，而应该用每个虚拟主机网站的相应域名来访问相应的网站<br>通过一台服务器的同一个ip同一个端口用不同的域名去访问不同的网站</p>
-<p>1.准备两个网站,一个是baidu，一个是sina<br>2.在nginx中进行设置，准备两个网站的虚拟主机<br>自我总结：<br>１.通过　ps  -ef | grep nginx　命令获取ｎｇｉｎｘ安装目录。</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/2255249-8f5c48eb6e3ff53f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Paste_Image.png"></p>
-<p>２.打开/etc/nginx/vhost　目录，新建ｂａｉｄｕ．ｃｏｎｆ，编辑<br>　vi /usr/local/nginx/conf/nginx.conf　：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">http&#123;</div><div class="line">    //全局配置</div><div class="line">    server&#123;</div><div class="line">            //局部配置 </div><div class="line">            name www.baidu.com</div><div class="line">            html /web/baidu</div><div class="line">    &#125;</div><div class="line">    server&#123;</div><div class="line">            //局部配置 </div><div class="line">            name www.sina.com</div><div class="line">            html /web/sina</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>详细配置:<br><code>server {
-        listen       80;
-        server_name  www.baidu.com;
-        access_log  logs/baidu.access.log  main;
-        location / {
-            root   /web/baidu;
-            index  index.html index.htm;
-        }
-    }
-    server {
-        listen       80;
-        server_name  www.sina.com;
-        access_log  logs/sina.access.log  main;
-        location / {
-            root   /web/sina;
-            index  index.html index.htm;
-        }
-    }</code>　<br>重新启动服务或者重新加载服务:<br>1.pkill nginx<br>//关闭nginx进程</p>
-<p>2./usr/local/nginx/sbin/nginx<br>//重新启动nginx服务</p>
-<p>重新加载服务或者平滑重启:<br>1.pkill -HUP nginx<br>//把配置文件中的新更改的东西加载到正在运行nginx的进程中，接着对用户提供服务，但是nginx进程并没有关闭.</p>
-<p>用域名去访问web服务器，需要dns服务器支持,还可能用自己系统中的hosts解析文件来帮你解析域名:</p>
-<p>C:\Windows\System32\drivers\etc<br>vi hosts<br>192.168.100.1 www.baidu.com<br>192.168.100.1 www.sina.com</p>
-<p>lnmp集成包安装步骤：<a href="https://lnmp.org/install.html" target="_blank" rel="external">https://lnmp.org/install.html</a></p>
-<p>lnmp集成包配置虚拟主机：<a href="http://lnmp.org/faq/lnmp-vhost-add-howto.html" target="_blank" rel="external">http://lnmp.org/faq/lnmp-vhost-add-howto.html</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">PHP</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Nginx</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/PHP笔记/" class="article-tag-list-link color1">PHP笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/08/16/Linux下Nginx配置虚拟主机！/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
-    <article id="post-根据两点经纬度计算距离！" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/08/16/根据两点经纬度计算距离！/">根据两点经纬度计算距离！</a>
-    </h1>
-  
-
-        
-        <a href="/2016/08/16/根据两点经纬度计算距离！/" class="archive-article-date">
-  	<time datetime="2016-08-15T19:30:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-08-16</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>这些经纬线是怎样定出来的呢？地球是在不停地绕地轴旋转（地轴是一根通过地球南北两极和地球中心的<br>假想线），在地球中腰画一个与地轴垂直的大圆圈，使圈上的每一点都和南北两极的距离相等，这个圆圈<br>就叫作“赤道”。在赤道的南北两边，画出许多和赤道平行的圆圈，就是“纬圈”；构成这些圆圈的线段，<br>叫做纬线。我们把赤道定为纬度零度，向南向北各为90度，在赤道以南的叫南纬，在赤道以北的叫北纬。<br>北极就是北纬90度，南极就是南纬90度。纬度的高低也标志着气候的冷热，如赤道和低纬度地地区无冬，<br>两极和高纬度地区无夏，中纬度地区四季分明。<br>其次，从北极点到南极点，可以画出许多南北方向的与地球赤道垂直的大圆圈，这叫作“经圈”；构成这<br>些圆圈的线段，就叫经线。公元1884平面坐标图年，国际上规定以通过英国伦敦近郊的格林尼治天文台的<br>经线作为计算经度的起点，即经度零度零分零秒，也称“本初子午线”。在它东面的为东经，共180度；<br>在它西面的为西经，共180度。因为地球是圆的，所以东经180度和西经180度的经线是同一条经线。各国<br>公定180度经线为“国际日期变更线”。为了避免同一地区使用两个不同的日期，国际日期变线在遇陆地时<br>略有偏离。<br> 每一经度和纬度还可以再细分为60分，每一分再分为60秒以及秒的小数。利用经纬线，我们就可以确定<br>地球上每一个地方的具体位置，并且把它在地图或地球仪上表示出来。例如问北京的经纬度是多少？我们<br>很容易从地图上查出来是东经116度24分，北纬39度54分。在大海中航行的船只，只要把所在地的经度测<br>出来，就可以确定船在海洋中的位置和前进方向。 纬度共有90度。赤道为0度，向两极排列，圈子越小，<br>度数越大。<br>横线是纬度，竖线是经度。<br>当然可以计算，四元二次方程。<br>经度和纬度都是一种角度。经度是个两面角，是两个经线平面的夹角。因所有经线都是一样长，为了度量<br>经度选取一个起点面，经1884年国际会议协商，决定以通过英国伦敦近郊、泰晤士河南岸的格林尼治皇家<br>天文台（旧址）的一台主要子午仪十字丝的那条经线为起始经线，称为本初子午线。本初子午线平面是起<br>点面，终点面是本地经线平面。某一点的经度，就是该点所在的经线平面与本初子午线平面间的夹角。在<br>赤道上度量，自本初子午线平面作为起点面，分别往东往西度量，往东量值称为东经度，往西量值称为西<br>经度。由此可见，一地的经度是该地对于本初子午线的方向和角距离。本初子午线是0°经度，东经度的最<br>大值为180°，西经度的最大值为180°，东、西经180°经线是同一根经线，因此不分东经或西经，而统称<br>180°经线。<br> 纬度是个线面角。起点面是赤道平面，线是本地的地面法线。所谓法线，即垂直于参考扁球体表面的线。<br>某地的纬度就是该地的法线与赤道平面之间的夹角。纬度在本地经线上度量，由赤道向南、北度量，向北<br>量值称为北纬度，向南量值称为南纬度。由此可见，一地的纬度是该地对于赤道的方向和角距离。赤道是<br>0°纬线，北纬度的最大值为90°，即北极点；南纬度的最大值为90°，即南极点。<br>经纬度互换</p>
-<p>度(DDD)：E 108.90593度 N 34.21630度</p>
-<p> 如何将度(DDD):： 108.90593度换算成度分秒(DMS)东经E 108度54分22.2秒?转换方法是将108.90593整数位不变取108(度),用0.90593<em>60=54.3558,取整数位54(分),0.3558</em>60=21.348再取整数位21(秒),故转化为108度54分21秒.</p>
-<p> 同样将度分秒(DMS):东经E 108度54分22.2秒 换算成度(DDD)的方法如下:108度54分22.2秒=108+(54/60)+(22.2/3600)=108.90616度</p>
-<p>因为计算时小数位保留的原因，导致正反计算存在一定误差，但误差影响不是很大。1秒的误差就是几米的样子。GPS车友可以用上述方法换算成自己需要的单位坐标。</p>
-<p>经纬度换算成米</p>
-<p>纬度分为60分，每一分再分为60秒以及秒的小数。</p>
-<p>纬度线投射在图上看似水平的平行线，但实际上是不同半径的圆。有相同特定纬度的所有位置都在同一个纬线上。<br>赤道的纬度为0°，将行星平分为南半球和北半球。<br>纬度是指某点与地球球心的连线和地球赤道面所成的线面角，其数值在0至90度之间。位于赤道以北的点的纬度叫北纬，记为N，位于赤道以南的点的纬度称南纬，记为S。<br>纬度数值在0至30度之间的地区称为低纬地区，纬度数值在30至60度之间的地区称为中纬地区，纬度数值在60至90度之间的地区称为高纬地区。<br>赤道、南回归线、北回归线、南极圈和北极圈是特殊的纬线。<br>纬度1秒的长度<br>地球的子午线总长度大约40008km。平均：<br>纬度1度 = 大约111km<br>纬度1分 = 大约1.85km<br>纬度1秒 = 大约30.9m </p>
-<p>根据地球上任意两点的经纬度计算两点间的距离</p>
-<p>地球是一个近乎标准的椭球体，它的赤道半径为6378.140千米，极半径为 6356.755千米，平均半径6371.004千米。如果我们假设地球是一个完美的球体，那么它的半径就是地球的平均半径，记为R。如果以0度经线为基 准，那么根据地球表面任意两点的经纬度就可以计算出这两点间的地表距离（这里忽略地球表面地形对计算带来的误差，仅仅是理论上的估算值）。设第一点A的经 纬度为(LonA, LatA)，第二点B的经纬度为(LonB, LatB)，按照0度经线的基准，东经取经度的正值(Longitude)，西经取经度负值(-Longitude)，北纬取90-纬度值(90- Latitude)，南纬取90+纬度值(90+Latitude)，则经过上述处理过后的两点被计为(MLonA, MLatA)和(MLonB, MLatB)。那么根据三角推导，可以得到计算两点距离的如下公式：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">C = sin(MLatA)*sin(MLatB)*cos(MLonA-MLonB) + cos(MLatA)*cos(MLatB)</div><div class="line"></div><div class="line">Distance = R*Arccos(C)*Pi/180</div></pre></td></tr></table></figure></p>
-<p>这里，R和Distance单位是相同，如果是采用6371.004千米作为半径，那么Distance就是千米为单位，如果要使用其他单位，比如mile，还需要做单位换算，1千米=0.621371192mile</p>
-<p>如果仅对经度作正负的处理，而不对纬度作90-Latitude(假设都是北半球，南半球只有澳洲具有应用意义)的处理，那么公式将是：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">C = sin(LatA)*sin(LatB) + cos(LatA)*cos(LatB)*cos(MLonA-MLonB)</div><div class="line"></div><div class="line">Distance = R*Arccos(C)*Pi/180</div></pre></td></tr></table></figure></p>
-<p>以上通过简单的三角变换就可以推出。</p>
-<p>如果三角函数的输入和输出都采用弧度值，那么公式还可以写作：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">C = sin(LatA*Pi/180)*sin(LatB*Pi/180) + cos(LatA*Pi/180)*cos(LatB*Pi/180)*cos((MLonA-MLonB)*Pi/180)</div><div class="line"></div><div class="line">Distance = R*Arccos(C)*Pi/180</div></pre></td></tr></table></figure></p>
-<p>也就是：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">C = sin(LatA/57.2958)*sin(LatB/57.2958) + cos(LatA/57.2958)*cos(LatB/57.2958)*cos((MLonA-MLonB)/57.2958)</div><div class="line"></div><div class="line">Distance = R*Arccos(C) = 6371.004*Arccos(C) kilometer </div><div class="line">= 0.621371192*6371.004*Arccos(C) mile = 3958.758349716768*Arccos(C) mile</div></pre></td></tr></table></figure></p>
-<p>在实际应用当中，一般是通过一个个体的邮政编码来查找该邮政编码对应的地区中心的经纬度，然 后再根据这些经纬度来计算彼此的距离，从而估算出某些群体之间的大致距离范围(比如酒店旅客的分布范围-各个旅客的邮政编码对应的经纬度和酒店的经纬度所 计算的距离范围-等等)，所以，通过邮政编码查询经纬度这样一个数据库是一个很有用的资源。<br>附：C#代码：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">private const double EARTH_RADIUS = 6378.137;//地球半径</div><div class="line">private static double rad(double d)</div><div class="line">&#123;</div><div class="line"> return d * Math.PI / 180.0;</div><div class="line">&#125; </div><div class="line"></div><div class="line">public static double GetDistance(double lat1, double lng1, double lat2, double lng2)</div><div class="line">&#123;</div><div class="line"> double radLat1 = rad(lat1);</div><div class="line"> double radLat2 = rad(lat2);</div><div class="line"> double a = radLat1 - radLat2;</div><div class="line"> double b = rad(lng1) - rad(lng2);</div><div class="line"></div><div class="line">double s = 2 * Math.Asin(Math.Sqrt(Math.Pow(Math.Sin(a/2),2) +</div><div class="line"> Math.Cos(radLat1)*Math.Cos(radLat2)*Math.Pow(Math.Sin(b/2),2)));</div><div class="line"> s = s * EARTH_RADIUS;</div><div class="line"> s = Math.Round(s * 10000) / 10000;</div><div class="line"> return s;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p> 最近用到了geohash（参考《geohash：用字符串实现附近地点搜索》）来实现附近搜索的功能，在《微信、陌陌架构方案分析》文中提供了一个php的geohash类直接能对经纬地址编码成字符串, 而其中包含一个getDistance方法获取两点间的距离，但在sphinx中使用过滤附近地标的方法SetGeoAnchor发现返回的距离值有误，遂google出以下方法，经测试可用。。 </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">/*** @desc 根据两点间的经纬度计算距离*</div><div class="line"> @param float $lat 纬度值* @param float $lng 经度值*/ </div><div class="line">    /**</div><div class="line">     *  @desc 根据两点间的经纬度计算距离</div><div class="line">     *  @param float $lat 纬度值</div><div class="line">     *  @param float $lng 经度值</div><div class="line">     * @return $result 单位为千米（km）</div><div class="line">     */</div><div class="line">     public function getDistance($lat1, $lng1, $lat2, $lng2)&#123;</div><div class="line"></div><div class="line">        $earthRadius = 6367000; //approximate radius of earth in meters</div><div class="line">        //  Convert these degrees to radians       to work with the formula</div><div class="line">        $lat1 = ($lat1 * pi() ) / 180;</div><div class="line">        $lng1 = ($lng1 * pi() ) / 180;</div><div class="line">        $lat2 = ($lat2 * pi() ) / 180;</div><div class="line">        $lng2 = ($lng2 * pi() ) / 180;</div><div class="line">        // Using the       Haversine formula       http://en.wikipedia.org/wiki/Haversine_formula       calculate the distance</div><div class="line">        $calcLongitude = $lng2 - $lng1;</div><div class="line">        $calcLatitude = $lat2 - $lat1;</div><div class="line">        $stepOne = pow(sin($calcLatitude / 2), 2) + cos($lat1) * cos($lat2) * pow(sin($calcLongitude / 2), 2);  $stepTwo = 2 * asin(min(1, sqrt($stepOne)));</div><div class="line">        $calculatedDistance = $earthRadius * $stepTwo;</div><div class="line">        return round($calculatedDistance);</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Android</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">IOS</a>
-        		</li>
-      		 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">PHP</a>
         		</li>
@@ -958,7 +511,7 @@ body {
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2016/08/16/根据两点经纬度计算距离！/">展开全文 >></a>
+          <a class="article-more-a" href="/2016/08/16/php-curl_post获取不到返回结果问题！/">展开全文 >></a>
         </p>
       
 
@@ -1058,6 +611,279 @@ body {
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2016/08/16/Linux安装lnmp集成包！/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
+    <article id="post-MYSQL-sql优化笔记！" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/08/16/MYSQL-sql优化笔记！/">mysql-sql优化笔记！</a>
+    </h1>
+  
+
+        
+        <a href="/2016/08/16/MYSQL-sql优化笔记！/" class="archive-article-date">
+  	<time datetime="2016-08-15T19:30:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-08-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>分析问题的几个步骤：</p>
+<p>#####1. 开启慢查询日志<br><img src="http://upload-images.jianshu.io/upload_images/2255249-0d4992b8bb33357c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Paste_Image.png"><br>这个步骤就是为了记录慢查询的sql，为下个步骤做准备：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">//查看慢查询的日志记录是否开启 如上图</div><div class="line">show variables like &apos;%slow_query_log%&apos;;     </div><div class="line"></div><div class="line"> //设置慢查询开启的两种写法：</div><div class="line">set global slow_query_log=1;   </div><div class="line">set global slow_query_log=true;    </div><div class="line"></div><div class="line">//设置慢查询开启的两种写法：</div><div class="line">set global slow_query_log=0;      </div><div class="line">set global slow_query_log=false;</div></pre></td></tr></table></figure></p>
+<p>#####2. 用explain 分析sql 语句</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/2255249-148339798a8663e4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Paste_Image.png"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">explain select * from crm_ego_members;     //分析sql语句</div></pre></td></tr></table></figure></p>
+<p>######table：显示这一行的数据是关于哪张表的</p>
+<p>######type：显示连接使用了何种类型。从最好到最差的连接类型为const、eq_reg、ref、range、 indexhe和ALL为 ALL 时，表示要扫描全表，尽量避免 </p>
+<p>######possible_keys：显示可能应用在这张表中的索引。如果为空，没有可能的索引。可以为相关的域从WHERE语句中选择一个合适的语句 </p>
+<p>######key： 表示此 SQL 语句是否用到索引，null代表没有！很少的情况下，MYSQL会选择优化不足的索引。这种情况下，可以在SELECT语句中使用USE INDEX（indexname）来强制使用一个索引或者用IGNORE INDEX（indexname）来强制MYSQL忽略索引</p>
+<p>######key_len：使用的索引的长度。在不损失精确性的情况下，长度越短越好</p>
+<p>######ref ： 显示索引的哪一列被使用了，如果可能的话，是一个常数</p>
+<p>######rows：MYSQL认为必须检查的用来返回请求数据的行数</p>
+<p>######Extra： 关于MYSQL如何解析查询的额外信息。坏的例子是Using temporary和Using filesort（文件排序，尽量避免使用），意思MYSQL根本不能使用索引，结果是检索会很慢<br>Extra列返回的描述的意义:</p>
+<p>Distinct:一旦MYSQL找到了与行相联合匹配的行，就不再搜索了</p>
+<p>Not exists: MYSQL优化了LEFT JOIN，一旦它找到了匹配LEFT JOIN标准的行，就不再搜索了</p>
+<p>Range checked for each Record（index map:#）:没有找到理想的索引，因此对于从前面表中来的每一个行组合，MYSQL检查使用哪个索引，并用它来从表中返回行。这是使用索引的最慢的连接之一</p>
+<p>Using filesort: 看到这个的时候，查询就需要优化了。MYSQL需要进行额外的步骤来发现如何对返回的行排序。它根据连接类型以及存储排序键值和匹配条件的全部行的行指针来排序全部行</p>
+<p>Using index: 列数据是从仅仅使用了索引中的信息而没有读取实际的行动的表返回的，这发生在对表的全部的请求列都是同一个索引的部分的时候</p>
+<p>Using temporary 看到这个的时候，查询需要优化了。这里，MYSQL需要创建一个临时表来存储结果，这通常发生在对不同的列集进行ORDER BY上，而不是GROUP BY上</p>
+<p>Where used 使用了WHERE从句来限制哪些行将与下一张表匹配或者是返回给用户。如果不想返回表中的全部行，并且连接类型ALL或index，这就会发生，或者是查询有问题不同连接类型的解释（按照效率高低的顺序排序）</p>
+<p>system 表只有一行：system表。这是const连接类型的特殊情况</p>
+<p>const:表中的一个记录的最大值能够匹配这个查询（索引可以是主键或惟一索引）。因为只有一行，这个值实际就是常数，因为MYSQL先读这个值然后把它当做常数来对待</p>
+<p>eq_ref:在连接中，MYSQL在查询时，从前面的表中，对每一个记录的联合都从表中读取一个记录，它在查询使用了索引为主键或惟一键的全部时使用</p>
+<p>ref:这个连接类型只有在查询使用了不是惟一或主键的键或者是这些类型的部分（比如，利用最左边前缀）时发生。对于之前的表的每一个行联合，全部记录都将从表中读出。这个类型严重依赖于根据索引匹配的记录多少—越少越好</p>
+<p>range:这个连接类型使用索引返回一个范围中的行，比如使用&gt;或&lt;查找东西时发生的情况</p>
+<p>index: 这个连接类型对前面的表中的每一个记录联合进行完全扫描（比ALL更好，因为索引一般小于表数据）</p>
+<p>ALL:这个连接类型对于前面的每一个记录联合进行完全扫描，这一般比较糟糕，应该尽量避免.</p>
+<p>注释：如何查看步骤的执行顺序呢？ 如果id相同，从上到下执行。如果id不同id大的先执行。</p>
+<p>#####3. 使用profile 来查看sql 的执行周期，看看sql的问题出错在执行的哪个步骤上。 </p>
+<p><img src="http://upload-images.jianshu.io/upload_images/2255249-b263bde3a693c72e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Paste_Image.png"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">//用来查看mysql 前十几条查询 </div><div class="line">show profiles;</div><div class="line"></div><div class="line">//设置profile 功能开启</div><div class="line"> set profiling=1;    </div><div class="line"> set profiling=true;    </div><div class="line"></div><div class="line">//设置profile 功能关闭</div><div class="line"> set profiling=0;    </div><div class="line"> set profiling=false;    </div><div class="line"></div><div class="line"> show profile for query N;   //查看 第 N 条 sql 的执行生命周期</div></pre></td></tr></table></figure></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/2255249-b4ca200f4317ed6c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Paste_Image.png"></p>
+<p>#####4. 修改mysql 数据库配置文件，比如设置查询缓冲区的大小等等。<br>使用慢查询分析</p>
+<p>在my.ini中：</p>
+<p>long_query_time=1</p>
+<p>log-slow-queries=d:\mysql5\logs\mysqlslow.log</p>
+<p>把超过1秒的记录在慢查询日志中</p>
+<p>可以用mysqlsla来分析之。也可以在mysqlreport中，有如</p>
+<p>DMS分别分析了select ,update,insert,delete,replace等所占的百份比</p>
+<p>4.MYISAM和INNODB的锁定</p>
+<p>myisam中，注意是表锁来的，比如在多个UPDATE操作后，再SELECT时，会发现SELECT操作被锁定了，必须等所有UPDATE操作完毕后，再能SELECT</p>
+<p>innodb的话则不同了，用的是行锁，不存在上面问题。</p>
+<h5 id="另外数据到一定量时，sql语句优化效果才会明显！"><a href="#另外数据到一定量时，sql语句优化效果才会明显！" class="headerlink" title="另外数据到一定量时，sql语句优化效果才会明显！"></a>另外数据到一定量时，sql语句优化效果才会明显！</h5>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">PHP</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">MYSQL</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/MYSQL笔记/" class="article-tag-list-link color3">MYSQL笔记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2016/08/16/MYSQL-sql优化笔记！/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
+    <article id="post-Windows安装多个MYSQL做读写分离测试！" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/08/16/Windows安装多个MYSQL做读写分离测试！/">windows安装多个mysql做读写分离测试！</a>
+    </h1>
+  
+
+        
+        <a href="/2016/08/16/Windows安装多个MYSQL做读写分离测试！/" class="archive-article-date">
+  	<time datetime="2016-08-15T19:30:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-08-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>mysql5.6.35下载地址：<a href="https://dev.mysql.com/downloads/file/?id=467063" target="_blank" rel="external">https://dev.mysql.com/downloads/file/?id=467063</a><br>一开始下载的是5.7版本解压版的，搞了很久mysql服务开不起来，网上也没找到有效的解决办法。退回5.6安装一次点亮！<br>步骤如下：<br>一.下载解压重命名，拷贝多份用端口号区分，在虚拟机win7 C盘下做实验：</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/2255249-cd4902f3e4fdc0ed.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Paste_Image.png"></p>
+<p>二.my-default.ini拷贝一份改名my.ini，打开修改basedir（mysql安装目录）和datadir（数据目录）和port（端口号）：</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/2255249-41eb341d0e096715.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Paste_Image.png"></p>
+<p>三. 然后以管理员身份打开dos，进入mysql_3307的bin目录，输入mysqld  –install  mysql_3307安装mysql_3307服务！显示：Service successfully installed.然后输入net start mysql_3307 命令启动。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/2255249-e8779f2b8d5ccf6d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Paste_Image.png"></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">PHP</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">MYSQL</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/MYSQL笔记/" class="article-tag-list-link color3">MYSQL笔记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2016/08/16/Windows安装多个MYSQL做读写分离测试！/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
+    <article id="post-MYSQL-流程控制语句-笔记！" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/08/16/MYSQL-流程控制语句-笔记！/">mysql-流程控制语句-笔记！</a>
+    </h1>
+  
+
+        
+        <a href="/2016/08/16/MYSQL-流程控制语句-笔记！/" class="archive-article-date">
+  	<time datetime="2016-08-15T19:30:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-08-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>###case when:<br><img src="http://upload-images.jianshu.io/upload_images/2255249-7405927169dfe6b1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Paste_Image.png"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">//mysql 中的 case when 用法</div><div class="line">select title,  </div><div class="line"> case disabled  </div><div class="line">     when &apos;0&apos; then &apos;隐藏&apos;  </div><div class="line">        when &apos;1&apos; then &apos;显示&apos;  </div><div class="line">        else &apos;未知&apos; end &apos;状态&apos;  </div><div class="line">from db_article; </div><div class="line"></div><div class="line"></div><div class="line">//case when   两种写法等效（then后的select 语句要加上括号） </div><div class="line">select  case  pid   </div><div class="line">when   1   then( select title from db_admin_node where id =1)   </div><div class="line">when   2   then( select title from db_admin_node where id =2)   </div><div class="line">when   3   then( select title from db_admin_node where id =3)   </div><div class="line">else &apos; 其它&apos;</div><div class="line">end  test,id,title,pid from db_admin_node</div><div class="line"></div><div class="line">select  case      </div><div class="line">when   pid=1   then( select title from db_admin_node where id =1)   </div><div class="line">when   pid=2   then( select title from db_admin_node where id =2)   </div><div class="line">when   pid=3   then( select title from db_admin_node where id =3)   </div><div class="line">else &apos;其它&apos;</div><div class="line">end  test,id,title,pid from db_admin_node</div></pre></td></tr></table></figure></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/2255249-a2e16a7ab062a7a8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Paste_Image.png"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">select id,username,email,is_super,status ,case </div><div class="line">when username=&apos;admin&apos; then &apos;超级管理员&apos; </div><div class="line">when email=&apos;root@qq.com&apos; then &apos;系统管理员&apos; </div><div class="line">when is_super = 2 then &apos;测试管理员&apos; </div><div class="line">when status =&apos;0 &apos;then &apos;失效管理员&apos;</div><div class="line">else &apos;其它管理员&apos; end &apos;管理员类型&apos; from db_admin_user</div></pre></td></tr></table></figure>
+<h5 id="case-null-when-表达式-then-执行结果-end-字段别名-from-数据表"><a href="#case-null-when-表达式-then-执行结果-end-字段别名-from-数据表" class="headerlink" title="case  null   when 表达式  then 执行结果 end  字段别名  from 数据表"></a>case  null   when 表达式  then 执行结果 end  字段别名  from 数据表</h5><p>#####如果这种情况，如果表达式为布尔false，则结果为null，如果表达式为布尔true，则执行结果<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">select case when 1&gt;0 then &apos;test&apos; end test from db_admin_user;</div></pre></td></tr></table></figure></p>
+<h3 id="IF-a-b-c"><a href="#IF-a-b-c" class="headerlink" title="IF(a,b,c)"></a>IF(a,b,c)</h3><p>#####如果 a 是TRUE (不为 0 或 NULL)，则 IF()的返回值为b; 否则返回值则为 c, 类似php的 三目运算！<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">//简单写法：</div><div class="line">select *,if(sex=1,&apos;男&apos;,&apos;女&apos;) sex from user;</div><div class="line"></div><div class="line">//多层嵌套写法：</div><div class="line">select *,if(sex=0,&apos;女&apos;,if(sex=1,&apos;男&apos;,&apos;保密&apos;)) sex from user;</div></pre></td></tr></table></figure></p>
+<p>###IFNULL(a,b)</p>
+<p>#####如果 a 不为 NULL（没有 0），则 IFNULL() 的返回值为 a; 否则其返回值为 b。 ifnull(a,b)这个函数一般用来替换null值!<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"> </div><div class="line">select *,ifnull(email,&apos;你还没设置邮箱&apos;) e_mail from user;//如果 email 字段为NULL，则用后面设置的值替换</div></pre></td></tr></table></figure></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/2255249-eadacb2203849c2d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Paste_Image.png"></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">PHP</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">MYSQL</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/MYSQL笔记/" class="article-tag-list-link color3">MYSQL笔记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2016/08/16/MYSQL-流程控制语句-笔记！/">展开全文 >></a>
         </p>
       
 
@@ -1243,19 +1069,19 @@ body {
 
 
   
-    <article id="post-Android移动端与PHP服务端对称加密解密的实现-！" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-海马玩模拟器安装与卸载本地APK的方法!" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/07/02/Android移动端与PHP服务端对称加密解密的实现-！/">Android移动端与PHP服务端对称加密解密的实现-！</a>
+      <a class="article-title" href="/2016/07/02/海马玩模拟器安装与卸载本地APK的方法!/">海马玩模拟器安装与卸载本地apk的方法!</a>
     </h1>
   
 
         
-        <a href="/2016/07/02/Android移动端与PHP服务端对称加密解密的实现-！/" class="archive-article-date">
+        <a href="/2016/07/02/海马玩模拟器安装与卸载本地APK的方法!/" class="archive-article-date">
   	<time datetime="2016-07-01T19:30:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-07-02</time>
 </a>
         
@@ -1263,49 +1089,12 @@ body {
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">class ApiCrypter&#123; </div><div class="line"></div><div class="line">    private $iv  = &apos;fdsfds85435nfdfs&apos;; #与JAVA实现类中的设置必须一致</div><div class="line"></div><div class="line">    private $key = &apos;89432hjfsd891787&apos;; #与JAVA实现类中的设置必须一致</div><div class="line"></div><div class="line"></div><div class="line">    public function __construct() &#123;</div><div class="line"></div><div class="line">    &#125;</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">public function encrypt($str) &#123; </div><div class="line"></div><div class="line">  $str = $this-&gt;pkcs5_pad($str);   </div><div class="line"></div><div class="line">  $iv = $this-&gt;iv; </div><div class="line"></div><div class="line">  $td = mcrypt_module_open(&apos;rijndael-128&apos;, &apos;&apos;, &apos;cbc&apos;, $iv); </div><div class="line"></div><div class="line">  mcrypt_generic_init($td, $this-&gt;key, $iv);</div><div class="line"></div><div class="line">  $encrypted = mcrypt_generic($td, $str); </div><div class="line"></div><div class="line">  mcrypt_generic_deinit($td);</div><div class="line"></div><div class="line">  mcrypt_module_close($td); </div><div class="line"></div><div class="line">  return bin2hex($encrypted);</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">public function decrypt($code) &#123; </div><div class="line"></div><div class="line">  $code = $this-&gt;hex2bin($code);</div><div class="line"></div><div class="line">  $iv = $this-&gt;iv; </div><div class="line"></div><div class="line">  $td = mcrypt_module_open(&apos;rijndael-128&apos;, &apos;&apos;, &apos;cbc&apos;, $iv); </div><div class="line"></div><div class="line">  mcrypt_generic_init($td, $this-&gt;key, $iv);</div><div class="line"></div><div class="line">  $decrypted = mdecrypt_generic($td, $code); </div><div class="line"></div><div class="line">  mcrypt_generic_deinit($td);</div><div class="line"></div><div class="line">  mcrypt_module_close($td); </div><div class="line"></div><div class="line">  $ut =  utf8_encode(trim($decrypted));</div><div class="line"></div><div class="line">  return $this-&gt;pkcs5_unpad($ut);</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">protected function hex2bin($hexdata) &#123;</div><div class="line"></div><div class="line">  $bindata = &apos;&apos;; </div><div class="line"></div><div class="line">  for ($i = 0; $i &lt; strlen($hexdata); $i += 2) &#123;</div><div class="line"></div><div class="line">      $bindata .= chr(hexdec(substr($hexdata, $i, 2)));</div><div class="line"></div><div class="line">  &#125; </div><div class="line"></div><div class="line">  return $bindata;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">protected function pkcs5_pad ($text) &#123;</div><div class="line"></div><div class="line">  $blocksize = 16;</div><div class="line"></div><div class="line">  $pad = $blocksize - (strlen($text) % $blocksize);</div><div class="line"></div><div class="line">  return $text . str_repeat(chr($pad), $pad);</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">    protected function pkcs5_unpad($text) &#123;</div><div class="line"></div><div class="line">      $pad = ord($text&#123;strlen($text)-1&#125;);</div><div class="line"></div><div class="line">      if ($pad &gt; strlen($text)) &#123;</div><div class="line"></div><div class="line">          return false;    </div><div class="line"></div><div class="line">      &#125;</div><div class="line"></div><div class="line">      if (strspn($text, chr($pad), strlen($text) - $pad) != $pad) &#123;</div><div class="line"></div><div class="line">          return false;</div><div class="line"></div><div class="line">      &#125;</div><div class="line"></div><div class="line">      return substr($text, 0, -1 * $pad);</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">package com.cwilldev.crypt;</div><div class="line"></div><div class="line"></div><div class="line">import java.security.NoSuchAlgorithmException;</div><div class="line"></div><div class="line">import javax.crypto.Cipher;</div><div class="line"></div><div class="line">import javax.crypto.NoSuchPaddingException;</div><div class="line"></div><div class="line">import javax.crypto.spec.IvParameterSpec;</div><div class="line"></div><div class="line">import javax.crypto.spec.SecretKeySpec;</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">public class ApiCrypter &#123;</div><div class="line"></div><div class="line"></div><div class="line">    private String iv              = &quot;fdsfds85435nfdfs&quot;; //根据实际需要更改</div><div class="line"></div><div class="line">    private String secretkey       = &quot;89432hjfsd891787&quot;; //根据实际需要更改</div><div class="line"></div><div class="line">    private IvParameterSpec ivspec;</div><div class="line"></div><div class="line">    private SecretKeySpec keyspec;</div><div class="line"></div><div class="line">    private Cipher cipher;</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">public ApiCrypter()</div><div class="line"></div><div class="line">&#123;</div><div class="line"></div><div class="line">    ivspec = new IvParameterSpec(iv.getBytes());</div><div class="line"></div><div class="line">    keyspec = new SecretKeySpec(secretkey.getBytes(), &quot;AES&quot;);</div><div class="line"></div><div class="line"></div><div class="line">    try &#123;</div><div class="line"></div><div class="line">        cipher = Cipher.getInstance(&quot;AES/CBC/PKCS5Padding&quot;);</div><div class="line"></div><div class="line">    &#125; catch (NoSuchAlgorithmException e) &#123;</div><div class="line"></div><div class="line">        e.printStackTrace();</div><div class="line"></div><div class="line">    &#125; catch (NoSuchPaddingException e) &#123;</div><div class="line"></div><div class="line">        e.printStackTrace();</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">public byte[] encrypt(String text) throws Exception</div><div class="line"></div><div class="line">&#123;</div><div class="line"></div><div class="line">    if(text == null || text.length() == 0) &#123;</div><div class="line"></div><div class="line">        throw new Exception(&quot;Empty string&quot;);</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    byte[] encrypted = null;</div><div class="line"></div><div class="line">    try &#123;</div><div class="line"></div><div class="line">        cipher.init(Cipher.ENCRYPT_MODE, keyspec, ivspec);</div><div class="line"></div><div class="line">        encrypted = cipher.doFinal(text.getBytes(&quot;UTF-8&quot;));</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    catch (Exception e) &#123;</div><div class="line"></div><div class="line">        throw new Exception(&quot;[encrypt] &quot; + e.getMessage());</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    return encrypted;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">public byte[] decrypt(String code) throws Exception</div><div class="line"></div><div class="line">&#123;</div><div class="line"></div><div class="line">    if(code == null || code.length() == 0) &#123;</div><div class="line"></div><div class="line">        throw new Exception(&quot;Empty string&quot;);</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    byte[] decrypted = null;</div><div class="line"></div><div class="line">    try &#123;</div><div class="line"></div><div class="line">        cipher.init(Cipher.DECRYPT_MODE, keyspec, ivspec);</div><div class="line"></div><div class="line">        decrypted = cipher.doFinal(hexToBytes(code));</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    catch (Exception e) &#123;</div><div class="line"></div><div class="line">        throw new Exception(&quot;[decrypt] &quot; + e.getMessage());</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    return decrypted;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line">public static String bytesToHex(byte[] data)</div><div class="line"></div><div class="line">&#123;</div><div class="line"></div><div class="line">    if (data==null) &#123;</div><div class="line"></div><div class="line">        return null;</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    int len = data.length;</div><div class="line"></div><div class="line">    String str = &quot;&quot;;</div><div class="line"></div><div class="line">    for (int i=0; i&lt;len; i++) &#123;</div><div class="line"></div><div class="line">        if ((data[i]&amp;0xFF)&lt;16) &#123;</div><div class="line"></div><div class="line">            str = str + &quot;0&quot; + java.lang.Integer.toHexString(data[i]&amp;0xFF);</div><div class="line"></div><div class="line">        &#125;</div><div class="line"></div><div class="line">        else &#123;</div><div class="line"></div><div class="line">            str = str + java.lang.Integer.toHexString(data[i]&amp;0xFF);</div><div class="line"></div><div class="line">        &#125;</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    return str;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line">    public static byte[] hexToBytes(String str) &#123;</div><div class="line"></div><div class="line">        if (str==null) &#123;</div><div class="line"></div><div class="line">            return null;</div><div class="line"></div><div class="line">        &#125;</div><div class="line"></div><div class="line">        else if (str.length() &lt; 2) &#123;</div><div class="line"></div><div class="line">            return null;</div><div class="line"></div><div class="line">        &#125;</div><div class="line"></div><div class="line">        else &#123;</div><div class="line"></div><div class="line">            int len = str.length() / 2;</div><div class="line"></div><div class="line">            byte[] buffer = new byte[len];</div><div class="line"></div><div class="line">            for (int i=0; i&lt;len; i++) &#123;</div><div class="line"></div><div class="line">                buffer[i] = (byte) Integer.parseInt(str.substring(i*2,i*2+2),16);</div><div class="line"></div><div class="line">            &#125;</div><div class="line"></div><div class="line">            return buffer;</div><div class="line"></div><div class="line">        &#125;</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<pre><code>$original_text = &apos;test&apos;;
+        <p>###安装的三种方法：</p>
+<p>#####第一种最简单的方法就是直接拖拽本地apk到海马玩模拟器当中。 </p>
+<p>#####第二种方法就是在电脑中右键单击apk文件，然后选择打开方式，在打开方式中选择海马玩模拟器。</p>
+<p>#####第三种方法就是点击模拟器的设置按钮，然后选择其他设置。选择apk安装。如下图：<br><img src="http://upload-images.jianshu.io/upload_images/2255249-c4b2db2445f2e657.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Paste_Image.png"></p>
+<p>###卸载方法：<br>鼠标长按要卸载的apk，直至出现卸载对话框点击卸载。</p>
 
-$mdes = new ApiCrypterUtil();
-
-//加密
-
-$encrypt_text = $mdes-&gt;encrypt($original_text);
-
-$this-&gt;log($encrypt_text, LOG_DEBUG);
-
-//解密
-
-$this-&gt;log($mdes-&gt;decrypt($encrypt_text), LOG_DEBUG);
-
-
-
-//加密:
-
-ApiCrypter apiCrypter = new ApiCrypter();
-
-String originalText = &quot;test&quot;;
-
-String encryptedText = ApiCrypter.bytesToHex(apiCrypter.encrypt(jsonParams.toString()));
-
-//解密:
-
-String res = new String(apiCrypter.decrypt(encryptedText), &quot;UTF-8&quot;); 
-
-String decryptedText = URLDecoder.decode(res, &quot;UTF-8&quot;);
-</code></pre>
       
 
       
@@ -1318,15 +1107,7 @@ String decryptedText = URLDecoder.decode(res, &quot;UTF-8&quot;);
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Android</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">IOS</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">PHP</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Windows</a>
         		</li>
       		
 		</ul>
@@ -1338,7 +1119,7 @@ String decryptedText = URLDecoder.decode(res, &quot;UTF-8&quot;);
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/Android和IOS相关/" class="article-tag-list-link color4">Android和IOS相关</a>
+        			<a href="/categories/Windows相关/" class="article-tag-list-link color5">Windows相关</a>
         		</li>
       		
 		</ul>
@@ -1347,7 +1128,7 @@ String decryptedText = URLDecoder.decode(res, &quot;UTF-8&quot;);
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2016/07/02/Android移动端与PHP服务端对称加密解密的实现-！/">展开全文 >></a>
+          <a class="article-more-a" href="/2016/07/02/海马玩模拟器安装与卸载本地APK的方法!/">展开全文 >></a>
         </p>
       
 
@@ -1362,19 +1143,19 @@ String decryptedText = URLDecoder.decode(res, &quot;UTF-8&quot;);
 
 
   
-    <article id="post-Android、IOS、PHP之间对称AES加密解密!" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-任意文件隐藏在一张图片！" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/07/02/Android、IOS、PHP之间对称AES加密解密!/">Android、IOS、PHP之间对称AES加密解密!</a>
+      <a class="article-title" href="/2016/07/02/任意文件隐藏在一张图片！/">任意文件隐藏在一张图片！</a>
     </h1>
   
 
         
-        <a href="/2016/07/02/Android、IOS、PHP之间对称AES加密解密!/" class="archive-article-date">
+        <a href="/2016/07/02/任意文件隐藏在一张图片！/" class="archive-article-date">
   	<time datetime="2016-07-01T19:30:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-07-02</time>
 </a>
         
@@ -1382,9 +1163,19 @@ String decryptedText = URLDecoder.decode(res, &quot;UTF-8&quot;);
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p> ###php:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">$aes = new aes;</div><div class="line">echo $aes-&gt;aes128cbcEncrypt(&quot;11122222&quot;);</div><div class="line">echo &quot;\n&quot;;</div><div class="line">echo $aes-&gt;aes128cbcEncrypt(&quot;中文aes演示&quot;);</div><div class="line">echo &quot;\n&quot;;</div><div class="line">class aes&#123;</div><div class="line">    const KEY=&quot;625202f9149e061d&quot;;</div><div class="line">    const IV =&quot;5efd3f6060e20330&quot;;</div><div class="line">    /**</div><div class="line">     * pkcs7补码</div><div class="line">     * @param string $string  明文</div><div class="line">     * @param int $blocksize Blocksize , 以 byte 为单位</div><div class="line">     * @return String</div><div class="line">     */ </div><div class="line">    private function addPkcs7Padding($string, $blocksize = 32) &#123;</div><div class="line">        $len = strlen($string); //取得字符串长度</div><div class="line">        $pad = $blocksize - ($len % $blocksize); //取得补码的长度</div><div class="line">        $string .= str_repeat(chr($pad), $pad); //用ASCII码为补码长度的字符， 补足最后一段</div><div class="line">        return $string;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    /**</div><div class="line">     * 加密然后base64转码</div><div class="line">     * </div><div class="line">     * @param String 明文</div><div class="line">     * @param 加密的初始向量（IV的长度必须和Blocksize一样， 且加密和解密一定要用相同的IV）</div><div class="line">     * @param $key 密钥</div><div class="line">     */</div><div class="line">    function aes256cbcEncrypt($str, $iv, $key ) &#123;   </div><div class="line">        return base64_encode(mcrypt_encrypt(MCRYPT_RIJNDAEL_256, $key, $this-&gt;addPkcs7Padding($str) , MCRYPT_MODE_CBC, $iv));</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    /**</div><div class="line">     * 除去pkcs7 padding</div><div class="line">     * </div><div class="line">     * @param String 解密后的结果</div><div class="line">     * </div><div class="line">     * @return String</div><div class="line">     */</div><div class="line">    private function stripPkcs7Padding($string)&#123;</div><div class="line">        $slast = ord(substr($string, -1));</div><div class="line">        $slastc = chr($slast);</div><div class="line">        $pcheck = substr($string, -$slast);</div><div class="line"></div><div class="line">        if(preg_match(&quot;/$slastc&#123;&quot;.$slast.&quot;&#125;/&quot;, $string))&#123;</div><div class="line">            $string = substr($string, 0, strlen($string)-$slast);</div><div class="line">            return $string;</div><div class="line">        &#125; else &#123;</div><div class="line">            return false;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    /**</div><div class="line">     * 解密</div><div class="line">     * </div><div class="line">     * @param String $encryptedText 二进制的密文 </div><div class="line">     * @param String $iv 加密时候的IV</div><div class="line">     * @param String $key 密钥</div><div class="line">     * @return String</div><div class="line">     */</div><div class="line">    function aes256cbcDecrypt($encryptedText, $iv, $key) &#123;</div><div class="line">        $encryptedText =base64_decode($encryptedText);</div><div class="line">        return $this-&gt;stripPkcs7Padding(mcrypt_decrypt(MCRYPT_RIJNDAEL_256, $key, $encryptedText, MCRYPT_MODE_CBC, $iv));</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    function aes128cbcDecrypt($encryptedText, $iv=self::IV, $key=self::KEY) &#123;</div><div class="line">        $encryptedText =base64_decode($encryptedText);</div><div class="line">        return $this-&gt;stripPkcs7Padding(mcrypt_decrypt(MCRYPT_RIJNDAEL_128, $key, $encryptedText, MCRYPT_MODE_CBC, $iv));</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    function hexToStr($hex)//十六进制转字符串</div><div class="line">    &#123;   </div><div class="line">        $string=&quot;&quot;; </div><div class="line">        for($i=0;$i&lt;strlen($hex)-1;$i+=2)</div><div class="line">        $string.=chr(hexdec($hex[$i].$hex[$i+1]));</div><div class="line">        return  $string;</div><div class="line">    &#125;</div><div class="line">    function strToHex($string)//字符串转十六进制</div><div class="line">    &#123; </div><div class="line">        $hex=&quot;&quot;;</div><div class="line">        $tmp=&quot;&quot;;</div><div class="line">        for($i=0;$i&lt;strlen($string);$i++)</div><div class="line">        &#123;</div><div class="line">            $tmp = dechex(ord($string[$i]));</div><div class="line">            $hex.= strlen($tmp) == 1 ? &quot;0&quot;.$tmp : $tmp;</div><div class="line">        &#125;</div><div class="line">        $hex=strtoupper($hex);</div><div class="line">        return $hex;</div><div class="line">    &#125;</div><div class="line">    function aes128cbcHexDecrypt($encryptedText, $iv=self::IV, $key=self::KEY) &#123;</div><div class="line">        $str = $this-&gt;hexToStr($encryptedText);</div><div class="line">        return $this-&gt;stripPkcs7Padding(mcrypt_decrypt(MCRYPT_RIJNDAEL_128, $key, $str, MCRYPT_MODE_CBC, $iv));</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    function aes128cbcEncrypt($str, $iv=self::IV, $key=self::KEY ) &#123;    // $this-&gt;addPkcs7Padding($str,16)</div><div class="line">        $base = (mcrypt_encrypt(MCRYPT_RIJNDAEL_128, $key,$this-&gt;addPkcs7Padding($str,16) , MCRYPT_MODE_CBC, $iv));</div><div class="line">        return $this-&gt;strToHex($base);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>###IOS:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div></pre></td><td class="code"><pre><div class="line"> //对数据进行解密</div><div class="line">    NSData* result = [data aes256_decrypt:key];</div><div class="line">    if (result &amp;&amp; result.length &gt; 0) &#123;</div><div class="line">        return [[NSString alloc] initWithData:result encoding:NSUTF8StringEncoding];</div><div class="line">    &#125;</div><div class="line">    return nil;</div><div class="line">&#125;</div><div class="line">@end</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">@implementation NSData (AES256)</div><div class="line"></div><div class="line">- (NSData *)aes256_encrypt:(NSString *)key   //加密</div><div class="line">&#123;</div><div class="line">    char keyPtr[kCCKeySizeAES256+1];</div><div class="line">    bzero(keyPtr, sizeof(keyPtr));</div><div class="line">    [key getCString:keyPtr maxLength:sizeof(keyPtr) encoding:NSUTF8StringEncoding];</div><div class="line">    NSUInteger dataLength = [self length];</div><div class="line">    size_t bufferSize = dataLength + kCCBlockSizeAES128;</div><div class="line">    void *buffer = malloc(bufferSize);</div><div class="line">    size_t numBytesEncrypted = 0;</div><div class="line">    CCCryptorStatus cryptStatus = CCCrypt(kCCEncrypt, kCCAlgorithmAES128,</div><div class="line">                                          kCCOptionPKCS7Padding ,</div><div class="line">                                          keyPtr, kCCBlockSizeAES128,</div><div class="line">                                          [AES_IV UTF8String],</div><div class="line">                                          [self bytes], dataLength,</div><div class="line">                                          buffer, bufferSize,</div><div class="line">                                          &amp;numBytesEncrypted);</div><div class="line">    if (cryptStatus == kCCSuccess) &#123;</div><div class="line">        return [NSData dataWithBytesNoCopy:buffer length:numBytesEncrypted];</div><div class="line">    &#125;</div><div class="line">    free(buffer);</div><div class="line">    return nil;</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (NSData *)aes256_decrypt:(NSString *)key   //解密</div><div class="line">&#123;</div><div class="line">    char keyPtr[kCCKeySizeAES256+1];</div><div class="line">    bzero(keyPtr, sizeof(keyPtr));</div><div class="line">    [key getCString:keyPtr maxLength:sizeof(keyPtr) encoding:NSUTF8StringEncoding];</div><div class="line">    NSUInteger dataLength = [self length];</div><div class="line">    size_t bufferSize = dataLength + kCCBlockSizeAES128;</div><div class="line">    void *buffer = malloc(bufferSize);</div><div class="line">    size_t numBytesDecrypted = 0;</div><div class="line">    CCCryptorStatus cryptStatus = CCCrypt(kCCDecrypt, kCCAlgorithmAES128,</div><div class="line">                                          kCCOptionPKCS7Padding ,</div><div class="line">                                          keyPtr, kCCBlockSizeAES128,</div><div class="line">                                          [AES_IV UTF8String],</div><div class="line">                                          [self bytes], dataLength,</div><div class="line">                                          buffer, bufferSize,</div><div class="line">                                          &amp;numBytesDecrypted);</div><div class="line">    if (cryptStatus == kCCSuccess) &#123;</div><div class="line">        return [NSData dataWithBytesNoCopy:buffer length:numBytesDecrypted];</div><div class="line"></div><div class="line">    &#125;</div><div class="line">    free(buffer);</div><div class="line">    return nil;</div><div class="line">&#125;</div><div class="line"></div><div class="line">@end</div></pre></td></tr></table></figure></p>
-<p>###android:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div><div class="line">159</div><div class="line">160</div><div class="line">161</div></pre></td><td class="code"><pre><div class="line">package com.example.aes;</div><div class="line"></div><div class="line"></div><div class="line">import java.io.UnsupportedEncodingException;</div><div class="line"></div><div class="line"></div><div class="line">import javax.crypto.Cipher;</div><div class="line">import javax.crypto.spec.IvParameterSpec;</div><div class="line">import javax.crypto.spec.SecretKeySpec;</div><div class="line"></div><div class="line"></div><div class="line">/**</div><div class="line"> * AES加密解密算法</div><div class="line"> */</div><div class="line">public class AesEncryptionUtil &#123;</div><div class="line">	/** 算法/模式/填充 **/</div><div class="line">	private static final String CipherMode = &quot;AES/CBC/PKCS5Padding&quot;;</div><div class="line"></div><div class="line"></div><div class="line">	/** 创建密钥 **/</div><div class="line">	private static SecretKeySpec createKey(String key) &#123;</div><div class="line">		byte[] data = null;</div><div class="line">		if (key == null) &#123;</div><div class="line">			key = &quot;&quot;;</div><div class="line">		&#125;</div><div class="line">		StringBuffer sb = new StringBuffer(16);</div><div class="line">		sb.append(key);</div><div class="line">		while (sb.length() &lt; 16) &#123;</div><div class="line">			sb.append(&quot;0&quot;);</div><div class="line">		&#125;</div><div class="line">		if (sb.length() &gt; 16) &#123;</div><div class="line">			sb.setLength(16);</div><div class="line">		&#125;</div><div class="line"></div><div class="line"></div><div class="line">		try &#123;</div><div class="line">			data = sb.toString().getBytes(&quot;UTF-8&quot;);</div><div class="line">		&#125; catch (UnsupportedEncodingException e) &#123;</div><div class="line">			e.printStackTrace();</div><div class="line">		&#125;</div><div class="line">		return new SecretKeySpec(data, &quot;AES&quot;);</div><div class="line">	&#125;</div><div class="line"></div><div class="line"></div><div class="line">	private static IvParameterSpec createIV(String password) &#123;</div><div class="line">		byte[] data = null;</div><div class="line">		if (password == null) &#123;</div><div class="line">			password = &quot;&quot;;</div><div class="line">		&#125;</div><div class="line">	StringBuffer sb = new StringBuffer(16);</div><div class="line">		sb.append(password);</div><div class="line">		while (sb.length() &lt; 16) &#123;</div><div class="line">			sb.append(&quot;0&quot;);</div><div class="line">		&#125;</div><div class="line">		if (sb.length() &gt; 16) &#123;</div><div class="line">			sb.setLength(16);</div><div class="line">		&#125;</div><div class="line"></div><div class="line"></div><div class="line">		try &#123;</div><div class="line">			data = sb.toString().getBytes(&quot;UTF-8&quot;);</div><div class="line">		&#125; catch (UnsupportedEncodingException e) &#123;</div><div class="line">			e.printStackTrace();</div><div class="line">		&#125;</div><div class="line">		return new IvParameterSpec(data);</div><div class="line">	&#125;</div><div class="line"></div><div class="line"></div><div class="line">	/** 加密字节数据 **/</div><div class="line">	public static byte[] encrypt(byte[] content, String password, String iv) &#123;</div><div class="line">		try &#123;</div><div class="line">			SecretKeySpec key = createKey(password);</div><div class="line">			Cipher cipher = Cipher.getInstance(CipherMode);</div><div class="line">			cipher.init(Cipher.ENCRYPT_MODE, key, createIV(iv));</div><div class="line">			byte[] result = cipher.doFinal(content);</div><div class="line">			return result;</div><div class="line">		&#125; catch (Exception e) &#123;</div><div class="line">			e.printStackTrace();</div><div class="line">		&#125;</div><div class="line">		return null;</div><div class="line">	&#125;</div><div class="line"></div><div class="line"></div><div class="line">	/** 加密(结果为16进制字符串) **/</div><div class="line">	public static String encrypt(String content, String password, String iv) &#123;</div><div class="line">		byte[] data = null;</div><div class="line">		try &#123;</div><div class="line">			data = content.getBytes(&quot;UTF-8&quot;);</div><div class="line">		&#125; catch (Exception e) &#123;</div><div class="line">			e.printStackTrace();</div><div class="line">		&#125;</div><div class="line">		data = encrypt(data, password, iv);</div><div class="line">		String result = byte2hex(data);</div><div class="line">		return result;</div><div class="line">	&#125;</div><div class="line"></div><div class="line"></div><div class="line">	/** 解密字节数组 **/</div><div class="line">	public static byte[] decrypt(byte[] content, String password, String iv) &#123;</div><div class="line">		try &#123;</div><div class="line">			SecretKeySpec key = createKey(password);</div><div class="line">			Cipher cipher = Cipher.getInstance(CipherMode);</div><div class="line">			cipher.init(Cipher.DECRYPT_MODE, key, createIV(iv));</div><div class="line">			byte[] result = cipher.doFinal(content);</div><div class="line">			return result;</div><div class="line">		&#125; catch (Exception e) &#123;</div><div class="line">			e.printStackTrace();</div><div class="line">		&#125;</div><div class="line">		return null;</div><div class="line">	&#125;</div><div class="line"></div><div class="line"></div><div class="line">	/** 解密(输出结果为字符串) **/</div><div class="line">	public static String decrypt(String content, String password, String iv) &#123;</div><div class="line">		byte[] data = null;</div><div class="line">		try &#123;</div><div class="line">			data = hex2byte(content);</div><div class="line">		&#125; catch (Exception e) &#123;</div><div class="line">			e.printStackTrace();</div><div class="line">		&#125;</div><div class="line">		data = decrypt(data, password, iv);</div><div class="line">		if (data == null)</div><div class="line">			return null;</div><div class="line">		String result = null;</div><div class="line">		try &#123;</div><div class="line">			result = new String(data, &quot;UTF-8&quot;);</div><div class="line">		&#125; catch (UnsupportedEncodingException e) &#123;</div><div class="line">			e.printStackTrace();</div><div class="line">		&#125;</div><div class="line">		return result;</div><div class="line">	&#125;</div><div class="line"></div><div class="line"></div><div class="line">	/** 字节数组转成16进制字符串 **/</div><div class="line">	public static String byte2hex(byte[] b) &#123; // 一个字节的数，</div><div class="line">		StringBuffer sb = new StringBuffer(b.length * 2);</div><div class="line">		String tmp = &quot;&quot;;</div><div class="line">		for (int n = 0; n &lt; b.length; n++) &#123;</div><div class="line">			// 整数转成十六进制表示</div><div class="line">			tmp = (java.lang.Integer.toHexString(b[n] &amp; 0XFF));</div><div class="line">			if (tmp.length() == 1) &#123;</div><div class="line">				sb.append(&quot;0&quot;);</div><div class="line">			&#125;</div><div class="line">			sb.append(tmp);</div><div class="line">		&#125;</div><div class="line">		return sb.toString().toUpperCase(); // 转成大写</div><div class="line">	&#125;</div><div class="line"></div><div class="line"></div><div class="line">	/** 将hex字符串转换成字节数组 **/</div><div class="line">	private static byte[] hex2byte(String inputString) &#123;</div><div class="line">		if (inputString == null || inputString.length() &lt; 2) &#123;</div><div class="line">			return new byte[0];</div><div class="line">		&#125;</div><div class="line">		inputString = inputString.toLowerCase();</div><div class="line">		int l = inputString.length() / 2;</div><div class="line">		byte[] result = new byte[l];</div><div class="line">		for (int i = 0; i &lt; l; ++i) &#123;</div><div class="line">			String tmp = inputString.substring(2 * i, 2 * i + 2);</div><div class="line">			result[i] = (byte) (Integer.parseInt(tmp, 16) &amp; 0xFF);</div><div class="line">		&#125;</div></pre></td></tr></table></figure></p>
+        <p>1：准备一张图片，比如 a.jpg。准备目标文件，比如a.txt。我们要实现把a.txt隐藏在图片里面。<br>2：把要隐藏的文件 a.txt 用 WinRAR 压缩。生成 a.rar 压缩包<br>3：打开命令行提示符：点击“开始→运行”，输入“cmd”。<br>4：我们假设中两个文件都存放在“ D:”下。输入命令：copy /b D:a.jpg + D:a.rar D:a.jpg<br>5：ok，试试打开生成的图片 a.jpg，没错吧，的的确确是原来的图片。<br>6：怎样打开那个 txt 文件？打开 WinRAR ，点击“文件→打开（快捷键 Ctrl + O ）”，然后选择文件类型为“所有文件”<br>，找到 a.jpg ，选择打开看看，是不是有个 txt 文件？<br>这种方法适用于所有文件,由于很多博客空间还没有支持附件上传的功能,这是上传文件的一个好方法呢!</p>
+<p>命令格式：copy /b 文件1+文件2+……文件N 合并后的文件名<br>命令讲解：使用”+”将多个相同或不同格式的文件合并为一个文件。<br>小提示：<br>1.在尾部隐藏了文本数据的图片文件，在使用了其他文件编辑器并保存后，隐藏的文本数据有可能丢失。<br>2.MP3文件在使用此方法连接后，就可以实现连续播放。<br>3.合成图片/歌曲这样的二进制文件必须使用/b参数（b代表Binaty,二进制），否则将会失败；另一个合并参数是/a(ASCII,文本文件），只能用于纯文本的合并。两参数不能同时使用，二进制方式可以合并文本文件和二进制文件，而文本方式用于纯文本的合并。、<br>4.当进行软盘复制时，可在命令中加入”/v”参数，这样可以减少因操作介质的问题而导致的数据写入失败。</p>
+<p>C:>copy /a 1.txt+rar.txt 3.txt<br>1.txt<br>rar.txt<br>已复制         1 个文件。</p>
+<p>C:>copy /b 1.jpg+1.txt 3.jpg<br>1.jpg<br>1.txt<br>已复制         1 个文件。</p>
+<p>copy /?<br>将一份或多份文件复制到另一个位置。</p>
+<p>COPY [/D] [/V] [/N] [/Y | /-Y] [/Z] [/A | /B ] source [/A | /B]<br>     [+ source [/A | /B] [+ …]] [destination [/A | /B]]</p>
+<p>  source       指定要复制的文件。<br>  /A           表示一个 ASCII 文本文件。<br>  /B           表示一个二进位文件。<br>  /D           允许解密要创建的目标文件<br>  destination  为新文件指定目录和/或文件名。<br>  /V           验证新文件写入是否正确。<br>  /N           复制带有非 8dot3 名称的文件时，<br>               尽可能使用短文件名。<br>  /Y           不使用确认是否要改写现有目标文件<br>               的提示。<br>  /-Y          使用确认是否要改写现有目标文件<br>               的提示。<br>  /Z           用可重新启动模式复制已联网的文件。</p>
+<p>命令行开关 /Y 可以在 COPYCMD 环境变量中预先设定。<br>这可能会被命令行上的 /-Y 替代。除非 COPY<br>命令是在一个批文件脚本中执行的，默认值应为<br>在改写时进行提示。</p>
+<p>要附加文件，请为目标指定一个文件，为源指定<br>数个文件(用通配符或 file1+file2+file3 格式)。</p>
+<p>经测试，发现因为txt默认的是ANSI编码，单纯的字符文件，没有文件头，所以合并txt即可看作合并文本！</p>
+<p>因为测试的不多，用txt和doc测试了下，默认使用/a模式。测试中的差别是/a在最后多插入了一个十六进制的“1A”！暂时没发现其他差别！</p>
+<p>而其他编码的txt是编码标记+文字编码的模式，合并的话，如果是相同编码，会正常显示，但是编码标记重复了，不确定其他工具是否正常显示，不一样的编码合并就是以下情况！<br>123???<br>123?<br>123??<br>123? 5 6</p>
+<p>刚才查到con不能做文件名，真的耶！但可以做后缀名！con.txt和con都不行，con1和1.con可以！在ext下也不行，估计只是操作系统原因，不知道linux系统行不！</p>
 
       
 
@@ -1398,15 +1189,7 @@ String decryptedText = URLDecoder.decode(res, &quot;UTF-8&quot;);
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Android</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">IOS</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">PHP</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Windows</a>
         		</li>
       		
 		</ul>
@@ -1418,7 +1201,7 @@ String decryptedText = URLDecoder.decode(res, &quot;UTF-8&quot;);
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/Android和IOS相关/" class="article-tag-list-link color4">Android和IOS相关</a>
+        			<a href="/categories/Windows相关/" class="article-tag-list-link color5">Windows相关</a>
         		</li>
       		
 		</ul>
@@ -1427,7 +1210,87 @@ String decryptedText = URLDecoder.decode(res, &quot;UTF-8&quot;);
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2016/07/02/Android、IOS、PHP之间对称AES加密解密!/">展开全文 >></a>
+          <a class="article-more-a" href="/2016/07/02/任意文件隐藏在一张图片！/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
+    <article id="post-Window-DOS命令删除服务！创建私密文件夹！解决端口占用等等问题！" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/07/02/Window-DOS命令删除服务！创建私密文件夹！解决端口占用等等问题！/">Windows-dos命令删除服务！创建私密文件夹！解决端口占用等等问题！</a>
+    </h1>
+  
+
+        
+        <a href="/2016/07/02/Window-DOS命令删除服务！创建私密文件夹！解决端口占用等等问题！/" class="archive-article-date">
+  	<time datetime="2016-07-01T19:30:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-07-02</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">#查询端口进程ID杀掉。命令：</div><div class="line"></div><div class="line">taskkill  /pid PID  /f </div><div class="line"></div><div class="line">#其中 /f 表示强制关闭该进程</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">#在命令行模式下输入sc查看命令：</div><div class="line">sc</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">CMD 调出服务：services.msc </div><div class="line"></div><div class="line">查看服务</div><div class="line">语法：sc create | delete | config | start | stop | 服务名[参数]（具体百度。。。）</div><div class="line">demo：删除服务-&gt; sc delete mongodb</div><div class="line">net   （start | stop）  mongodb 开启|关闭服务</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">#创建普通方式不能删除的文件夹：</div><div class="line">md E:\001..\</div><div class="line">#进入文件夹：</div><div class="line">start E:\001..\</div><div class="line">#删除文件夹：</div><div class="line">rd：E:\001..\（只能删除空目录！）</div></pre></td></tr></table></figure>
+<p>用sc  create—-创建一个服务（增加到注册表中） 如下:在命令行模式下执行：<br>        sc create TestService binpath= “c:/in estapp.exe” displayname= “TestService” depend= Tcpip start= auto<br>注意这里的格式，“=”后面是必须空一格的，否则会出现错误。<br>    在提示建立成功后，可以直接输入“net start TestService” 来启动服务，或者可以直接在“管理工具”的“服务”中直接启动。<br> C:/Documents and Settings/Administrator&gt;sc create<br>描述:         在注册表和服务<a href="http://lib.csdn.net/base/mysql" target="_blank" rel="external">数据库</a>中创建服务项。<br> 用法:<br>      sc <server> create [service name] [binPath= ] <option1> <option2>…<br>选项: 注意: 选项名称包括等号。<br>type= <own|share|interact|kernel|filesys|rec><br>  (默认 = own) start= <boot|system|auto|demand|disabled><br>     (默认 = demand) error= <normal|severe|critical|ignore><br>  (默认 = normal) binPath= <binarypathname> group= <loadordergroup> tag= <yes|no> depend= &lt;依存关系(以 / (斜杠) 分隔)&gt; obj= <accountname|objectname><br> (默认 = LocalSystem) DisplayName= &lt;显示名称&gt; password= &lt;密码&gt;</accountname|objectname></yes|no></loadordergroup></binarypathname></normal|severe|critical|ignore></boot|system|auto|demand|disabled></own|share|interact|kernel|filesys|rec></option2></option1></server></p>
+<p> 用管理员身份打开了一个命令行程序，输入 sc 加上参数就可以了，使用办法很简单： 　<br>sc delete “服务名”(如果服务名中间有空格，就需要前后加引号) 　　 </p>
+<p>　　如针对上面的： sc delete KSD2Service　　 </p>
+<p>　　sc 命令的详解，参看本文下方，Windows7之家/Vista之家已经帮您整理。　　 </p>
+<p>　　方法二：直接进行注册表编辑(不推荐) 　　 </p>
+<p>　　打开注册表编辑器，找到下面的键值： 　　 </p>
+<p>　　HKEY_LOCAL_MACHINE/SYSTEM/CurrentControlSet/Services一般服务会以相同的名字在这里显示一个主健，直接删除相关的键值便可。<br>四、特殊情况 　　<br>　　1、如果服务显示的是rundll32.exe，并且这个文件是位于system32目录下，那么就不能删除这个rundll32.exe文件，它是Windows系统的文件。这时只要清除相关的服务就可以了。 　　<br>　　2、如果一个服务删除了马上又自动建立了，说明后台有进程在监视、保护。需要先在进程管理器中杀掉相应的进程，或者启动后按F8，到Win7/Vista安全模式下删除。 　　<br>　　////// 附录：SC 命令行程序 参数详解 ///////　　<br>　　描述:<br>　　 SC 是用于与服务控制管理器和服务进行通信的命令行程序。<br>　　用法:<br>　　 sc [command] [service name] …　　<br>　　 选项 的格式为 “\ServerName”<br>　　 键入 “sc [command]” 可以获得有关命令的进一步帮助<br>　　 命令:<br>　　 query———–查询服务的状态，<br>　　 或枚举服务类型的状态。<br>　　 queryex———查询服务的扩展状态，<br>　　 或枚举服务类型的状态。<br>　　 start———–启动服务。<br>　　 pause———–向服务发送 PAUSE 控制请求。<br>　　 interrogate—–向服务发送 INTERROGATE 控制请求。<br>　　 continue——–向服务发送 CONTINUE 控制请求。<br>　　 stop————向服务发送 STOP 请求。<br>　　 config———-更改服务的配置(永久)。<br>　　 description—–更改服务的描述。<br>　　 failure———更改服务失败时执行的操作。<br>　　 failureflag—–更改服务的失败操作标志。<br>　　 sidtype———更改服务的服务 SID 类型。<br>　　 privs———–更改服务的所需权限。<br>　　 qc————–查询服务的配置信息。<br>　　 qdescription—-查询服务的描述。<br>　　 qfailure——–查询失败时服务执行的操作。<br>　　 qfailureflag—-查询服务的失败操作标志。<br>　　 qsidtype——–查询服务的服务 SID 类型。<br>　　 qprivs———-查询服务的所需权限。<br>　　 qtriggerinfo—-查询服务的触发器参数。<br>　　 qpreferrednode–查询首选的服务 NUMA 节点。<br>　　 delete———-(从注册表)删除服务。<br>　　 create———-创建服务(将其添加到注册表)。<br>　　 control———向服务发送控制。<br>　　 sdshow———-显示服务的安全描述符。<br>　　 sdset———–设置服务的安全描述符。<br>　　 showsid———显示相应于假定名称的 SID 字符串。<br>　　 triggerinfo—–配置服务的触发器参数。<br>　　 preferrednode—设置首选的服务 NUMA 节点。<br>　　 GetDisplayName–获取服务的 DisplayName<br>　　 GetKeyName——获取服务的 ServiceKeyName。<br>　　 EnumDepend——枚举服务的依存关系。　　<br>　　 下列命令不要求服务名称:<br>　　 sc<br>　　 boot————(ok 　 bad) 指示是否将上一次启动保存为<br>　　 最近一次已知的正确启动配置<br>　　 Lock————锁定服务数据库<br>　　 QueryLock——-查询 SCManager 数据库的 LockStatus<br>　　示例:<br>　　 sc start MyService　　<br>　　QUERY 和 QUERYEX 选项:<br>　　 如果查询命令带服务名称，将返回<br>　　 该服务的状态。其他选项不适合这种<br>　　 情况。如果查询命令不带参数或<br>　　 带下列选项之一，将枚举此服务。<br>　　 type= 要枚举的服务的类型(driver, service, all)<br>　　 默认 = service)<br>　　 state= 要枚举的服务的状态 (inactive, all)<br>　　 (默认 = active)<br>　　 bufsize= 枚举缓冲区的大小(以字节计)<br>　　 (默认 = 4096)<br>　　 ri= 开始枚举的恢复索引号<br>　　 (默认 = 0)<br>　　 group= 要枚举的服务组<br>　　 (默认 = all groups)　　<br>　　语法示例<br>　　sc query - 枚举活动服务和驱动程序的状态<br>　　sc query eventlog - 显示 eventlog 服务的状态<br>　　sc queryex eventlog - 显示 eventlog 服务的扩展状态<br>　　sc query type= driver - 仅枚举活动驱动程序<br>　　sc query type= service - 仅枚举 Win32 服务<br>　　sc query state= all - 枚举所有服务和驱动程序<br>　　sc query bufsize= 50 - 枚举缓冲区为 50 字节<br>　　sc query ri= 14 - 枚举时恢复索引 = 14<br>　　sc queryex group= “” - 枚举不在组内的活动服务<br>　　sc query type= interact - 枚举所有不活动服务<br>　　sc query type= driver group= NDIS - 枚举所有 NDIS 驱动程序<br>```</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Windows</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/Windows相关/" class="article-tag-list-link color5">Windows相关</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2016/07/02/Window-DOS命令删除服务！创建私密文件夹！解决端口占用等等问题！/">展开全文 >></a>
         </p>
       
 
@@ -1549,10 +1412,6 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">生活</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Android</a>
               </li>
              
@@ -1658,6 +1517,10 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">JQUERY</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">生活</a>
               </li>
              
               <li class="article-tag-list-item">

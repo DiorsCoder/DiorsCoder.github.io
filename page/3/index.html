@@ -539,6 +539,173 @@ body {
 
 
   
+    <article id="post-PHP操作MongoDB笔记！" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/08/16/PHP操作MongoDB笔记！/">php操作MongoDB笔记！</a>
+    </h1>
+  
+
+        
+        <a href="/2016/08/16/PHP操作MongoDB笔记！/" class="archive-article-date">
+  	<time datetime="2016-08-15T19:30:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-08-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div><div class="line">159</div><div class="line">160</div><div class="line">161</div><div class="line">162</div><div class="line">163</div><div class="line">164</div><div class="line">165</div><div class="line">166</div><div class="line">167</div><div class="line">168</div><div class="line">169</div><div class="line">170</div><div class="line">171</div><div class="line">172</div><div class="line">173</div><div class="line">174</div><div class="line">175</div><div class="line">176</div><div class="line">177</div><div class="line">178</div><div class="line">179</div><div class="line">180</div><div class="line">181</div><div class="line">182</div><div class="line">183</div><div class="line">184</div><div class="line">185</div><div class="line">186</div><div class="line">187</div><div class="line">188</div><div class="line">189</div><div class="line">190</div><div class="line">191</div><div class="line">192</div></pre></td><td class="code"><pre><div class="line">//连接mongodb数据库</div><div class="line">$conn = new MongoClient();</div><div class="line"></div><div class="line">//选择数据库和文档集合</div><div class="line">$db  = $conn-&gt;mydb;  #选择mydb数据库 </div><div class="line">$db  = $conn-&gt;selectDB(“mydb”); #选择mydb数据库 第二种写法</div><div class="line"></div><div class="line">$collection = $db-&gt;test; #选择集合(选择’表’)</div><div class="line">$db-&gt;selectCollection(‘column’); #选择集合(选择’表’)第二种写法</div><div class="line"></div><div class="line">$collection = $conn-&gt;local-&gt;User;#更简洁的写法，一步到位</div><div class="line"></div><div class="line">#插入一条记录</div><div class="line">$res = $collection-&gt;insert(array(&quot;id&quot;=&gt;1,&quot;username&quot;=&gt;&quot;admin&quot;,&quot;age&quot;=&gt;18,&quot;email&quot;=&gt;&quot;admin@qq.com&quot;));</div><div class="line">#根据条件更新数据</div><div class="line">$res = $collection-&gt;update(array(&quot;username&quot;=&gt;&quot;admin&quot;),array(&quot;$set&quot;=&gt;array(&quot;age&quot;=&gt;25)));</div><div class="line">#根据条件删除数据</div><div class="line">$res = $collection-&gt;remove(array(&quot;username&quot;=&gt;&quot;test&quot;));</div><div class="line">#查询一条记录</div><div class="line">$res = $collection-&gt;findOne(array(&quot;username&quot;=&gt;&quot;admin&quot;));</div><div class="line">#查询 </div><div class="line">$res = $collection-&gt;find();</div><div class="line">#根据正则查询符合条件数据</div><div class="line">$res = $collection-&gt;find(array(&quot;username&quot;=&gt;new MongoRegex(&quot;/admin/i&quot;)));</div><div class="line">//db.User.find(&#123;&quot;username&quot;:/admin/i&#125;) #原生态模糊查询（/XXX/i 正则忽略大小写）</div><div class="line"></div><div class="line">#统计数量</div><div class="line">$res = $collection-&gt;count();</div><div class="line">#带条件的统计</div><div class="line">$res = $collection-&gt;count(array(&quot;username&quot;=&gt;new MongoRegex(&quot;/admin/i&quot;)，&apos;age&apos;=&gt;array(&apos;$gt&apos;=&gt;21,&apos;$lt&apos;=&gt;80)));</div><div class="line">#带条件的统计另一种写法</div><div class="line">$res = $collection-&gt;find(array(&quot;username&quot;=&gt;new MongoRegex(&quot;/admin/i&quot;)，&apos;age&apos;=&gt;array(&apos;$gt&apos;=&gt;21,&apos;$lt&apos;=&gt;80)))-&gt;count();</div><div class="line"> </div><div class="line">#注:$gt为大于、$gte为大于等于、$lt为小于、$lte为小于等于、$ne为不等于、$exists不存在 </div><div class="line"></div><div class="line">#分页取数据</div><div class="line">$count = $collection-&gt;find()-&gt;limit(10)-&gt;skip(10)-&gt;count(true);</div><div class="line">//#获得实际返回的结果数 （count()或count(0)或count(false)返回全部数据，count(1)或count(true)返回分页数据）</div><div class="line"></div><div class="line">//true显示列，false隐藏列   sort排序：-1=desc 1=asc</div><div class="line">$res = $collection-&gt;find(array(&apos;age&apos; =&gt; array(&apos;$gt&apos; =&gt; 23, &apos;$lt&apos; =&gt; 93)))-&gt;fields(array(&quot;age&quot; =&gt; true, &quot;_id&quot; =&gt; false))-&gt;sort(array(&apos;age&apos; =&gt; -1));</div><div class="line"></div><div class="line"></div><div class="line">/** 创建索引</div><div class="line"> $collection-&gt;ensureIndex(array(&apos;age&apos; =&gt; 1,&apos;type&apos;=&gt;-1));                             #1表示降序 -1表示升序</div><div class="line">$collection-&gt;ensureIndex(array(&apos;age&apos; =&gt; 1,&apos;type&apos;=&gt;-1),array(&apos;background&apos;=&gt;true));   #索引的创建放在后台运行(默认是同步运行)</div><div class="line">$collection-&gt;ensureIndex(array(&apos;age&apos; =&gt; 1,&apos;type&apos;=&gt;-1),array(&apos;unique&apos;=&gt;true));       #该索引是唯一的</div><div class="line">*/</div><div class="line"></div><div class="line">******************************************mongodb复制远程数据库和表start******************************************************************</div><div class="line"></div><div class="line">        $con1 = new Mongo(&quot;mongodb://192.168.1.243:7788&quot;); // 连接到服务器</div><div class="line">        $con2 = new Mongo(&quot;mongodb://127.0.0.1:27017&quot;); // 连接到本地</div><div class="line">        $db1 = $con1-&gt;ak_sys;</div><div class="line">        $db2 = $con2-&gt;ak_sys;</div><div class="line">        $res1 = $db1-&gt;feedback-&gt;find();</div><div class="line">       </div><div class="line">        foreach ($res1 as $k =&gt; $v) &#123;</div><div class="line">        //echo&quot;&lt;pre&gt;&quot;;print_R($v); </div><div class="line"></div><div class="line">        $res2 = $db2-&gt;feedback-&gt;insert($v);#简单插入 </div><div class="line">        echo $res2[&apos;ok&apos;]? &apos;success&apos; : &apos;failed&apos;;</div><div class="line">        echo &quot;&lt;br/&gt;&quot;;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">******************************************mongodb复制远程数据库和表end******************************************************************</div><div class="line"></div><div class="line">******************************************where条件可以用js函数方式start******************************************************************</div><div class="line">        $where[&apos;$where&apos;] = &quot;</div><div class="line">            function()&#123;</div><div class="line">            var pos_code = this.pos_code;</div><div class="line">            var count= this.count;</div><div class="line">            if(pos_code ==&apos;d&apos; &amp;&amp; count==0)&#123;</div><div class="line">                return true;</div><div class="line">                &#125;</div><div class="line">            &#125;&quot;;</div><div class="line">        $res = $db2-&gt;feedback-&gt;find($where);</div><div class="line">*******************************************where条件可以用js函数方式end******************************************************************</div><div class="line"></div><div class="line"></div><div class="line">日期转换时间戳，再用mongoDate函数：new MongoDate(strtotime(date(&quot;Y-m-d H:i:s&quot;))); </div><div class="line">demo：</div><div class="line"> $start = new MongoDate(strtotime(date(&quot;2011-02-15 00:00:00&quot;))); </div><div class="line"> $end = new MongoDate(strtotime(date(&quot;2017-12-15 23:59:59&quot;)));  </div><div class="line"></div><div class="line">查询分组统计</div><div class="line">        $where[&apos;$match&apos;] = array(</div><div class="line">            &apos;click_time&apos; =&gt; array(&apos;$gt&apos; =&gt; $start, &apos;$lte&apos; =&gt; $end));</div><div class="line">        //管道效应：group中的click_time是where传过来的</div><div class="line">        $group[&apos;$group&apos;] = array(</div><div class="line">            &apos;_id&apos; =&gt; array(</div><div class="line">                &apos;year&apos; =&gt; array(&apos;$year&apos; =&gt; &apos;$click_time&apos;),</div><div class="line">                &apos;month&apos; =&gt; array(&apos;$month&apos; =&gt; &apos;$click_time&apos;),</div><div class="line">                &apos;day&apos; =&gt; array(&apos;$dayOfMonth&apos; =&gt; &apos;$click_time&apos;)</div><div class="line">            ),</div><div class="line">            &apos;total&apos; =&gt; array(&apos;$sum&apos; =&gt; 1)</div><div class="line">        );</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">        $res = $db2-&gt;test-&gt;aggregate($where, $group);</div><div class="line">        // echo count($res[&apos;result&apos;]);//获取分组后的总数量</div><div class="line">        //  echo&quot;&lt;pre&gt;&quot;;print_R($res);</div><div class="line"> echo $db2-&gt;test-&gt;find(array(&apos;click_time&apos;=&gt;array(&apos;$gte&apos; =&gt; $start, &apos;$lte&apos; =&gt; $end)))-&gt;count();</div><div class="line">        $res = $db2-&gt;test-&gt;find(array(&apos;click_time&apos; =&gt; array(&apos;$gt&apos; =&gt; $start, &apos;$lte&apos; =&gt; $end)));</div><div class="line"></div><div class="line"></div><div class="line">//        foreach ($res[&apos;result&apos;] as $k =&gt; $v) &#123;</div><div class="line">//            $v[&apos;click_time&apos;] = date(&apos;Y-m-d H:i:s&apos;, $v[&apos;click_time&apos;]-&gt;sec);</div><div class="line">//            $v[&apos;create_time&apos;] = date(&apos;Y-m-d H:i:s&apos;, $v[&apos;create_time&apos;]-&gt;sec);</div><div class="line">//            $v[&apos;_id&apos;] = $v[&apos;_id&apos;]-&gt;&#123;&apos;$id&apos;&#125;; //取mongoid字符串</div><div class="line">//            echo&quot;&lt;pre&gt;&quot;;</div><div class="line">//            print_R($v);</div><div class="line">//        &#125;</div><div class="line">where模糊查询分组排序分页</div><div class="line">        $op = array(</div><div class="line">            array(</div><div class="line">                &apos;$match&apos; =&gt; array(</div><div class="line">                    &apos;click_time&apos; =&gt; array(</div><div class="line">                        &apos;$gte&apos; =&gt; $start,</div><div class="line">                        &apos;$lte&apos; =&gt; $end</div><div class="line">                    ),</div><div class="line">                    &apos;pos_code&apos; =&gt; new MongoRegex(&apos;/^dd$/&apos;),//正则匹配pos_code含有dd字符的</div><div class="line">                    &apos;remark&apos; =&gt;&apos;&apos;, //等于空 </div><div class="line">                    &apos;title&apos; =&gt; array(&apos;$ne&apos;=&gt;null),//不等于空</div><div class="line">                )),</div><div class="line">            array(</div><div class="line">                &apos;$group&apos; =&gt; array(</div><div class="line">                    &apos;_id&apos; =&gt; array(</div><div class="line">                        &apos;dev_id&apos; =&gt; &apos;$dev_id&apos;,</div><div class="line">                        &apos;pos_code&apos; =&gt; &apos;$pos_code&apos;,</div><div class="line">                        &apos;status&apos; =&gt; &apos;$status&apos;,</div><div class="line">                        &apos;title&apos;=&gt;&apos;$title&apos;,</div><div class="line">                        &apos;year&apos; =&gt; array(&apos;$year&apos; =&gt; &apos;$click_time&apos;),</div><div class="line">                        &apos;month&apos; =&gt; array(&apos;$month&apos; =&gt; &apos;$click_time&apos;),</div><div class="line">                        &apos;day&apos; =&gt; array(&apos;$dayOfMonth&apos; =&gt; &apos;$click_time&apos;)</div><div class="line">                    )</div><div class="line">                )</div><div class="line">            ),</div><div class="line">             array(&apos;$sort&apos; =&gt; array(&apos;click_time&apos; =&gt; -1)),</div><div class="line">             array(&apos;$skip&apos; =&gt; 0),</div><div class="line">            array(&apos;$limit&apos; =&gt; 100),</div><div class="line">        );</div><div class="line"></div><div class="line">        $res3 = $db2-&gt;test-&gt;aggregate($op);</div><div class="line">        echo&quot;&lt;pre&gt;&quot;;</div><div class="line">        print_R($res3);</div><div class="line">        die;</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">        //$result = $db2-&gt;test-&gt;update(array(&apos;img_url&apos;=&gt;&apos; &apos;),array(&apos;$set&apos;=&gt;array(&quot;pos_code&quot;=&gt;time())));//更新文档</div><div class="line">        // echo $result ? &apos;success&apos; : &apos;failed&apos;;echo &quot;&lt;br&gt;&quot;;</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">原生态mongodb操作方法：</div><div class="line">  MONGODB:数据库(db)-&gt;集合(table)-&gt;文档(row)</div><div class="line"> D:\mongodb\bin&gt;mongod.exe --dbpath &quot;d:\set up\mongodb\data&quot; //设置mongodb数据路径：</div><div class="line"> D:\mongodb\bin&gt;mongo.exe//启动mongodb </div><div class="line"> &gt;use mydb//创建数据库 返回数据库名称</div><div class="line">&gt;db mydb//查看数据库信息</div><div class="line">&gt;show dbs//查看数据库（创建的数据库mydb 列表中是不存在的。要显示的数据库，需要把它插入至少一个文件。）</div><div class="line"> db.movie.insert(&#123;&quot;name&quot;:&quot;tutorials point&quot;&#125;)</div><div class="line"> db.movie.save(&#123;&quot;name&quot;:&quot;tutorials point&quot;&#125;)//保存数据</div><div class="line">  &gt;use mydb</div><div class="line">  &gt;db.dropDatabase()//删除数据库 </div><div class="line">  &gt;use test //创建集合&#123; 当插入一些文件 MongoDB 自动创建的集合。&#125;</div><div class="line">  &gt;db.createCollection(&quot;mycollection&quot;)</div><div class="line">  &gt;show collections//查看创建集合</div><div class="line">  &gt;db.集合名称.drop()//删除集合</div><div class="line">  &gt;db.集合名称.find()//查询集合</div><div class="line">  &gt;db.hello.find().pretty()//格式化返回集合数据</div><div class="line">  &gt;db.hello.find(&#123;key1:value1, key2:value2&#125;).pretty()//根据条件查询  AND</div><div class="line">  &gt;db.hello.find(&#123;$or:[&#123;key1:value1&#125;,&#123;key2:value2&#125;]&#125;).pretty()//根据条件查询  OR</div><div class="line">  &gt;db.hello.find(&quot;age&quot;: &#123;$gt:10&#125;, $or: [&#123;&quot;name&quot;: &quot;li&quot;&#125;, &#123;&quot;title&quot;: &quot;book&quot;&#125;] &#125;).pretty()//AND 和　 OR</div><div class="line"> //where age &gt;10 and(name=li or title =book )</div><div class="line"> //可以使用操作符完成更复杂的操作，常用操作符有：$lt , $lte , $gt , $gte   ( &lt; , &lt;= , &gt; , &gt;= ), $ne ( &lt;&gt; ) ,$in , $nin ,  $or ,  $not,  $mod (取模),  $exists, $where </div><div class="line"> //db.hello.find( &#123;&quot;age&quot; : &#123; “$lt” : 20 &#125; &#125; )</div><div class="line">  &gt;db.COLLECTION_NAME.update(SELECTIOIN_CRITERIA, UPDATED_DATA)//更新文档值(MongoDB默认将只更新单一的文件，来更新多个你需要设置参数置&apos;multi&apos; 为true)</div><div class="line">  &gt;db.hello.update(&#123;&apos;name&apos;:&apos;lis&apos;&#125;,&#123;$set:&#123;&apos;name&apos;:&apos;dragoners.li&apos;,&apos;age&apos;:23&#125;&#125;)</div><div class="line">  &gt;db.hello.remove(&#123;&apos;name&apos;:&apos;abc&apos;&#125;)//删除记录</div><div class="line">  &gt;db.hello.remove(&#123;&apos;name&apos;:&apos;abc&apos;&#125;,1)//删除一条记录</div><div class="line">  &gt;db.hello.remove(&#123;&#125;)//全部删除相当于mysql的truncate</div><div class="line">  &gt;db.hello.find(&#123;&#125;,&#123;&quot;name&quot;:&apos;abc&apos;,_id:0&#125;)//_id：0把_id设置为0.返回。类似mysql的视图。</div><div class="line">  &gt;db.hello.find().limit(3)//类似mysql的limit(0,3)从0开始取3条记录。（参数不写或写0时返回全部）</div><div class="line">  &gt;db.hello.find().limit(3).skip(2)//类似mysql的limit 限制记录条件，skip忽略前N条记录</div><div class="line">   //Sort   :  排序   -1（降序） 1（升序）；</div><div class="line">  //Count: 记录数</div><div class="line"> //getIndexes()  获取索引信息</div><div class="line">// dropIndexes()  : 删除所有索引</div><div class="line">//dropIndex( name )删除某个索引</div></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">PHP</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">MongoDB</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/MongoDB笔记/" class="article-tag-list-link color5">MongoDB笔记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2016/08/16/PHP操作MongoDB笔记！/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
+    <article id="post-Linux-Apache下虚拟主机配置方法！" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/08/16/Linux-Apache下虚拟主机配置方法！/">linux-apache下虚拟主机配置方法！</a>
+    </h1>
+  
+
+        
+        <a href="/2016/08/16/Linux-Apache下虚拟主机配置方法！/" class="archive-article-date">
+  	<time datetime="2016-08-15T19:30:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-08-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>linux apache下虚拟主机配置方法</p>
+<p>假设IP是192.168.1.183，有两个域名指向该IP，分别是21.cc,22.cc,      </p>
+<p> 修改/etc/httpd/conf/httpd.conf，在文件的最后加入：<br>   ServerName 192.168.1.183<br>   NameVirtualHost 192.168.1.183  </p>
+<virtualhost 192.168.1.183=""><br>       ServerName 21.cc<br>       DocumentRoot /var/www/21.cc<br>           <directory "="" var="" www="" 21.cc"=""><br>            Options Indexes FollowSymLinks<br>            AllowOverride None<br>            Order allow,deny<br>            Allow from all<br>           </directory><br> </virtualhost>  
+
+<pre><code>&lt;VirtualHost 192.168.1.183&gt;  
+     ServerName 22.cc
+     DocumentRoot /var/www/22.cc
+     &lt;Directory &quot;/var/www/22.cc&quot;&gt;     
+      Options Indexes FollowSymLinks      
+     AllowOverride None       
+    Order allow,deny         
+  Allow from all       
+&lt;/Directory&gt;   
+</code></pre><p>      </p>
+<p>  然后在/var/www/21.cc和/var/www/22.cc下创建不同的index.php,在浏览器里输入<a href="http://21.cc和http://22.cc即可看到效果了" target="_blank" rel="external">http://21.cc和http://22.cc即可看到效果了</a>   !</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">PHP</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Apache</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/PHP笔记/" class="article-tag-list-link color1">PHP笔记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2016/08/16/Linux-Apache下虚拟主机配置方法！/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
     <article id="post-大并发处理解决方案！" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -663,19 +830,19 @@ body {
 
 
   
-    <article id="post-JS贪吃蛇代码！" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Linux-ubuntu-lamp安装配置环境phpmyadmin-！" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/08/16/JS贪吃蛇代码！/">JS贪吃蛇代码!</a>
+      <a class="article-title" href="/2016/08/16/Linux-ubuntu-lamp安装配置环境phpmyadmin-！/">Linux-ubuntu-lamp安装配置环境phpmyadmin-！</a>
     </h1>
   
 
         
-        <a href="/2016/08/16/JS贪吃蛇代码！/" class="archive-article-date">
+        <a href="/2016/08/16/Linux-ubuntu-lamp安装配置环境phpmyadmin-！/" class="archive-article-date">
   	<time datetime="2016-08-15T19:30:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-08-16</time>
 </a>
         
@@ -683,8 +850,45 @@ body {
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>贪吃蛇图片：</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/2255249-9b48c524e7f66a79.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Paste_Image.png"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div><div class="line">159</div><div class="line">160</div><div class="line">161</div><div class="line">162</div><div class="line">163</div><div class="line">164</div><div class="line">165</div><div class="line">166</div><div class="line">167</div><div class="line">168</div><div class="line">169</div><div class="line">170</div><div class="line">171</div><div class="line">172</div><div class="line">173</div><div class="line">174</div><div class="line">175</div><div class="line">176</div><div class="line">177</div><div class="line">178</div><div class="line">179</div><div class="line">180</div><div class="line">181</div><div class="line">182</div><div class="line">183</div><div class="line">184</div><div class="line">185</div><div class="line">186</div><div class="line">187</div><div class="line">188</div><div class="line">189</div><div class="line">190</div><div class="line">191</div><div class="line">192</div><div class="line">193</div><div class="line">194</div><div class="line">195</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">    &lt;head&gt;</div><div class="line">        &lt;title&gt;新建网页&lt;/title&gt;</div><div class="line">        &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;</div><div class="line">        &lt;meta name=&quot;description&quot; content=&quot;&quot; /&gt;</div><div class="line">        &lt;meta name=&quot;keywords&quot; content=&quot;&quot; /&gt;</div><div class="line"></div><div class="line">        &lt;script type=&quot;text/javascript&quot;&gt;</div><div class="line">        //① 绘制操作界面</div><div class="line">        function Map()&#123;</div><div class="line">            var w = 800;</div><div class="line">            var h = 400;</div><div class="line">            this.showmap = function()&#123;</div><div class="line">                //利用dom技术创建div元素并设置css样式</div><div class="line">                //并把div追加到body里边</div><div class="line">                var mian = document.createElement(&apos;div&apos;);</div><div class="line">                mian.style.width = w+&quot;px&quot;;</div><div class="line">                mian.style.height = h+&quot;px&quot;;</div><div class="line">                //mian.style.backgroundColor = &quot;pink&quot;;</div><div class="line">                //背景方块图片</div><div class="line">                mian.style.backgroundImage = &quot;url(12.jpg)&quot;;</div><div class="line">                document.body.appendChild(mian);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        //② 绘制食物</div><div class="line">        function Food()&#123;</div><div class="line">            var len = 20; //食物边长</div><div class="line"></div><div class="line">            //声明食物权值坐标为公开的成员</div><div class="line">            this.xFood = 0;</div><div class="line">            this.yFood = 0;</div><div class="line"></div><div class="line">            this.pian = null; //用于保存食物的成员对象</div><div class="line"></div><div class="line">            this.showfood = function()&#123;</div><div class="line">                if(this.pian===null)&#123;</div><div class="line">                    //利用dom创建一个div，绘制绿色的css背景颜色</div><div class="line">                    //宽度和高度都是20</div><div class="line">                    //最后div被追加给body</div><div class="line">                    this.pian = document.createElement(&apos;div&apos;);</div><div class="line">                    this.pian.style.width = this.pian.style.height = len+&quot;px&quot;;</div><div class="line">                    this.pian.style.backgroundColor = &quot;green&quot;;</div><div class="line">                    //给div设置绝对定位</div><div class="line">                    this.pian.style.position = &quot;absolute&quot;;</div><div class="line">                        </div><div class="line">                    document.body.appendChild(this.pian);</div><div class="line">                &#125;</div><div class="line"></div><div class="line">                //食物摆放有“步进值20”防止放到线上</div><div class="line">                //食物在地图的位置是变的，原因是其有“权值”</div><div class="line">                //x轴权值的范围：0-39(Math.floor(Math.random()*40))</div><div class="line">                //y轴权值的范围：0-19(Math.floor(Math.random()*20))</div><div class="line"></div><div class="line">                //left和top对决定定位元素进行位置设定的两个样式</div><div class="line">                //食物坐标=步进值 * 权值;</div><div class="line">                this.xFood = Math.floor(Math.random()*40);</div><div class="line">                this.yFood = Math.floor(Math.random()*20);</div><div class="line">                this.pian.style.left = this.xFood*len+&quot;px&quot;;</div><div class="line">                this.pian.style.top  = this.yFood*len+&quot;px&quot;;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        //③ 绘制小蛇</div><div class="line">        function Snake()&#123;</div><div class="line">            var len = 20; //每个蛇节的边长</div><div class="line"></div><div class="line">            //蛇节：[x坐标，y坐标，颜色，div元素节点对象]</div><div class="line">            this.snakebody = [[0,1,&apos;green&apos;,null],[1,1,&apos;green&apos;,null],[2,1,&apos;green&apos;,null],[3,1,&apos;red&apos;,null]];</div><div class="line">            </div><div class="line">            //蛇头默认移动方向(右)</div><div class="line">            this.redirect = &quot;right&quot;;</div><div class="line"></div><div class="line">            //绘制</div><div class="line">            this.showsnake = function()&#123;</div><div class="line">                //遍历每个蛇节并进行具体设置</div><div class="line">                for(var i=0; i&lt;this.snakebody.length; i++)&#123;</div><div class="line">                    //创建每个蛇节div之前先判断，不要重复创建</div><div class="line">                    if(this.snakebody[i][3]===null)&#123;</div><div class="line">                        this.snakebody[i][3] = document.createElement(&apos;div&apos;);</div><div class="line">                        this.snakebody[i][3].style.height = this.snakebody[i][3].style.width = len+&quot;px&quot;;</div><div class="line">                        this.snakebody[i][3].style.backgroundColor = this.snakebody[i][2];</div><div class="line">                        //绝对定位</div><div class="line">                        this.snakebody[i][3].style.position = &quot;absolute&quot;;</div><div class="line">                        </div><div class="line">                        document.body.appendChild(this.snakebody[i][3]);</div><div class="line">                    &#125;</div><div class="line"></div><div class="line">                    //设置坐标=权值坐标 * 步进值;</div><div class="line">                    this.snakebody[i][3].style.left = this.snakebody[i][0] * len+&quot;px&quot;;</div><div class="line">                    this.snakebody[i][3].style.top = this.snakebody[i][1] * len+&quot;px&quot;;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line"></div><div class="line">            //移动小蛇</div><div class="line">            this.movesnake = function()&#123;</div><div class="line">                //当前蛇节新坐标 等于下个蛇节的 旧坐标</div><div class="line">                for(var i=0; i&lt;this.snakebody.length-1; i++)&#123;</div><div class="line">                    this.snakebody[i][0] = this.snakebody[i+1][0];</div><div class="line">                    this.snakebody[i][1] = this.snakebody[i+1][1];</div><div class="line">                &#125;</div><div class="line">                //蛇头移动</div><div class="line">                if(this.redirect == &apos;right&apos;)</div><div class="line">                    this.snakebody[this.snakebody.length-1][0]++; //x轴坐标++</div><div class="line">                else if (this.redirect == &apos;left&apos;)</div><div class="line">                    this.snakebody[this.snakebody.length-1][0]--; //x轴坐标--</div><div class="line">                else if (this.redirect == &apos;top&apos;)</div><div class="line">                    this.snakebody[this.snakebody.length-1][1]--; //y轴坐标--</div><div class="line">                else if (this.redirect == &apos;down&apos;)</div><div class="line">                    this.snakebody[this.snakebody.length-1][1]++; //y轴坐标++</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">                //蛇头碰到食物（蛇头坐标 与 食物坐标 对比）</div><div class="line">                var xSnake = this.snakebody[this.snakebody.length-1][0];</div><div class="line">                var ySnake = this.snakebody[this.snakebody.length-1][1];</div><div class="line">                //food.xFood  food.yFood分别是食物的x/y轴坐标</div><div class="line">                if(xSnake==food.xFood &amp;&amp; ySnake==food.yFood)&#123;</div><div class="line">                    //增加蛇节</div><div class="line">                    //增加新蛇节，该蛇节的坐标等于&quot;蛇尾巴节&quot;旧的坐标</div><div class="line">                    var newjie = [this.snakebody[0][0],this.snakebody[0][1],&apos;green&apos;,null];</div><div class="line">                    this.snakebody.unshift(newjie);</div><div class="line"></div><div class="line">                    //生成一个新食物</div><div class="line">                    food.showfood();</div><div class="line">                &#125;</div><div class="line"></div><div class="line">                //规定小蛇在地图范围移动</div><div class="line">                if(xSnake&gt;39 || xSnake&lt;0 || ySnake&gt;19 || ySnake&lt;0)&#123;</div><div class="line">                    alert(&apos;game over&apos;);</div><div class="line">                    clearInterval(mytime);</div><div class="line">                    return false;</div><div class="line">                &#125;</div><div class="line">                //蛇头吃到自己的判断</div><div class="line">                for(var k=0; k&lt;this.snakebody.length-1; k++)&#123;</div><div class="line">                    //蛇头坐标 是否 等于任何一个蛇节的坐标</div><div class="line">                    if(xSnake==this.snakebody[k][0] &amp;&amp; ySnake==this.snakebody[k][1])&#123;</div><div class="line">                        alert(&apos;kill you by yourself game over!&apos;);</div><div class="line">                        clearInterval(mytime);</div><div class="line">                        return false;</div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line"></div><div class="line">                //根据新坐标重新绘制小蛇</div><div class="line">                this.showsnake();</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        window.onload = function()&#123;</div><div class="line">            //操作界面</div><div class="line">            var map = new Map();</div><div class="line">            map.showmap();</div><div class="line"></div><div class="line">            //绘制食物</div><div class="line">            food = new Food();</div><div class="line">            food.showfood();</div><div class="line"></div><div class="line">            //绘制小蛇</div><div class="line">            snake = new Snake();</div><div class="line">            snake.showsnake();</div><div class="line"></div><div class="line">            //移动小蛇,并且不要停止</div><div class="line">            mytime = setInterval(&quot;snake.movesnake()&quot;,200);</div><div class="line">            //snake.movesnake();</div><div class="line"></div><div class="line">            //给body设置键盘事件，通过&quot;事件对象&quot;感知被触发的键子信息</div><div class="line">            document.onkeyup = function(evt)&#123;</div><div class="line">                var num = evt.keyCode;</div><div class="line">                switch(num)&#123;</div><div class="line">                    case 37:</div><div class="line">                        snake.redirect = &quot;left&quot;;</div><div class="line">                        break;</div><div class="line">                    case 38:</div><div class="line">                        snake.redirect = &quot;top&quot;;</div><div class="line">                        break;</div><div class="line">                    case 39:</div><div class="line">                        snake.redirect = &quot;right&quot;;</div><div class="line">                        break;</div><div class="line">                    case 40:</div><div class="line">                        snake.redirect = &quot;down&quot;;</div><div class="line">                        break;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        &lt;/script&gt;</div><div class="line"></div><div class="line">        &lt;style type=&quot;text/css&quot;&gt;</div><div class="line">        body&#123;margin:0;&#125;</div><div class="line">        &lt;/style&gt;</div><div class="line">    &lt;/head&gt;</div><div class="line">    &lt;body&gt;</div><div class="line">    &lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure></p>
+        <p>PHP开发和服务器运行环境首选LAMP组合，即Linux+Apache+Mysql+Php/Perl/Python，能最优化服务器性能。如何在本地电脑Ubuntu 中安装和配置LAMP环境搭建？Ubuntu9.10本身就是基于Linux内核，所以Linux是现成的了。使用Ubuntu LAMP Server软件包可以很简单地实现Linux下Apache，Mysql和Php的统一安装和配置，也不再需要一个一个来安装配置了。</p>
+<p>Ubuntu环境下如何安装LAMP组件？</p>
+<p>使用Ubuntu界面管理器：<br>系统-&gt;系统管理-&gt;新立得软件包管理器-&gt;编辑-&gt;使用任务标记分组软件包-&gt;LAMP Server(勾选)-&gt;确定-&gt;返回到上一个窗口点击应用(或System-&gt;Administration-&gt;Synaptic Package Manager-&gt;Edit-&gt;Mark packages by Task-&gt;LAMP Server-&gt;OK)。然后系统会自动下载安装lamp环境软件包，几分钟就下载搞定。安装过程中会要求设置Mysql root帐号的密码，设置好了记住。另外当Ubuntu系统升级时lamp环境组件也会同时更新到最新版本。</p>
+<p>安装完毕测试：打开Firefox浏览器在地址栏输入127.0.0.1，显示It works!表明Apache服务器已经开始工作了，LAMP安装也就这样完成了。<br><img src="http://upload-images.jianshu.io/upload_images/2255249-ce5928572e76f03b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>ubuntu LAMP 安装 环境配置<br>Linux ubuntu LAMP 安装配置环境-It Works</p>
+<p>当然不使用Gnome，使用终端命令也很简单：<br>直接一条命令：apt-get install apache2 mysql-server mysql-client php5 php5-gd php5-mysql</p>
+<p>设置Ubuntu文件执行读写权限</p>
+<p>LAMP组建安装好之后，PHP网络服务器根目录默认设置是在：/var/www。由于Linux系统的安全性原则，改 目录下的文件读写权限是只允许root用户操作的，所以我们不能在www文件夹中新建php文件，也不能修改和删除，必须要先修改/var/www目录的读写权限。在界面管理器中通过右键属性不能修改文件权限，得执行root终端命令：sudo chmod 777 /var/www。然后就可以写入html或php文件了。如果对777表示的文件权限不是很清楚，可以到这篇文章中看看：文件权限666是什么意思。</p>
+<p>如何安装phpmyadmin-Mysql 数据库管理</p>
+<p>使用界面管理器：<br>系统-&gt;系统管理-&gt;新立得软件包管理器-&gt;搜索 phpmyadmin-&gt;右键标记安装。<br>或直接使用一条命令：sudo apt-get install phpmyadmin 安装开始。</p>
+<p>phpmyadmin设置：<br>在安装过程中会要求选择Web server：apache2或lighttpd，选择apache2，按tab键然后确定。然后会要求输入设置的Mysql数据库密码连接密码 Password of the database’s administrative user。<br>然后将phpmyadmin与apache2建立连接，以我的为例：www目录在/var/www，phpmyadmin在/usr/share/phpmyadmin目录，所以就用命令：sudo ln -s /usr/share/phpmyadmin /var/www 建立连接。</p>
+<p>phpmyadmin测试：在浏览器地址栏中打开<a href="http://localhost/phpmyadmin。" target="_blank" rel="external">http://localhost/phpmyadmin。</a></p>
+<p>Ubuntu LAMP 如何配置Apache</p>
+<ol>
+<li>启用 mod_rewrite 模块<br>终端命令：sudo a2enmod rewrite<br>重启Apache服务器：sudo /etc/init.d/apache2 restart</li>
+</ol>
+<p>Apache重启后我们可以测试一下，在/var/www目录下新建文件test.php，写入代码：  &lt;?php phpinfo(); ?&gt; 保存，在地址栏输入<a href="http://127.0.0.1/test.php" target="_blank" rel="external">http://127.0.0.1/test.php</a> ;或 <a href="http://localhost/test.php" target="_blank" rel="external">http://localhost/test.php</a> ，如果正确出现了php 配置信息则表明LAMP Apache已经正常工作了(记得重启Apache服务器后再测试)。</p>
+<p>2.设置Apache支持.htm .html .php<br>sudo gedit /etc/apache2/apache2.conf<br>或sudo gedit /etc/apache2/mods-enabled/php5.conf<br>在打开的文件中加上<br>AddType application/x-httpd-php .php .htm .html 即可。</p>
+<p>LAMP配置之Mysql测试</p>
+<p>上面php,Apache 都已经测试过了，下面我们再测试一下Mysql 数据库是否已经正确启用。</p>
+<p>在/var/www目录下新建 mysql_test.php：<br>&lt;?php$link = mysql_connect(“localhost”,”root”,”020511”);if (!$link){die(‘Could not connect: ‘ . mysql_error());}else echo “Mysql已经正确配置”;mysql_close($link);?&gt;<br>保存退出，在地址栏输入<a href="http://127.0.0.1/mysql_test.php，显示”Mysql" target="_blank" rel="external">http://127.0.0.1/mysql_test.php，显示”Mysql</a> 已经正确配置”则表示OK了，如果不行，重启Apache服务器后再试一下。</p>
+<p>解决Firefox浏览器显示中文乱码等问题</p>
+<p>上面在FireFox浏览器中打开mysql_test.php或phpmyadmin测试时，如果出现了中文乱码，则是默认语言设置问题，解决方法如下：</p>
+<p>打开apache配置文件： udo gedit /etc/apache2/apache2.conf，在最后面加上：AddDefaultCharset UTF-8，如果还是乱码的，再将UTF-8改用gb2312。<br>重启Apache：sudo /etc/init.d/apache2 restart  再刷新mysql_test.php 中文乱码没有了。</p>
+<p>如果要人工启动mysql：mysql -u root -p，根据提示输入密码。<br>如果重启Apache时出现：</p>
+<ul>
+<li>Restarting web server apache2<br>apache2: Could not reliably determine the server’s fully qualified domain name, using 127.0.1.1 for ServerName<br>apache2: Could not reliably determine the server’s fully qualified domain name, using 127.0.1.1 for ServerName</li>
+</ul>
+<p>则还是修改apache配置文件：sudo gedit /etc/apache2/apache2.conf，在文件最后设置：ServerName 127.0.0.1</p>
+<p>LAMP组件经常使用的几个终端命令</p>
+<p>重启 apache：sudo /etc/init.d/apache2 restart</p>
+<p>重启mysql：sudo /etc/init.d/mysql restart</p>
+<p>配置 php.ini：sudo gedit /etc/php5/apache2/php.ini</p>
+<p>配置 apache2.conf：sudo gedit /etc/apache2/apache2.conf</p>
+<p>配置 my.cnf：sudo gedit /etc/mysql/my.cnf</p>
+<p>PHP CGI ：sudo /var/www/cgi-bin/</p>
+<p>Ubuntu PHP 编辑器</p>
+<p>最后LAMP配置就完成了，在Ubuntu下进行简单的php代码编辑，用Gedit就可以了。Gedit支持HTML，PHP，Javascsript等近几十种语言的代码高亮功能。如果是PHP项目开发，建议使用PHP IDE编辑器，比如Zend Studio，Eclipse。据说文本编辑VIM也很不错。</p>
+<p>PS：如果是Windows XP 下要搭建LAMP 环境，建议大家试试xampp快速安装配置法，使用也很方便快捷，点击前面的超级链接或Google一下就知道怎么用了。</p>
 
       
 
@@ -702,7 +906,11 @@ body {
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Ubuntu</a>
         		</li>
       		
 		</ul>
@@ -723,7 +931,314 @@ body {
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2016/08/16/JS贪吃蛇代码！/">展开全文 >></a>
+          <a class="article-more-a" href="/2016/08/16/Linux-ubuntu-lamp安装配置环境phpmyadmin-！/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
+    <article id="post-Redis-5种数据类型学习笔记！-" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/08/16/Redis-5种数据类型学习笔记！-/">Redis-5种数据类型学习笔记！-</a>
+    </h1>
+  
+
+        
+        <a href="/2016/08/16/Redis-5种数据类型学习笔记！-/" class="archive-article-date">
+  	<time datetime="2016-08-15T19:30:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-08-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"> redis 有5种数据格式！</div><div class="line">redis有16个数据库(0-15)!</div><div class="line">切换数据库：select 15(切换第15个数据库) </div><div class="line">清空数据库：flushall </div><div class="line">set  key : 1 values     (   :  表示作用域 )</div><div class="line">//输入ping 返回 pong</div></pre></td></tr></table></figure>
+<p>1.string类型：<br>个人理解：就是简单的key-&gt;value<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div></pre></td><td class="code"><pre><div class="line"> </div><div class="line"></div><div class="line">SET key value </div><div class="line">设置指定 key 的值 </div><div class="line"></div><div class="line">  set name lucy   //ok</div><div class="line"></div><div class="line">GET key</div><div class="line">获取指定 key 的值 </div><div class="line"></div><div class="line">get name    //lucy</div><div class="line"> </div><div class="line">GETRANGE key start end</div><div class="line">返回 key 中字符串值的子字符  </div><div class="line"></div><div class="line">getrange name 0 2 //luc</div><div class="line"></div><div class="line">GETSET key value</div><div class="line">//获取 key 的旧值返回，设置key 的新值 value</div><div class="line"> //key 若不存在返回nil</div><div class="line"></div><div class="line">set name lucy   //ok</div><div class="line">getset name lily  //lucy</div><div class="line"></div><div class="line"></div><div class="line">  </div><div class="line">MSET key1 val1 key2 val 2 ...</div><div class="line">同时设置一个或多个 key-value 对。</div><div class="line"></div><div class="line">mset  name  lucy age 18 class 3 //ok</div><div class="line"></div><div class="line">MGET key1 [key2..]</div><div class="line">获取所有(一个或多个)给定 key 的值。</div><div class="line"></div><div class="line"> mget name age class //lucy 18 3</div><div class="line"> </div><div class="line">SETEX key seconds value</div><div class="line"> 为 key 赋值 value ，并设置过期时间（以秒为单位）</div><div class="line"></div><div class="line">PSETEX key milliseconds value</div><div class="line">这个命令和 SETEX 命令相似，但它以毫秒为单位设置 key 的生存时间 </div><div class="line"></div><div class="line"> setex  name  60 lucy </div><div class="line">//为name 赋值lucy，过期时间60s，</div><div class="line">//可以用ttl name 查看剩余过期时间</div><div class="line">psetex name 600 lucy</div><div class="line"></div><div class="line">SETNX key value</div><div class="line">只有在 key 不存在时设置 key 的值。</div><div class="line"></div><div class="line"> set name lucy </div><div class="line">setnx name lily //（integer) 0 失败</div><div class="line">set names lily  //（integer) 1 成功</div><div class="line"> </div><div class="line">STRLEN key</div><div class="line">返回 key 所储存的字符串值的长度。</div><div class="line">strlen name   //(integer) 4</div><div class="line"></div><div class="line">SUBSTR key start end</div><div class="line">截取 key 从 start 开始 截取 到 end</div><div class="line">substr name 0 1 // lu </div><div class="line"> </div><div class="line"> </div><div class="line"></div><div class="line">MSETNX key value [key value ...]</div><div class="line">同时设置一个或多个 key-value 对，当且仅当所有给定 key 都不存在。</div><div class="line"></div><div class="line">msetnx  key1 val1 key2 val2 </div><div class="line"> </div><div class="line"></div><div class="line"> </div><div class="line">INCR key</div><div class="line">将 key 中储存的数字值增一 </div><div class="line"></div><div class="line">set n 10 </div><div class="line">incr n  //11</div><div class="line"> </div><div class="line">INCRBY key increment</div><div class="line">将 key 所储存的值加上给定的增量值（increment） </div><div class="line"></div><div class="line">set n 10</div><div class="line">incrby n 2 //12</div><div class="line"> </div><div class="line"> </div><div class="line">DECR key</div><div class="line">将 key 中储存的数字值减一。</div><div class="line"></div><div class="line"> set n 10</div><div class="line">decr n  // 9</div><div class="line"></div><div class="line">DECRBY key decrement</div><div class="line">key 所储存的值减去给定的减量值（decrement） 。</div><div class="line"></div><div class="line"> set n 10</div><div class="line">decrby n 2  //8</div><div class="line"></div><div class="line">APPEND key value</div><div class="line">APPEND 命令将 value 追加到字符串 key 原值末尾</div><div class="line">append name hello  //name 不存在返回  hello</div><div class="line">set  name lucy </div><div class="line">append name hello // lucyhello</div><div class="line"></div><div class="line"></div><div class="line"> del key  </div><div class="line">删除key   //del 成功 (integer) 1 ，失败(integer) 0</div><div class="line">del name   </div><div class="line"></div><div class="line"></div><div class="line">符合给定模式的 key 列表 (Array) </div><div class="line"> keys  abc*  //获取 以abc 开头的 key</div><div class="line">keys *abc  //获取 以abc 结尾的 key</div><div class="line">keys *  //获取该数据库所有 key </div><div class="line">//如果为空 返回(empy list or set)</div><div class="line"></div><div class="line">判断key 是否存在</div><div class="line">exists  key  // 成功 (integer) 1 ，失败(integer) 0</div><div class="line">exists name</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">判断key 类型</div><div class="line">type key  // 返回 类型</div><div class="line">type name</div><div class="line"></div><div class="line">修改 key 名称</div><div class="line">rename key  k   //成功返回ok</div><div class="line">rename name  title</div><div class="line"></div><div class="line"></div><div class="line">randomkey</div><div class="line">随机返回一个key</div><div class="line">randomkey </div><div class="line"></div><div class="line"></div><div class="line">创建一个 key 并赋值：set key  val</div><div class="line">为 key 设置过期时间：expire key 60(秒)  </div><div class="line">查看剩余过期时间：ttl  key   </div><div class="line">过期后 再 get key  则 返回 (nil)</div></pre></td></tr></table></figure></p>
+<p>2.list类型：<br>个人理解：一个双向队列，要么头进尾出，要么尾进头出。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">lpush   list   string</div><div class="line">//在list 头部压入字符串元素</div><div class="line"></div><div class="line">rpush list string</div><div class="line">//在list 尾部压入字符串元素 </div><div class="line">// 当 key 存在但不是列表类型时，返回一个错误。</div><div class="line"></div><div class="line">llen  list </div><div class="line">// 返回 list 长度，不存在返回0</div><div class="line"></div><div class="line">lrange  list start end</div><div class="line">//返回列表中指定区间内的元素，区间以偏移量 START 和 END 指定。 </div><div class="line">//其中 0 表示列表的第一个元素， 1 表示列表的第二个元素，以此类推。 </div><div class="line">//你也可以使用负数下标，以 -1 表示列表的最后一个元素， -2 表示列表的倒数第二个元素，以此类推。</div><div class="line">lrange list 0 -1  //取list全部</div><div class="line"></div><div class="line">lrem list count  string</div><div class="line">//从list 头部开始 删除 count 个 string</div><div class="line"></div><div class="line">lpop list </div><div class="line">//弹出最头部 的元素，删除</div><div class="line"></div><div class="line">rpop list </div><div class="line">//弹出最尾部 的元素，删除</div></pre></td></tr></table></figure></p>
+<p>3.hash类型：<br>个人理解： hash 类似mysql的一行记录，一行记录中， table有多个field，每个field对应一个value；<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line">hset   table  field1   value1   </div><div class="line">//设置 field1 值 为 value1</div><div class="line">//成功 返回  （integer) 1 ,失败 返回（integer) 0 </div><div class="line">//如果field1 已存在 ，则替换 ，但返回 （integer) 0</div><div class="line"></div><div class="line">hget   table  filed1   </div><div class="line">//获取 field1</div><div class="line"></div><div class="line">hgetall table </div><div class="line">//获取table所有field</div><div class="line"></div><div class="line">hdel   table  field1  </div><div class="line">//删除  filed1  </div><div class="line">//成功 返回  （integer) 1 ,失败 返回（integer) 0 </div><div class="line"></div><div class="line"></div><div class="line">hexists  table  field1</div><div class="line">//field1 是否存在</div><div class="line">//成功 返回  （integer) 1 ,失败 返回（integer) 0 </div><div class="line"></div><div class="line">hincrby table field  n</div><div class="line">//给 field  自增长 n（可以为负数）</div><div class="line"></div><div class="line"></div><div class="line">hkeys table</div><div class="line">//获取 table 所有 field</div><div class="line"></div><div class="line"></div><div class="line">hlen  table</div><div class="line">//哈希表中字段的数量。 当 key 不存在时，返回 0 。</div><div class="line"></div><div class="line">hmset   table  field1 value1 field2 value2  field3 value3 ...</div><div class="line">//批量设置</div><div class="line"></div><div class="line">hmget  table field1 field2 field3 field4 ...</div><div class="line">//批量获取</div><div class="line"></div><div class="line"></div><div class="line">hsetnx  table  field value</div><div class="line">//为field 设置 value ，如果 field已存在，则 失败，返回  （integer） 0</div></pre></td></tr></table></figure></p>
+<p>4.set类型：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div></pre></td><td class="code"><pre><div class="line">sadd  set  value1 value2 value3 ...</div><div class="line">//将一个或多个成员元素加入到集合中，已经存在于集合的成员元素将被忽略。 </div><div class="line">//假如集合 key 不存在，则创建一个只包含添加的元素作成员的集合。 </div><div class="line">//当集合 key 不是集合类型时，返回一个错误。</div><div class="line">//集合元素不能重复，否则添加失败</div><div class="line"></div><div class="line">scard  set</div><div class="line">//集合的数量。 当集合 key 不存在时，返回 0 。</div><div class="line"></div><div class="line">smembers  set</div><div class="line">//查看 set 所有元素</div><div class="line"></div><div class="line"></div><div class="line">sdiff  set1  set2 setn...</div><div class="line">//在set1 集合里，但不在set2 集合里。求差集，不存在的集合 key 将视为空集。</div><div class="line"></div><div class="line"></div><div class="line">sdiffstore  set   set1 set2 setn...</div><div class="line">//在set1 集合里，但不在set2 集合里。差集存储set 集合</div><div class="line"></div><div class="line"></div><div class="line">sinter  set1 set2 setn...</div><div class="line">//求交集， 当给定集合当中有一个空集时，结果也为空集(根据集合运算定律)。</div><div class="line"></div><div class="line"></div><div class="line">sinterstore  set  set1 set2 setn...</div><div class="line">//求set1，set2 ，setn的交集。交集存储set 集合</div><div class="line"></div><div class="line">sunion  set1 set2 setn...</div><div class="line">//求set1 ，set2 ，setn的并集</div><div class="line"></div><div class="line">sunionstore   set  set1 set2 setn...</div><div class="line">//求set1，set2 ，setn的并集。交集存储set 并集</div><div class="line"></div><div class="line">sismember   set  value</div><div class="line">//判断 value 是否是 set 集合的元素，是返回 1，否 返回 0</div><div class="line"></div><div class="line">smove  set1  set2  value</div><div class="line">//把set1集合的value 移到 set2 集合。smove是原子性操作，成功返回 1，失败返回 0</div><div class="line"></div><div class="line">spop  set </div><div class="line">//移除并返回set 集合中的一个随机元素。</div><div class="line"></div><div class="line">srandmember  set</div><div class="line">//随机返回set 集合中的一个元素  </div><div class="line"></div><div class="line">srem    set    value1 value2 valuen</div><div class="line">//从集合 set 中 移除 value元素，可以移除多个，返回移除成功的个数。</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div></pre></td><td class="code"><pre><div class="line"> ZADD KEY_NAME SCORE1 VALUE1.. SCOREN VALUEN</div><div class="line">// 命令用于将一个或多个成员元素及其分数值加入到有序集当中。</div><div class="line">//如果某个成员已经是有序集的成员，那么更新这个成员的分数值，并通过重新插入这个成员元素，来保证该成员在正确的位置上。</div><div class="line">//分数值可以是整数值或双精度浮点数。</div><div class="line">//如果有序集合 key 不存在，则创建一个空的有序集并执行 ZADD 操作。</div><div class="line">//当 key 存在但不是有序集类型时，返回一个错误。</div><div class="line"></div><div class="line"> ZCARD KEY_NAME</div><div class="line">//用于计算集合中元素的数量。</div><div class="line"></div><div class="line">ZCOUNT key min max</div><div class="line">//用于计算有序集合中指定分数区间的成员数量。</div><div class="line"></div><div class="line">ZINCRBY key increment member</div><div class="line">//对有序集合中指定成员的分数加上增量 increment</div><div class="line">//可以通过传递一个负数值 increment ，让分数减去相应的值，比如 ZINCRBY key -5 member ，就是让 member 的 score 值减去 5 。</div><div class="line">//当 key 不存在，或分数不是 key 的成员时， ZINCRBY key increment member 等同于 ZADD key increment member 。</div><div class="line">//当 key 不是有序集类型时，返回一个错误。</div><div class="line">//分数值可以是整数值或双精度浮点数。</div><div class="line"></div><div class="line"></div><div class="line">ZINTERSTORE destination numkeys key [key ...] [WEIGHTS weight [weight ...]] [AGGREGATE SUM|MIN|MAX]</div><div class="line">//计算给定的一个或多个有序集的交集，中给定 key 的数量必须以 numkeys 参数指定，并将该交集(结果集)储存到 destination 。</div><div class="line">//默认情况下，结果集中某个成员的分数值是所有给定集下该成员分数值之和。</div><div class="line"></div><div class="line">ZLEXCOUNT KEY MIN MAX</div><div class="line">//在计算有序集合中指定字典区间内成员数量。</div><div class="line"></div><div class="line">ZRANGE key start stop [WITHSCORES]</div><div class="line">//返回有序集中，指定区间内的成员。</div><div class="line">//其中成员的位置按分数值递增(从小到大)来排序。</div><div class="line">//具有相同分数值的成员按字典序(lexicographical order )来排列。</div><div class="line">//如果你需要成员按值递减(从大到小)来排列，请使用 ZREVRANGE 命令。</div><div class="line">//下标参数 start 和 stop 都以 0 为底，也就是说，以 0 表示有序集第一个成员，以 1 表示有序集第二个成员，以此类推。</div><div class="line">//你也可以使用负数下标，以 -1 表示最后一个成员， -2 表示倒数第二个成员，以此类推。</div><div class="line"></div><div class="line"></div><div class="line">ZRANK key member</div><div class="line">//返回有序集中指定成员的排名。其中有序集成员按分数值递增(从小到大)顺序排列。</div><div class="line"></div><div class="line">ZRANK key member</div><div class="line">//用于移除有序集中的一个或多个成员，不存在的成员将被忽略。</div><div class="line">//当 key 存在但不是有序集类型时，返回一个错误。</div><div class="line"> </div><div class="line">ZSCORE key member</div><div class="line">//返回有序集中，成员的分数值。 如果成员元素不是有序集 key 的成员，或 key 不存在，返回 nil 。</div><div class="line"></div><div class="line"> ZSCORE key member</div><div class="line">//返回有序集中，成员的分数值。 如果成员元素不是有序集 key 的成员，或 key 不存在，返回 nil 。</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">ZSCAN key cursor [MATCH pattern] [COUNT count]</div><div class="line">//用于迭代有序集合中的元素（包括元素成员和元素分值）</div></pre></td></tr></table></figure>
+<p>```</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">PHP</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Redis</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/Redis笔记/" class="article-tag-list-link color3">Redis笔记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2016/08/16/Redis-5种数据类型学习笔记！-/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
+    <article id="post-Redis环境配置安装注意安装步骤及说明事项。" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/08/16/Redis环境配置安装注意安装步骤及说明事项。/">Redis环境配置安装注意安装步骤及说明事项。</a>
+    </h1>
+  
+
+        
+        <a href="/2016/08/16/Redis环境配置安装注意安装步骤及说明事项。/" class="archive-article-date">
+  	<time datetime="2016-08-15T19:30:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-08-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Wiondows下安装redis步骤：<br>1.使用phpinfo()函数查看PHP的版本信息，这会决定扩展文件版本</p>
+<p>2.根据PHP版本号，编译器版本号和CPU架构，<br>选择php_redis-2.2.5-5.5-ts-vc11-x86.zip和php_igbinary-1.2.1-5.5-ts-vc11-x86.zip<br>下载地址：<br><a href="http://windows.php.net/downloads/pecl/snaps/redis/2.2.5/" target="_blank" rel="external">http://windows.php.net/downloads/pecl/snaps/redis/2.2.5/</a><br><a href="http://windows.php.net/downloads/pecl/releases/igbinary/1.2.1/" target="_blank" rel="external">http://windows.php.net/downloads/pecl/releases/igbinary/1.2.1/</a></p>
+<p>3.解压缩后，将php_redis.dll和php_redis.pdb拷贝至php的ext目录下</p>
+<p>4.修改php.ini，(PS：此php.ini文件是在Apache目录）在该文件中加入：<br>; php_redis<br>extension=php_igbinary.dll<br>extension=php_redis.dll<br>注意：extension=php_igbinary.dll一定要放在extension=php_redis.dll的前面，否则此扩展不会生效</p>
+<p>5.重启Apache后，使用phpinfo查看扩展是否成功安装</p>
+<p>新建一个test.php页面<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$redis=new Redis();</div><div class="line">$redis-&gt;connect(&apos;192.168.1.11&apos;,6379);</div><div class="line">$redis-&gt;auth(&apos;123456&apos;);</div><div class="line">$redis-&gt;set(&apos;test&apos;,&apos;helloworld&apos;);</div><div class="line">echo $redis-&gt;get(&apos;test&apos;);</div></pre></td></tr></table></figure></p>
+<ol>
+<li>什么是Redis<br>Redis是Remote Dictionary Server(远程数据服务)的缩写<br>由意大利人 antirez(Salvatore Sanfilippo)  开发的一款 内存高速缓存数据库<br>该软件使用C语言编写,它的数据模型为 key-value<br>它支持丰富的数据结构，比如 String  list  hash   set  sorted set。<br>可持久化，保证了数据安全。</li>
+</ol>
+<p>缓存：<br>有两种类型 数据缓存、页面缓存(smarty)<br>使用缓存减轻数据库的负载。<br>在开发网站的时候如果有一些数据在短时间之内不会发生变化，而它们还要被频繁访问，为了提高用户的请求速度/降低网站的负载，就把这些数据放到一个读取速度更快的介质上，该行为就称作对该数据的缓存动作。<br>该介质可以是文件、数据库、内存，内存经常用于数据缓存。</p>
+<p>页面缓存经常用在CMS内存管理系统里边<br>数据缓存经常会用在页面的具体数据里边</p>
+<ol>
+<li>redis和memcache比较<br>    Redis不仅仅支持简单的k/v类型的数据，同时还提供list，set，zset，hash等数据结构的存储。<br>    Redis支持master-slave(主—从)模式应用。<br>    Redis支持数据的持久化，可以将内存中的数据保持在磁盘中，重启的时候可以再次加载进行使用。<br>    Redis单个value的最大限制是1GB， memcached只能保存1MB的数据 </li>
+</ol>
+<p>一．编译安装Redis<br>安装redis-2.6.14.tar.gz<br>shell# cd /home/jinnan/tar<br>shell# tar zxvf redis-2.6.14.tar.gz<br>shell# cd redis-2.6.14<br>shell# make<br>    shell# cd src<br>在该目录会看到以下文件</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/2255249-8edc591c4017d581.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="1.png"></p>
+<pre><code>redis-benchmark       压力测试
+</code></pre><p>redis-check-aof       检查redis持久化命令文件的完整性<br>redis-check-dump   检查redis持久化数据文件的完整性<br>redis-cli            redis在linux上的客户端<br>redis-sentinel           做集群用的<br>redis-server         linux上的服务端</p>
+<pre><code>将redis源码目录下的  src目录里的 redis-cli和 redis-server 拷贝到工作目录里.同时将源码根目录下的redis.conf 也拷贝到工作目录里
+</code></pre><p>shell# mkdir /usr/local/redis<br>shell# cp redis-cli redis-server /usr/local/redis<br>shell# cp ../redis.conf /usr/local/redis</p>
+<p>至此在linux上编译安装redis服务端和客户端已经大功告成<br>启动redis服务器:<br>shell# cd /usr/local/redis<br>shell# vi ./redis.conf<br>把参数daemonize no 改为 daemonize yes<br>shell# ./redis-server redis.conf</p>
+<p>二. redis配置文件说明<br>/usr/local/redis/redis.conf<br>1 daemonize  no<br>默认情况下，redis 不是在后台运行的，如果需要在后台运行，把该项的值更改为yes<br>2 pidfile  /var/run/redis.pid<br>当Redis 在后台运行的时候，Redis 默认会把pid 文件放在/var/run/redis.pid，你可以配置到其他地址。当运行多个redis 服务时，需要指定不同的pid 文件和端口<br>3 port<br>监听端口，默认为6379<br>4 #bind 127.0.0.1<br>指定Redis 只接收来自于该IP 地址的请求，如果不进行设置，那么将处理所有请求，在生产环境中为了安全最好设置该项。默认注释掉，不开启<br>5 timeout 0<br>设置客户端连接时的超时时间，单位为秒。当客户端在这段时间内没有发出任何指令，那么关闭该连接<br>6 tcp-keepalive 0<br>指定TCP连接是否为长连接,”侦探”信号有server端维护。默认为0.表示禁用<br>7 loglevel notice<br>log 等级分为4 级，debug,verbose, notice, 和warning。生产环境下一般开启notice<br>8 logfile stdout<br>配置log 文件地址，默认使用标准输出，即打印在命令行终端的窗口上，也可以修改为日志文件对应的目录地址<br>9 databases 16<br>设置数据库的个数，可以使用SELECT 命令来切换数据库。默认使用的数据库是0号库。默认16个库<br>10<br>save 900 1<br>save 300 10<br>save 60 10000<br>保存数据快照的频率，即将数据持久化到dump.rdb文件中的频度。用来描述”在多少秒期间至少多少个变更操作”触发snapshot数据保存动作<br>默认设置，意思是：<br>if(在60 秒之内有10000 个keys 发生变化时){<br>进行镜像备份<br>}else if(在300 秒之内有10 个keys 发生了变化){<br>进行镜像备份<br>}else if(在900 秒之内有1 个keys 发生了变化){<br>进行镜像备份<br>}<br>更多配置参考：<br><a href="http://blog.csdn.net/neubuffer/article/details/17003909" target="_blank" rel="external">http://blog.csdn.net/neubuffer/article/details/17003909</a><br>三．php_redis安装配置<br>phpredis中文手册：<br><a href="http://www.cnblogs.com/ikodota/archive/2012/03/05/php_redis_cn.html" target="_blank" rel="external">http://www.cnblogs.com/ikodota/archive/2012/03/05/php_redis_cn.html</a> </p>
+<ol>
+<li>下载 phpredis 扩展包<br>上传到linux指定目录(/home/jinnan/rdtar)</li>
+<li>进入phpredis源码目录并执行php的bin目录下的一个工具叫  phpize<br> shell# cd /home/jinnan/tar<br> shell# tar zxvf phpredis.tar.gz<br>shell# cd phpredis<br>shell# /usr/local/php/bin/phpize   ????<br>以上这个指令必须在phpredis解压包目录/home/jinnan/tar/phpredis(根据个人情况设置)执行</li>
+<li><p>安装autoconf-2.62.tar.gz<br>shell# cd /home/jinnan/tar<br>shell# tar zxvf autoconf-2.62.tar.gz<br>shell# cd autoconf-2.62<br>shell# ./configure &amp;&amp; make &amp;&amp; make install</p>
+</li>
+<li><p>配置并编译安装phpredis<br> shell#./configure –with-php-config=/usr/local/php/bin/php-config<br> shell# make &amp;&amp; make install</p>
+</li>
+<li><p>给php.ini设置redis扩展<br>打开php.ini配置文件设置以下代码<br>shell# vi /usr/local/php/lib/php.ini</p>
+</li>
+<li><p>重启apache</p>
+<pre><code>shell# /usr/local/http2/bin/apachectl restart
+</code></pre><p>至此，使用php操作redis 所用到的 phpredis扩展包 已经编译安装并配置完毕。</p>
+</li>
+<li><p>查看php是否有引入redis扩展</p>
+</li>
+<li><p>php使用redis示例代码</p>
+</li>
+</ol>
+<p><img src="http://upload-images.jianshu.io/upload_images/2255249-b439391aa649b6cc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="2.png"></p>
+<p> 浏览器看效果：</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/2255249-9e30088d4051cfe2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="3.png"></p>
+<ol>
+<li>如果不清楚php-redis扩展内部到底有什么方法可以利用反射</li>
+</ol>
+<p><img src="http://upload-images.jianshu.io/upload_images/2255249-d7753d03572660bf.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="4.png"></p>
+<p>官方网址：<a href="http://redis.io/" target="_blank" rel="external">http://redis.io/</a><br>redis 中文资料站: <a href="http://www.redis.cn/" target="_blank" rel="external">http://www.redis.cn/</a><br>redis 命令手册： <a href="http://www.redisdoc.com/en/latest/index.html" target="_blank" rel="external">http://www.redisdoc.com/en/latest/index.html</a><br>php操作redis：<a href="http://blog.sina.com.cn/s/blog_3dbab2840100uo5l.html" target="_blank" rel="external">http://blog.sina.com.cn/s/blog_3dbab2840100uo5l.html</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">PHP</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Redis</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/Redis笔记/" class="article-tag-list-link color3">Redis笔记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2016/08/16/Redis环境配置安装注意安装步骤及说明事项。/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
+    <article id="post-Linux下Nginx配置虚拟主机！" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/08/16/Linux下Nginx配置虚拟主机！/">linux下nginx配置虚拟主机！</a>
+    </h1>
+  
+
+        
+        <a href="/2016/08/16/Linux下Nginx配置虚拟主机！/" class="archive-article-date">
+  	<time datetime="2016-08-15T19:30:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-08-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>什么虚拟主机?<br>一台linux服务器上放置多套网站:<br>一家公司可能企业网站<br>要点:<br>一旦一台linux服务器上加设虚拟主机，则不能再用ip来访问这台linux服务器，而应该用每个虚拟主机网站的相应域名来访问相应的网站<br>通过一台服务器的同一个ip同一个端口用不同的域名去访问不同的网站</p>
+<p>1.准备两个网站,一个是baidu，一个是sina<br>2.在nginx中进行设置，准备两个网站的虚拟主机<br>自我总结：<br>１.通过　ps  -ef | grep nginx　命令获取ｎｇｉｎｘ安装目录。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/2255249-8f5c48eb6e3ff53f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Paste_Image.png"></p>
+<p>２.打开/etc/nginx/vhost　目录，新建ｂａｉｄｕ．ｃｏｎｆ，编辑<br>　vi /usr/local/nginx/conf/nginx.conf　：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">http&#123;</div><div class="line">    //全局配置</div><div class="line">    server&#123;</div><div class="line">            //局部配置 </div><div class="line">            name www.baidu.com</div><div class="line">            html /web/baidu</div><div class="line">    &#125;</div><div class="line">    server&#123;</div><div class="line">            //局部配置 </div><div class="line">            name www.sina.com</div><div class="line">            html /web/sina</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>详细配置:<br><code>server {
+        listen       80;
+        server_name  www.baidu.com;
+        access_log  logs/baidu.access.log  main;
+        location / {
+            root   /web/baidu;
+            index  index.html index.htm;
+        }
+    }
+    server {
+        listen       80;
+        server_name  www.sina.com;
+        access_log  logs/sina.access.log  main;
+        location / {
+            root   /web/sina;
+            index  index.html index.htm;
+        }
+    }</code>　<br>重新启动服务或者重新加载服务:<br>1.pkill nginx<br>//关闭nginx进程</p>
+<p>2./usr/local/nginx/sbin/nginx<br>//重新启动nginx服务</p>
+<p>重新加载服务或者平滑重启:<br>1.pkill -HUP nginx<br>//把配置文件中的新更改的东西加载到正在运行nginx的进程中，接着对用户提供服务，但是nginx进程并没有关闭.</p>
+<p>用域名去访问web服务器，需要dns服务器支持,还可能用自己系统中的hosts解析文件来帮你解析域名:</p>
+<p>C:\Windows\System32\drivers\etc<br>vi hosts<br>192.168.100.1 www.baidu.com<br>192.168.100.1 www.sina.com</p>
+<p>lnmp集成包安装步骤：<a href="https://lnmp.org/install.html" target="_blank" rel="external">https://lnmp.org/install.html</a></p>
+<p>lnmp集成包配置虚拟主机：<a href="http://lnmp.org/faq/lnmp-vhost-add-howto.html" target="_blank" rel="external">http://lnmp.org/faq/lnmp-vhost-add-howto.html</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">PHP</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Nginx</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/PHP笔记/" class="article-tag-list-link color1">PHP笔记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2016/08/16/Linux下Nginx配置虚拟主机！/">展开全文 >></a>
         </p>
       
 
@@ -929,402 +1444,6 @@ body {
 
 
   
-    <article id="post-PHP操作MongoDB笔记！" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/08/16/PHP操作MongoDB笔记！/">php操作MongoDB笔记！</a>
-    </h1>
-  
-
-        
-        <a href="/2016/08/16/PHP操作MongoDB笔记！/" class="archive-article-date">
-  	<time datetime="2016-08-15T19:30:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-08-16</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div><div class="line">159</div><div class="line">160</div><div class="line">161</div><div class="line">162</div><div class="line">163</div><div class="line">164</div><div class="line">165</div><div class="line">166</div><div class="line">167</div><div class="line">168</div><div class="line">169</div><div class="line">170</div><div class="line">171</div><div class="line">172</div><div class="line">173</div><div class="line">174</div><div class="line">175</div><div class="line">176</div><div class="line">177</div><div class="line">178</div><div class="line">179</div><div class="line">180</div><div class="line">181</div><div class="line">182</div><div class="line">183</div><div class="line">184</div><div class="line">185</div><div class="line">186</div><div class="line">187</div><div class="line">188</div><div class="line">189</div><div class="line">190</div><div class="line">191</div><div class="line">192</div></pre></td><td class="code"><pre><div class="line">//连接mongodb数据库</div><div class="line">$conn = new MongoClient();</div><div class="line"></div><div class="line">//选择数据库和文档集合</div><div class="line">$db  = $conn-&gt;mydb;  #选择mydb数据库 </div><div class="line">$db  = $conn-&gt;selectDB(“mydb”); #选择mydb数据库 第二种写法</div><div class="line"></div><div class="line">$collection = $db-&gt;test; #选择集合(选择’表’)</div><div class="line">$db-&gt;selectCollection(‘column’); #选择集合(选择’表’)第二种写法</div><div class="line"></div><div class="line">$collection = $conn-&gt;local-&gt;User;#更简洁的写法，一步到位</div><div class="line"></div><div class="line">#插入一条记录</div><div class="line">$res = $collection-&gt;insert(array(&quot;id&quot;=&gt;1,&quot;username&quot;=&gt;&quot;admin&quot;,&quot;age&quot;=&gt;18,&quot;email&quot;=&gt;&quot;admin@qq.com&quot;));</div><div class="line">#根据条件更新数据</div><div class="line">$res = $collection-&gt;update(array(&quot;username&quot;=&gt;&quot;admin&quot;),array(&quot;$set&quot;=&gt;array(&quot;age&quot;=&gt;25)));</div><div class="line">#根据条件删除数据</div><div class="line">$res = $collection-&gt;remove(array(&quot;username&quot;=&gt;&quot;test&quot;));</div><div class="line">#查询一条记录</div><div class="line">$res = $collection-&gt;findOne(array(&quot;username&quot;=&gt;&quot;admin&quot;));</div><div class="line">#查询 </div><div class="line">$res = $collection-&gt;find();</div><div class="line">#根据正则查询符合条件数据</div><div class="line">$res = $collection-&gt;find(array(&quot;username&quot;=&gt;new MongoRegex(&quot;/admin/i&quot;)));</div><div class="line">//db.User.find(&#123;&quot;username&quot;:/admin/i&#125;) #原生态模糊查询（/XXX/i 正则忽略大小写）</div><div class="line"></div><div class="line">#统计数量</div><div class="line">$res = $collection-&gt;count();</div><div class="line">#带条件的统计</div><div class="line">$res = $collection-&gt;count(array(&quot;username&quot;=&gt;new MongoRegex(&quot;/admin/i&quot;)，&apos;age&apos;=&gt;array(&apos;$gt&apos;=&gt;21,&apos;$lt&apos;=&gt;80)));</div><div class="line">#带条件的统计另一种写法</div><div class="line">$res = $collection-&gt;find(array(&quot;username&quot;=&gt;new MongoRegex(&quot;/admin/i&quot;)，&apos;age&apos;=&gt;array(&apos;$gt&apos;=&gt;21,&apos;$lt&apos;=&gt;80)))-&gt;count();</div><div class="line"> </div><div class="line">#注:$gt为大于、$gte为大于等于、$lt为小于、$lte为小于等于、$ne为不等于、$exists不存在 </div><div class="line"></div><div class="line">#分页取数据</div><div class="line">$count = $collection-&gt;find()-&gt;limit(10)-&gt;skip(10)-&gt;count(true);</div><div class="line">//#获得实际返回的结果数 （count()或count(0)或count(false)返回全部数据，count(1)或count(true)返回分页数据）</div><div class="line"></div><div class="line">//true显示列，false隐藏列   sort排序：-1=desc 1=asc</div><div class="line">$res = $collection-&gt;find(array(&apos;age&apos; =&gt; array(&apos;$gt&apos; =&gt; 23, &apos;$lt&apos; =&gt; 93)))-&gt;fields(array(&quot;age&quot; =&gt; true, &quot;_id&quot; =&gt; false))-&gt;sort(array(&apos;age&apos; =&gt; -1));</div><div class="line"></div><div class="line"></div><div class="line">/** 创建索引</div><div class="line"> $collection-&gt;ensureIndex(array(&apos;age&apos; =&gt; 1,&apos;type&apos;=&gt;-1));                             #1表示降序 -1表示升序</div><div class="line">$collection-&gt;ensureIndex(array(&apos;age&apos; =&gt; 1,&apos;type&apos;=&gt;-1),array(&apos;background&apos;=&gt;true));   #索引的创建放在后台运行(默认是同步运行)</div><div class="line">$collection-&gt;ensureIndex(array(&apos;age&apos; =&gt; 1,&apos;type&apos;=&gt;-1),array(&apos;unique&apos;=&gt;true));       #该索引是唯一的</div><div class="line">*/</div><div class="line"></div><div class="line">******************************************mongodb复制远程数据库和表start******************************************************************</div><div class="line"></div><div class="line">        $con1 = new Mongo(&quot;mongodb://192.168.1.243:7788&quot;); // 连接到服务器</div><div class="line">        $con2 = new Mongo(&quot;mongodb://127.0.0.1:27017&quot;); // 连接到本地</div><div class="line">        $db1 = $con1-&gt;ak_sys;</div><div class="line">        $db2 = $con2-&gt;ak_sys;</div><div class="line">        $res1 = $db1-&gt;feedback-&gt;find();</div><div class="line">       </div><div class="line">        foreach ($res1 as $k =&gt; $v) &#123;</div><div class="line">        //echo&quot;&lt;pre&gt;&quot;;print_R($v); </div><div class="line"></div><div class="line">        $res2 = $db2-&gt;feedback-&gt;insert($v);#简单插入 </div><div class="line">        echo $res2[&apos;ok&apos;]? &apos;success&apos; : &apos;failed&apos;;</div><div class="line">        echo &quot;&lt;br/&gt;&quot;;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">******************************************mongodb复制远程数据库和表end******************************************************************</div><div class="line"></div><div class="line">******************************************where条件可以用js函数方式start******************************************************************</div><div class="line">        $where[&apos;$where&apos;] = &quot;</div><div class="line">            function()&#123;</div><div class="line">            var pos_code = this.pos_code;</div><div class="line">            var count= this.count;</div><div class="line">            if(pos_code ==&apos;d&apos; &amp;&amp; count==0)&#123;</div><div class="line">                return true;</div><div class="line">                &#125;</div><div class="line">            &#125;&quot;;</div><div class="line">        $res = $db2-&gt;feedback-&gt;find($where);</div><div class="line">*******************************************where条件可以用js函数方式end******************************************************************</div><div class="line"></div><div class="line"></div><div class="line">日期转换时间戳，再用mongoDate函数：new MongoDate(strtotime(date(&quot;Y-m-d H:i:s&quot;))); </div><div class="line">demo：</div><div class="line"> $start = new MongoDate(strtotime(date(&quot;2011-02-15 00:00:00&quot;))); </div><div class="line"> $end = new MongoDate(strtotime(date(&quot;2017-12-15 23:59:59&quot;)));  </div><div class="line"></div><div class="line">查询分组统计</div><div class="line">        $where[&apos;$match&apos;] = array(</div><div class="line">            &apos;click_time&apos; =&gt; array(&apos;$gt&apos; =&gt; $start, &apos;$lte&apos; =&gt; $end));</div><div class="line">        //管道效应：group中的click_time是where传过来的</div><div class="line">        $group[&apos;$group&apos;] = array(</div><div class="line">            &apos;_id&apos; =&gt; array(</div><div class="line">                &apos;year&apos; =&gt; array(&apos;$year&apos; =&gt; &apos;$click_time&apos;),</div><div class="line">                &apos;month&apos; =&gt; array(&apos;$month&apos; =&gt; &apos;$click_time&apos;),</div><div class="line">                &apos;day&apos; =&gt; array(&apos;$dayOfMonth&apos; =&gt; &apos;$click_time&apos;)</div><div class="line">            ),</div><div class="line">            &apos;total&apos; =&gt; array(&apos;$sum&apos; =&gt; 1)</div><div class="line">        );</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">        $res = $db2-&gt;test-&gt;aggregate($where, $group);</div><div class="line">        // echo count($res[&apos;result&apos;]);//获取分组后的总数量</div><div class="line">        //  echo&quot;&lt;pre&gt;&quot;;print_R($res);</div><div class="line"> echo $db2-&gt;test-&gt;find(array(&apos;click_time&apos;=&gt;array(&apos;$gte&apos; =&gt; $start, &apos;$lte&apos; =&gt; $end)))-&gt;count();</div><div class="line">        $res = $db2-&gt;test-&gt;find(array(&apos;click_time&apos; =&gt; array(&apos;$gt&apos; =&gt; $start, &apos;$lte&apos; =&gt; $end)));</div><div class="line"></div><div class="line"></div><div class="line">//        foreach ($res[&apos;result&apos;] as $k =&gt; $v) &#123;</div><div class="line">//            $v[&apos;click_time&apos;] = date(&apos;Y-m-d H:i:s&apos;, $v[&apos;click_time&apos;]-&gt;sec);</div><div class="line">//            $v[&apos;create_time&apos;] = date(&apos;Y-m-d H:i:s&apos;, $v[&apos;create_time&apos;]-&gt;sec);</div><div class="line">//            $v[&apos;_id&apos;] = $v[&apos;_id&apos;]-&gt;&#123;&apos;$id&apos;&#125;; //取mongoid字符串</div><div class="line">//            echo&quot;&lt;pre&gt;&quot;;</div><div class="line">//            print_R($v);</div><div class="line">//        &#125;</div><div class="line">where模糊查询分组排序分页</div><div class="line">        $op = array(</div><div class="line">            array(</div><div class="line">                &apos;$match&apos; =&gt; array(</div><div class="line">                    &apos;click_time&apos; =&gt; array(</div><div class="line">                        &apos;$gte&apos; =&gt; $start,</div><div class="line">                        &apos;$lte&apos; =&gt; $end</div><div class="line">                    ),</div><div class="line">                    &apos;pos_code&apos; =&gt; new MongoRegex(&apos;/^dd$/&apos;),//正则匹配pos_code含有dd字符的</div><div class="line">                    &apos;remark&apos; =&gt;&apos;&apos;, //等于空 </div><div class="line">                    &apos;title&apos; =&gt; array(&apos;$ne&apos;=&gt;null),//不等于空</div><div class="line">                )),</div><div class="line">            array(</div><div class="line">                &apos;$group&apos; =&gt; array(</div><div class="line">                    &apos;_id&apos; =&gt; array(</div><div class="line">                        &apos;dev_id&apos; =&gt; &apos;$dev_id&apos;,</div><div class="line">                        &apos;pos_code&apos; =&gt; &apos;$pos_code&apos;,</div><div class="line">                        &apos;status&apos; =&gt; &apos;$status&apos;,</div><div class="line">                        &apos;title&apos;=&gt;&apos;$title&apos;,</div><div class="line">                        &apos;year&apos; =&gt; array(&apos;$year&apos; =&gt; &apos;$click_time&apos;),</div><div class="line">                        &apos;month&apos; =&gt; array(&apos;$month&apos; =&gt; &apos;$click_time&apos;),</div><div class="line">                        &apos;day&apos; =&gt; array(&apos;$dayOfMonth&apos; =&gt; &apos;$click_time&apos;)</div><div class="line">                    )</div><div class="line">                )</div><div class="line">            ),</div><div class="line">             array(&apos;$sort&apos; =&gt; array(&apos;click_time&apos; =&gt; -1)),</div><div class="line">             array(&apos;$skip&apos; =&gt; 0),</div><div class="line">            array(&apos;$limit&apos; =&gt; 100),</div><div class="line">        );</div><div class="line"></div><div class="line">        $res3 = $db2-&gt;test-&gt;aggregate($op);</div><div class="line">        echo&quot;&lt;pre&gt;&quot;;</div><div class="line">        print_R($res3);</div><div class="line">        die;</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">        //$result = $db2-&gt;test-&gt;update(array(&apos;img_url&apos;=&gt;&apos; &apos;),array(&apos;$set&apos;=&gt;array(&quot;pos_code&quot;=&gt;time())));//更新文档</div><div class="line">        // echo $result ? &apos;success&apos; : &apos;failed&apos;;echo &quot;&lt;br&gt;&quot;;</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">原生态mongodb操作方法：</div><div class="line">  MONGODB:数据库(db)-&gt;集合(table)-&gt;文档(row)</div><div class="line"> D:\mongodb\bin&gt;mongod.exe --dbpath &quot;d:\set up\mongodb\data&quot; //设置mongodb数据路径：</div><div class="line"> D:\mongodb\bin&gt;mongo.exe//启动mongodb </div><div class="line"> &gt;use mydb//创建数据库 返回数据库名称</div><div class="line">&gt;db mydb//查看数据库信息</div><div class="line">&gt;show dbs//查看数据库（创建的数据库mydb 列表中是不存在的。要显示的数据库，需要把它插入至少一个文件。）</div><div class="line"> db.movie.insert(&#123;&quot;name&quot;:&quot;tutorials point&quot;&#125;)</div><div class="line"> db.movie.save(&#123;&quot;name&quot;:&quot;tutorials point&quot;&#125;)//保存数据</div><div class="line">  &gt;use mydb</div><div class="line">  &gt;db.dropDatabase()//删除数据库 </div><div class="line">  &gt;use test //创建集合&#123; 当插入一些文件 MongoDB 自动创建的集合。&#125;</div><div class="line">  &gt;db.createCollection(&quot;mycollection&quot;)</div><div class="line">  &gt;show collections//查看创建集合</div><div class="line">  &gt;db.集合名称.drop()//删除集合</div><div class="line">  &gt;db.集合名称.find()//查询集合</div><div class="line">  &gt;db.hello.find().pretty()//格式化返回集合数据</div><div class="line">  &gt;db.hello.find(&#123;key1:value1, key2:value2&#125;).pretty()//根据条件查询  AND</div><div class="line">  &gt;db.hello.find(&#123;$or:[&#123;key1:value1&#125;,&#123;key2:value2&#125;]&#125;).pretty()//根据条件查询  OR</div><div class="line">  &gt;db.hello.find(&quot;age&quot;: &#123;$gt:10&#125;, $or: [&#123;&quot;name&quot;: &quot;li&quot;&#125;, &#123;&quot;title&quot;: &quot;book&quot;&#125;] &#125;).pretty()//AND 和　 OR</div><div class="line"> //where age &gt;10 and(name=li or title =book )</div><div class="line"> //可以使用操作符完成更复杂的操作，常用操作符有：$lt , $lte , $gt , $gte   ( &lt; , &lt;= , &gt; , &gt;= ), $ne ( &lt;&gt; ) ,$in , $nin ,  $or ,  $not,  $mod (取模),  $exists, $where </div><div class="line"> //db.hello.find( &#123;&quot;age&quot; : &#123; “$lt” : 20 &#125; &#125; )</div><div class="line">  &gt;db.COLLECTION_NAME.update(SELECTIOIN_CRITERIA, UPDATED_DATA)//更新文档值(MongoDB默认将只更新单一的文件，来更新多个你需要设置参数置&apos;multi&apos; 为true)</div><div class="line">  &gt;db.hello.update(&#123;&apos;name&apos;:&apos;lis&apos;&#125;,&#123;$set:&#123;&apos;name&apos;:&apos;dragoners.li&apos;,&apos;age&apos;:23&#125;&#125;)</div><div class="line">  &gt;db.hello.remove(&#123;&apos;name&apos;:&apos;abc&apos;&#125;)//删除记录</div><div class="line">  &gt;db.hello.remove(&#123;&apos;name&apos;:&apos;abc&apos;&#125;,1)//删除一条记录</div><div class="line">  &gt;db.hello.remove(&#123;&#125;)//全部删除相当于mysql的truncate</div><div class="line">  &gt;db.hello.find(&#123;&#125;,&#123;&quot;name&quot;:&apos;abc&apos;,_id:0&#125;)//_id：0把_id设置为0.返回。类似mysql的视图。</div><div class="line">  &gt;db.hello.find().limit(3)//类似mysql的limit(0,3)从0开始取3条记录。（参数不写或写0时返回全部）</div><div class="line">  &gt;db.hello.find().limit(3).skip(2)//类似mysql的limit 限制记录条件，skip忽略前N条记录</div><div class="line">   //Sort   :  排序   -1（降序） 1（升序）；</div><div class="line">  //Count: 记录数</div><div class="line"> //getIndexes()  获取索引信息</div><div class="line">// dropIndexes()  : 删除所有索引</div><div class="line">//dropIndex( name )删除某个索引</div></pre></td></tr></table></figure>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">PHP</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">MongoDB</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/MongoDB笔记/" class="article-tag-list-link color5">MongoDB笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/08/16/PHP操作MongoDB笔记！/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
-    <article id="post-高并发高负载数据库架构策略！" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/08/16/高并发高负载数据库架构策略！/">高并发高负载数据库架构策略！</a>
-    </h1>
-  
-
-        
-        <a href="/2016/08/16/高并发高负载数据库架构策略！/" class="archive-article-date">
-  	<time datetime="2016-08-15T19:30:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-08-16</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>在WEB网站的规模从小到大不断扩展的过程中，数据库的访问压力也不断的增加，数据库的架构也需要动态扩展，在数据库的扩展过程基本上包含如下几步，每一个扩展都可以比上一步骤的部署方式的性能得到数量级的提升。 </p>
-<ol>
-<li>WEB应用和数据库部署在同一台服务器上<br>一般的小规模的网站采用这种方式，用户量、数据量、并发访问量都比较小，否则单台服务器无法承受，并且在遇到性能瓶颈的时候升级硬件所需要的费用非常高 昂，在访问量增加的时候，应用程序和数据库都来抢占有限的系统资源，很快就又会遇到性能问题。 </li>
-<li>WEB应用和数据库部署在各自独立的服务器上<br>web应用和数据库分开部署，WEB应用服务器和数据库服务器各司其职，在系统访问量增加的时候可以分别升级应用服务器和数据库服务器，这种部署方式是一般小规模网站的典型部署方式。在将应用程序进行性能优化并且使用数据库对象缓存策略的情况下，可以承载较大的访问量，比如2000用户，200个并发，百万级别的数据量。 </li>
-<li>数据库服务器采用集群方式部署（比如Oracle的一个数据库多个实例的情况）<br>数据库集群方式能承担的负载是比较大的，数据库物理介质为一个磁盘阵列，多个数据库实例以虚拟IP方式向外部应用服务器提供数据库连接服务。这种部署方式 基本上可以满足绝大多数的常见WEB应用，但是还是不能满足大用户量、高负载、数据库读写访问非常频繁的应用。</li>
-<li>数据库采用主从部署方式<br>在面向大众用户的博客、论谈、交友、CMS等系统中，有上百万的用户，有上千万的数据量，存在众多的数据库查询操作，也有较多的数据库写操作，并且在多数情况下都是读操作远大于写操作的。在这个时候，假如能将数据库的读写操作分离的话，对于系统来讲是一个很大的提高啦。数据库的主从部署方式就走到我们面前啦。<br>主从复制： 几乎所有的主流数据库都支持复制，这是进行数据库简单扩展的基本手段。下面以Mysql为例来说明，它支持主从复制，配置也并不复杂，只需要开启主服务器上的二进制日志以及在主服务器和从服务器上分别进行简单的配置和授权。Mysql的主从复制是一句主服务器的二进制日志文件进行的，主服务器日志中记录的操作会在从服务器上重放，从而实现复制，所以主服务器必须开启二进制日志，自动记录所有对于主数据库的更新操作，从服务器再定时到主服务器取得二进制日志 文件进行重放则完成了数据的复制。主从复制也用于自动备份。<br>读写分离： 为保证数据库数据的一致性，我们要求所有对于数据库的更新操作都是针对主数据库的，但是读操作是可以针对从数据库来进行。大多数站点的数据库读操作比写操作更加密集，而且查询条件相对复杂，数据库的大部分性能消耗在查询操作上了。<br>主从复制数据是异步完成的，这就导致主从数据库中的数据有一定的延迟，在读写分离的设计中必须要考虑这一点。以博客为例，用户登录后发表了一篇文章，他需要马上看到自己的文章，但是对于其它用户来讲可以允许延迟一段时间（1分钟/5分钟/30分钟），不会造成什么问题。这时对于当前用户就需要读主数据库，对于其他访问量更大的外部用户就可以读从数据库。<br>数据库反向代理： 在读写分离的方式使用主从部署方式的数据库的时候，会遇到一个问题，一个主数据库对应多台从服务器，对于写操作是针对主数据库的，数据库个数是唯一的，但 是对于从服务器的读操作就需要使用适当的算法来分配请求啦，尤其对于多个从服务器的配置不一样的时候甚至需要读操作按照权重来分配。 对于上述问题可以使用数据库方向代理来实现。就像WEB方向代理服务器一样，MYsql Proxy同样可以在SQL语句转发到后端的Mysql服务器之前对它进行修改。 </li>
-<li>数据库垂直分割<br>主从部署数据库中，当写操作占了主数据库的CPU消耗的50%以上的时候，我们再增加从服务器的意义就不是很大了，因为所有的从服务器的写操作也将占到 CPU消耗的50%以上，一台从服务器提供出来查询的资源非常有限。数据库就需要重新架构了，我们需要采用数据库垂直分区技术啦。 最简单的垂直分区方式是将原来的数据库中独立的业务进行分拆（被分拆出来的部分与其它部分不需要进行Join连接查询操作），比如WEB站点的BLOG和 论坛，是相对独立的，与其它的数据的关联性不是很强，这时可以将原来的数据库拆分为一个BLog库，一个论坛库，以及剩余的表所组成的库。这三个库再各自进行主从数据库方式部署，这样整个数据库的压力就分担啦。<br>另外查询扩展性也是采用数据库分区最主要的原因之一。将一个大的数据库分成多个小的数据库可以提高查询的性能，因为每个数据库分区拥有自己的一小部分数据。假设您想扫描1亿条记录，对一个单一分区的数据库来讲，该扫描操作需要数据库管理器独立扫描一亿条记录，如果您将数据库系统做成50个分区，并将这1 亿条记录平均分配到这50个分区上，那么每个数据库分区的数据库管理器将只扫描200万记录。 </li>
-<li>数据库水平分割<br>在数据库的垂直分区之后，假如我们的BLOG库又再次无法承担写操作的时候，我们又该怎么办呢？数据库垂直分区这种扩展方式又无能为力了，我们需要的是水 平分区。 水平分区意味着我们可以将同一个数据库表中的记录通过特定的算法进行分离，分别保存在不同的数据库表中，从而可以部署在不同的数据库服务器上。很多的大规模的站点基本上都是主从复制+垂直分区+水平分区这样的架构。水平分区并不依赖什么特定的技术，完全是逻辑层面的规划，需要的是经验和业务的细分。<br>如何分区呢？对于大型的WEB站点来说，必须分区，并且对于分区我们没有选择的余地，对于那些频繁访问导致站点接近崩溃的热点数据，我们必须分区。<br>在对数据分区的时候，我们必须要存在一个分区索引字段，比如USER_ID，它必须和所有的记录都存在关系，是分区数据库中的核心表的主键，在其它表中作 为外键，并且在使用主键的时候，该主键不能是自增长的，必须是业务主键才可以。<br>余数分区： 我们可以将User_ID%10后的值为依据存入到不同的分区数据库中，该算法简单高效，但是在分区数据库个数有变动的时候，整个系统的数据需要重新分布。<br>范围分区： 我们可以将User_ID的范围进行分区，比如1-100000范围为一个分区数据库，100001-200000范围为一个分区数据库，该算法在分区数 据库个数有变动的时候，系统非常有利于扩展，但是容易导致不同分区之间的压力不同，比如老用户所在的分区数据库的压力很大，但是新用户的分区数据库的压力偏小。<br>映射关系分区： 将对分区索引字段的每个可能的结果创建一个分区映射关系，这个映射关系非常庞大，需要将它们写入数据库中。比如当应用程序需要知道User_id为10的 用户的BLOG内容在那个分区时，它必须查询数据库获取答案，当然，我们可以使用缓存来提高性能。 这种方式详细保存了每一个记录的分区对应关系，所以各个分区有非常强的可伸缩性，可以灵活的控制，并且将数据库从一个分区迁移到另一个分区也很简单，也可以使各个分区通过灵活的动态调节来保持压力的分布平衡。</li>
-</ol>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">PHP</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/PHP笔记/" class="article-tag-list-link color1">PHP笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/08/16/高并发高负载数据库架构策略！/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
-    <article id="post-php-curl_post获取不到返回结果问题！" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/08/16/php-curl_post获取不到返回结果问题！/">php-curl_post获取不到返回结果问题！</a>
-    </h1>
-  
-
-        
-        <a href="/2016/08/16/php-curl_post获取不到返回结果问题！/" class="archive-article-date">
-  	<time datetime="2016-08-15T19:30:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-08-16</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>####post数据到远程服务器，获取返回数据。通过代码时而有数据，时而无。print_R（）返回为空，用var_dump（）打印出来是string(0) “”  ,用FireFox的Httprequester工具，请求结果正确！最后找到问题所在，用的封装curl_postData（）函数有问题。从 <a href="http://php.net/manual/zh/function.curl-exec.php" target="_blank" rel="external">http://php.net/manual/zh/function.curl-exec.php</a> 上获取代码，结果就ok了！这个坑踩的冤！！</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/2255249-0464a42e4f417844.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Paste_Image.png"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"> /** </div><div class="line">* Send a POST requst using cURL </div><div class="line">* @param string $url to request </div><div class="line">* @param array $post values to send </div><div class="line">* @param array $options for cURL </div><div class="line">* @return string </div><div class="line">*/ </div><div class="line">function curl_post($url, array $post = NULL, array $options = array()) </div><div class="line">&#123; </div><div class="line">    $defaults = array( </div><div class="line">        CURLOPT_POST =&gt; 1, </div><div class="line">        CURLOPT_HEADER =&gt; 0, </div><div class="line">        CURLOPT_URL =&gt; $url, </div><div class="line">        CURLOPT_FRESH_CONNECT =&gt; 1, </div><div class="line">        CURLOPT_RETURNTRANSFER =&gt; 1, </div><div class="line">        CURLOPT_FORBID_REUSE =&gt; 1, </div><div class="line">        CURLOPT_TIMEOUT =&gt; 4, </div><div class="line">        CURLOPT_POSTFIELDS =&gt; http_build_query($post) </div><div class="line">    ); </div><div class="line"></div><div class="line">    $ch = curl_init(); </div><div class="line">    curl_setopt_array($ch, ($options + $defaults)); </div><div class="line">    if( ! $result = curl_exec($ch)) </div><div class="line">    &#123; </div><div class="line">        trigger_error(curl_error($ch)); </div><div class="line">    &#125; </div><div class="line">    curl_close($ch); </div><div class="line">    return $result; </div><div class="line">&#125;</div></pre></td></tr></table></figure>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">PHP</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/PHP笔记/" class="article-tag-list-link color1">PHP笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/08/16/php-curl_post获取不到返回结果问题！/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
-    <article id="post-Windows安装多个MYSQL做读写分离测试！" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/08/16/Windows安装多个MYSQL做读写分离测试！/">windows安装多个mysql做读写分离测试！</a>
-    </h1>
-  
-
-        
-        <a href="/2016/08/16/Windows安装多个MYSQL做读写分离测试！/" class="archive-article-date">
-  	<time datetime="2016-08-15T19:30:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-08-16</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>mysql5.6.35下载地址：<a href="https://dev.mysql.com/downloads/file/?id=467063" target="_blank" rel="external">https://dev.mysql.com/downloads/file/?id=467063</a><br>一开始下载的是5.7版本解压版的，搞了很久mysql服务开不起来，网上也没找到有效的解决办法。退回5.6安装一次点亮！<br>步骤如下：<br>一.下载解压重命名，拷贝多份用端口号区分，在虚拟机win7 C盘下做实验：</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/2255249-cd4902f3e4fdc0ed.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Paste_Image.png"></p>
-<p>二.my-default.ini拷贝一份改名my.ini，打开修改basedir（mysql安装目录）和datadir（数据目录）和port（端口号）：</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/2255249-41eb341d0e096715.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Paste_Image.png"></p>
-<p>三. 然后以管理员身份打开dos，进入mysql_3307的bin目录，输入mysqld  –install  mysql_3307安装mysql_3307服务！显示：Service successfully installed.然后输入net start mysql_3307 命令启动。</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/2255249-e8779f2b8d5ccf6d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Paste_Image.png"></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">PHP</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">MYSQL</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/MYSQL笔记/" class="article-tag-list-link color3">MYSQL笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/08/16/Windows安装多个MYSQL做读写分离测试！/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
-    <article id="post-Linux-Apache下虚拟主机配置方法！" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/08/16/Linux-Apache下虚拟主机配置方法！/">linux-apache下虚拟主机配置方法！</a>
-    </h1>
-  
-
-        
-        <a href="/2016/08/16/Linux-Apache下虚拟主机配置方法！/" class="archive-article-date">
-  	<time datetime="2016-08-15T19:30:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-08-16</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>linux apache下虚拟主机配置方法</p>
-<p>假设IP是192.168.1.183，有两个域名指向该IP，分别是21.cc,22.cc,      </p>
-<p> 修改/etc/httpd/conf/httpd.conf，在文件的最后加入：<br>   ServerName 192.168.1.183<br>   NameVirtualHost 192.168.1.183  </p>
-<virtualhost 192.168.1.183=""><br>       ServerName 21.cc<br>       DocumentRoot /var/www/21.cc<br>           <directory "="" var="" www="" 21.cc"=""><br>            Options Indexes FollowSymLinks<br>            AllowOverride None<br>            Order allow,deny<br>            Allow from all<br>           </directory><br> </virtualhost>  
-
-<pre><code>&lt;VirtualHost 192.168.1.183&gt;  
-     ServerName 22.cc
-     DocumentRoot /var/www/22.cc
-     &lt;Directory &quot;/var/www/22.cc&quot;&gt;     
-      Options Indexes FollowSymLinks      
-     AllowOverride None       
-    Order allow,deny         
-  Allow from all       
-&lt;/Directory&gt;   
-</code></pre><p>      </p>
-<p>  然后在/var/www/21.cc和/var/www/22.cc下创建不同的index.php,在浏览器里输入<a href="http://21.cc和http://22.cc即可看到效果了" target="_blank" rel="external">http://21.cc和http://22.cc即可看到效果了</a>   !</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">PHP</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Apache</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/PHP笔记/" class="article-tag-list-link color1">PHP笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/08/16/Linux-Apache下虚拟主机配置方法！/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
@@ -1432,10 +1551,6 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">生活</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Android</a>
               </li>
              
@@ -1541,6 +1656,10 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">JQUERY</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">生活</a>
               </li>
              
               <li class="article-tag-list-item">
